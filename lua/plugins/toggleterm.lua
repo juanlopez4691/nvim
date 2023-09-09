@@ -37,7 +37,33 @@ return {
       },
     })
 
+    local Terminal  = require('toggleterm.terminal').Terminal
+    local lazygit = Terminal:new({
+      cmd = 'lazygit',
+      hidden = true,
+      direction = "float",
+      float_opts = {
+        border = "none",
+        width = 100000,
+        height = 100000,
+      },
+      close_on_exit = true,
+      on_open = function(term)
+        vim.cmd('startinsert!')
+        vim.api.nvim_buf_set_keymap(term.bufnr, 'n', 'q', '<cmd>close<CR>', {noremap = true, silent = true})
+        vim.api.nvim_buf_set_keymap(term.bufnr, 'n', '<ESC>', '', {noremap = true, silent = true})
+      end,
+      on_close = function(term)
+        vim.cmd('startinsert!')
+      end,
+    })
+
+    function _lazygit_toggle()
+      lazygit:toggle()
+    end
+
     -- Setup keymaps.
+    Map('n', '<leader>gg', '<cmd>lua _lazygit_toggle()<CR>', {noremap = true, silent = true})
     Map('n', '<leader>tt', '<cmd>ToggleTerm direction=float<CR>', {desc = 'Terminal float'})
     Map('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', {desc = 'Terminal horizontal'})
     Map('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>', {desc = 'Terminal vertical'})
