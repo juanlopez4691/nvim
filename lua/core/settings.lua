@@ -1,6 +1,6 @@
 local M = {}
 
-M.colorscheme = 'kanagawa-wave'
+M.colorscheme = 'tokyonight-night'
 
 M.terminal = {
   size = {
