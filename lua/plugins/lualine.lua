@@ -16,6 +16,7 @@ return {
       extensions = {
         'nvim-tree',
         'lazy',
+        'symbols-outline',
       },
       sections = {
         lualine_a = { "mode" },
