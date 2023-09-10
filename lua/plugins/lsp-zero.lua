@@ -54,12 +54,6 @@ return {
           -- see :help lsp-zero-keybindings
           -- to learn the available actions
           lsp.default_keymaps({buffer = bufnr})
-
-          Map('n', 'gr', '<cmd>Telescope lsp_references<cr>', {buffer = bufnr, desc = 'LSP: References'})
-          Map('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', {buffer = bufnr, desc = 'LSP: Definitions'})
-          Map('n', 'gs', '<cmd>Telescope lsp_document_symbols<cr>', {buffer = bufnr, desc = 'LSP: Document symbols'})
-          Map('n', 'gws', '<cmd>Telescope lsp_workspace_symbols<cr>', {buffer = bufnr, desc = 'LSP: Dynamic workspace symbols'})
-          Map('n', 'gi', '<cmd>Telescope lsp_implementations<cr>', {buffer = bufnr, desc = 'LSP: Implementations'})
         end)
 
         lsp.set_sign_icons({

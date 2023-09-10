@@ -1,5 +1,5 @@
 require('core.config')
 require('core.lazy')
 require('core.colorscheme')
-require('core.keymaps')
+require('core.keymappings')
 require('core.autocommands')

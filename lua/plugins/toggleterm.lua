@@ -3,7 +3,6 @@ return {
   version = '*',
   event = { 'BufWinEnter', 'BufReadPre', 'BufNewFile' },
   config = function ()
-    require('core.keymaps')
     local config = require('core.settings')
 
     require('toggleterm').setup({
@@ -53,20 +52,14 @@ return {
         vim.api.nvim_buf_set_keymap(term.bufnr, 'n', 'q', '<cmd>close<CR>', {noremap = true, silent = true})
         vim.api.nvim_buf_set_keymap(term.bufnr, 'n', '<ESC>', '', {noremap = true, silent = true})
       end,
-      on_close = function(term)
+      on_close = function()
         vim.cmd('startinsert!')
       end,
     })
 
-    function _lazygit_toggle()
+    function Lazygit_toggle()
       lazygit:toggle()
     end
-
-    -- Setup keymaps.
-    Map('n', '<leader>gg', '<cmd>lua _lazygit_toggle()<CR>', {noremap = true, silent = true})
-    Map('n', '<leader>tt', '<cmd>ToggleTerm direction=float<CR>', {desc = 'Terminal float'})
-    Map('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', {desc = 'Terminal horizontal'})
-    Map('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>', {desc = 'Terminal vertical'})
   end,
 }
 
