@@ -2,7 +2,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>gg',
-    cmd = '<cmd>lua Lazygit_toggle()<CR>',
+    cmd = "<cmd>lua TerminalFullWindow('lazygit')<CR>",
     opt = {
       desc = 'Open lazygit',
     },

@@ -6,7 +6,7 @@ M.terminal = {
   size = {
     float = {
       width = math.ceil(vim.o.columns * 0.95),
-      height = math.ceil(vim.o.lines * 0.85),
+      height = math.ceil(vim.o.lines * 0.87),
     },
     horizontal = {
       height = 15,

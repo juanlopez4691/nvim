@@ -36,29 +36,30 @@ return {
       },
     })
 
-    local Terminal  = require('toggleterm.terminal').Terminal
-    local lazygit = Terminal:new({
-      cmd = 'lazygit',
-      hidden = true,
-      direction = "float",
-      float_opts = {
-        border = "none",
-        width = 100000,
-        height = 100000,
-      },
-      close_on_exit = true,
-      on_open = function(term)
-        vim.cmd('startinsert!')
-        vim.api.nvim_buf_set_keymap(term.bufnr, 'n', 'q', '<cmd>close<CR>', {noremap = true, silent = true})
-        vim.api.nvim_buf_set_keymap(term.bufnr, 'n', '<ESC>', '', {noremap = true, silent = true})
-      end,
-      on_close = function()
-        vim.cmd('startinsert!')
-      end,
-    })
+    TerminalFullWindow = function(cmd)
+      local Terminal  = require('toggleterm.terminal').Terminal
 
-    function Lazygit_toggle()
-      lazygit:toggle()
+      Terminal
+        :new({
+          cmd = cmd,
+          hidden = true,
+          direction = "float",
+          float_opts = {
+            border = "none",
+            width = 100000,
+            height = 100000,
+          },
+          close_on_exit = true,
+          on_open = function(term)
+            vim.cmd('startinsert!')
+            vim.api.nvim_buf_set_keymap(term.bufnr, 'n', 'q', '<cmd>close<CR>', {noremap = true, silent = true})
+            vim.api.nvim_buf_set_keymap(term.bufnr, 'n', '<ESC>', '', {noremap = true, silent = true})
+          end,
+          on_close = function()
+            vim.cmd('startinsert!')
+          end,
+        })
+        :toggle()
     end
   end,
 }
