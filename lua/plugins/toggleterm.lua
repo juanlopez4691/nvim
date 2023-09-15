@@ -31,8 +31,8 @@ return {
           border = 'Normal',
           background = 'Normal',
         },
-        width = config.terminal.size.float.width,
-        height = config.terminal.size.float.height,
+        width = math.ceil(vim.o.columns * 0.95),
+        height = math.ceil(vim.o.lines * 0.87),
       },
     })
 
