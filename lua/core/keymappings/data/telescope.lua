@@ -39,5 +39,69 @@ return {
       desc = 'Workspace symbols',
     },
   },
+  {
+    modes = { 'n' },
+    key = 'ff',
+    cmd = '<cmd>Telescope find_files prompt_prefix=🔭› <CR>',
+    opt = {
+      desc = 'Find files',
+    },
+  },
+  {
+    modes = { 'n' },
+    key = 'fr',
+    cmd = '<cmd>Telescope oldfiles prompt_prefix=💾› <CR>',
+    opt = {
+      desc = 'Recent files',
+    },
+  },
+  {
+    modes = { 'n' },
+    key = 'fb',
+    cmd = '<cmd>Telescope buffers show_all_buffers=true prompt_prefix=👓› <CR>',
+    opt = {
+      desc = 'Buffers',
+    },
+  },
+  {
+    modes = { 'n' },
+    key = 'fe',
+    cmd = '<cmd>Telescope file_browser prompt_prefix=🗂️› <CR>',
+    opt = {
+      desc = 'File Browser',
+    },
+  },
+  {
+    modes = { 'n' },
+    key = 'fg',
+    cmd = '<cmd>Telescope live_grep prompt_prefix=🔍› <CR>',
+    opt = {
+      desc = 'Live Grep (root dir)',
+    },
+  },
+  {
+    modes = { 'n' },
+    key = 'fgg',
+    cmd = '<cmd>Telescope live_grep_args prompt_prefix=🔍› <CR>',
+    opt = {
+      desc = 'Live Grep with arguments (root dir)',
+    },
+  },
+  {
+    modes = { 'n' },
+    key = 'fh',
+    cmd = '<cmd>Telescope help_tags prompt_prefix=💡› <CR>',
+    opt = {
+      desc = 'Help pages',
+    },
+  },
+  {
+    modes = { 'n' },
+    key = 'fu',
+    cmd = '<cmd>Telescope help_tags prompt_prefix=💡› <CR>',
+    opt = {
+      desc = 'Undo tree',
+    },
+  },
 }
 

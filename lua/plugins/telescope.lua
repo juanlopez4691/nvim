@@ -4,9 +4,7 @@ return {
   event = { 'BufWinEnter', 'BufReadPre', 'BufNewFile' },
   -- Lazy loads on this commands.
   cmd = { 'Telescope', 'Tel' },
-  -- Lazy loads on this keys.
   dependencies = require('plugins.telescope.dependencies'),
-  keys = require('plugins.telescope.keys'),
   config = function ()
     local telescope = require('telescope')
     local actions = require('telescope.actions')
