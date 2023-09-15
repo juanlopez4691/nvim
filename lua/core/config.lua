@@ -73,6 +73,8 @@ local options = {
   history = 1000,
   -- Set global statusline.
   laststatus = 3,
+  -- Minimal number of screen lines to keep above and below the cursor.
+  scrolloff = 4,
   -- Faster scrolling
   lazyredraw = true,
   -- ms to wait for trigger an event.
