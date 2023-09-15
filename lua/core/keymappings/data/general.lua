@@ -8,6 +8,24 @@ return {
     },
   },
 
+  -- Navigation.
+  {
+    modes = { 'n' },
+    key = '<C-o>',
+    cmd = '<C-o>zz',
+    opt = {
+      desc = 'Go back to previous edit location',
+    },
+  },
+  {
+    modes = { 'n' },
+    key = '<C-i>',
+    cmd = '<C-i>zz',
+    opt = {
+      desc = 'Go to next edit location',
+    },
+  },
+
   -- Navigate window splits.
   {
     modes = { 'n' },
