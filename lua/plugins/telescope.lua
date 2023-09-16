@@ -15,7 +15,7 @@ return {
       color_devicons = true,
       defaults = {
         path_display = { 'smart' },
-        -- initial_mode = 'normal',
+        initial_mode = 'normal',
         selection_caret = '❯ ',
         layout_config = {
           vertical = { width = 0.95 },

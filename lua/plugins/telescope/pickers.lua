@@ -12,7 +12,6 @@ return {
     only_sort_text = true,
   },
   buffers = {
-    initial_mode = 'normal',
     mappings = {
       i = {
         ['<C-d>'] = actions.delete_buffer,
