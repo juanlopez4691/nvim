@@ -25,6 +25,22 @@ return {
       desc = 'Go to next edit location',
     },
   },
+  {
+    modes = { 'n' },
+    key = '<C-d>',
+    cmd = '<C-d>zz',
+    opt = {
+      desc = 'Scroll down half screen',
+    },
+  },
+  {
+    modes = { 'n' },
+    key = '<C-u>',
+    cmd = '<C-u>zz',
+    opt = {
+      desc = 'Scroll up half screen',
+    },
+  },
 
   -- Navigate window splits.
   {
