@@ -18,9 +18,14 @@ return {
         initial_mode = 'normal',
         selection_caret = '❯ ',
         layout_config = {
-          vertical = { width = 0.95 },
-          horizontal = { width = 0.95 },
-          preview_width = 0.5,
+          vertical = {
+            width = 0.95,
+            preview_height = 0.5,
+          },
+          horizontal = {
+            width = 0.95,
+            preview_width = 0.5,
+          },
         },
         mappings = {
           ['i'] = {
