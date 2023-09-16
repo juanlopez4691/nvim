@@ -154,13 +154,36 @@ return {
                 buffer = '[Buffer]',
                 path = '[Path]',
                 nvim_lua = '[Lua]',
+                cmdline = '[Cmd]',
               })[entry.source.name]
 
-              kind.kind = (strings[1] or '') .. ' │'
-              kind.menu = ' (' .. (strings[2] or '') .. ') ' .. (source_name or '')
+              local kind_menu = ''
+              local kind_kind = ' │'
+              if entry.source.name ~= 'cmdline' then
+                kind_menu = ' (' .. (strings[2] or '') .. ') ' .. (source_name or '')
+                kind_kind = (strings[1] or '') .. ' │'
+              end
+
+              kind.menu = kind_menu
+              kind.kind = kind_kind
 
               return kind
             end,
+          },
+        })
+        -- Use buffer source for `/` and `?`.
+        cmp.setup.cmdline({ '/', '?' }, {
+          mapping = cmp.mapping.preset.cmdline(),
+          sources = {
+            { name = 'buffer' }
+          }
+        })
+        -- Use cmdline & path source for ':'.
+        cmp.setup.cmdline(':', {
+          mapping = cmp.mapping.preset.cmdline(),
+          sources = {
+            { name = 'path' },
+            { name = 'cmdline' },
           },
         })
       end,
@@ -172,6 +195,9 @@ return {
     },
     {
       'hrsh7th/cmp-buffer',
+    },
+    {
+      'hrsh7th/cmp-cmdline',
     },
     {
       'hrsh7th/cmp-path',
