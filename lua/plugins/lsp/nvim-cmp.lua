@@ -1,9 +1,20 @@
+-- Colorize the autocompletion menu icons.
+local colorize_cmp_menu = function()
+  local menu_colors = require('plugins.lsp.cmp_menu_colors')
+
+  for key, colors in pairs(menu_colors) do
+    vim.api.nvim_set_hl(0, key, colors)
+  end
+end
+
 return {
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',
   config = function()
     local cmp = require('cmp')
     local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
+
+    colorize_cmp_menu()
 
     cmp.setup({
       preselect = 'item',
@@ -56,14 +67,14 @@ return {
           })[entry.source.name]
 
           local kind_menu = ''
-          local kind_kind = ' │'
+          local kind_kind = '  '
           if entry.source.name ~= 'cmdline' then
+            kind_kind = ' ' .. (strings[1] or '') .. ' '
             kind_menu = ' (' .. (strings[2] or '') .. ') ' .. (source_name or '')
-            kind_kind = (strings[1] or '') .. ' │'
           end
 
-          kind.menu = kind_menu
           kind.kind = kind_kind
+          kind.menu = kind_menu
 
           return kind
         end,
