@@ -13,6 +13,7 @@ return {
   config = function()
     local cmp = require('cmp')
     local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
+    local compare = require('cmp.config.compare')
 
     colorize_cmp_menu()
 
@@ -49,6 +50,21 @@ return {
         { name = 'nvim-lua' },
         { name = 'luasnip' },
       }),
+      sorting = {
+        priority_weight = 2,
+        comparators = {
+          compare.kind,
+          compare.recently_used,
+          compare.offset,
+          compare.exact,
+          -- compare.scopes,
+          compare.score,
+          compare.locality,
+          -- compare.sort_text,
+          compare.length,
+          compare.order,
+        },
+      },
       formatting = {
         fields = { 'kind', 'abbr', 'menu' },
         format = function(entry, vim_item)
