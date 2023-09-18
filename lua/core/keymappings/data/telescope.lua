@@ -1,7 +1,7 @@
 return {
   {
     modes = { 'n' },
-    key = 'gd',
+    key = '<leader>gd',
     cmd = '<cmd>lua LspDefinitionsAtCursor()<CR>',
     opt = {
       desc = 'Show definitions',
@@ -9,7 +9,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'gr',
+    key = '<leader>gr',
     cmd = '<cmd>lua LspReferencesAtCursor()<CR>',
     opt = {
       desc = 'Show references',
@@ -17,7 +17,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'gi',
+    key = '<leader>gi',
     cmd = '<cmd>lua LspImplementationsAtCursor()<CR>',
     opt = {
       desc = 'Show implementations',
@@ -25,7 +25,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'gs',
+    key = '<leader>gs',
     cmd = '<cmd>Telescope lsp_document_symbols<CR>',
     opt = {
       desc = 'Document symbols',
@@ -33,7 +33,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'gws',
+    key = '<leader>gws',
     cmd = '<cmd>Telescope lsp_workspace_symbols<CR>',
     opt = {
       desc = 'Workspace symbols',
@@ -41,7 +41,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'ff',
+    key = '<leader>ff',
     cmd = '<cmd>Telescope find_files prompt_prefix=🔭› <CR>',
     opt = {
       desc = 'Find files',
@@ -49,7 +49,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'fr',
+    key = '<leader>fr',
     cmd = '<cmd>Telescope oldfiles prompt_prefix=💾› <CR>',
     opt = {
       desc = 'Recent files',
@@ -57,7 +57,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'fb',
+    key = '<leader>fb',
     cmd = '<cmd>Telescope buffers show_all_buffers=true prompt_prefix=👓› <CR>',
     opt = {
       desc = 'Buffers',
@@ -65,7 +65,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'fe',
+    key = '<leader>fe',
     cmd = '<cmd>Telescope file_browser prompt_prefix=🗂️› <CR>',
     opt = {
       desc = 'File Browser',
@@ -73,7 +73,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'fg',
+    key = '<leader>fg',
     cmd = '<cmd>Telescope live_grep prompt_prefix=🔍› <CR>',
     opt = {
       desc = 'Live Grep (root dir)',
@@ -81,7 +81,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'fgg',
+    key = '<leader>fgg',
     cmd = '<cmd>Telescope live_grep_args prompt_prefix=🔍› <CR>',
     opt = {
       desc = 'Live Grep with arguments (root dir)',
@@ -89,7 +89,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'fh',
+    key = '<leader>fh',
     cmd = '<cmd>Telescope help_tags prompt_prefix=💡› <CR>',
     opt = {
       desc = 'Help pages',
@@ -97,7 +97,7 @@ return {
   },
   {
     modes = { 'n' },
-    key = 'fu',
+    key = '<leader>fu',
     cmd = '<cmd>Telescope help_tags prompt_prefix=💡› <CR>',
     opt = {
       desc = 'Undo tree',
