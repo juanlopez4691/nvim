@@ -1,7 +1,7 @@
 return {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
-  lazy = true,
+  event = { 'CmdLineEnter', 'BufWinEnter', 'BufReadPre', 'BufNewFile' },
   config = function()
     require('lsp-zero.settings').preset({})
   end,

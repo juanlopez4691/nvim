@@ -9,7 +9,7 @@ end
 
 return {
   'hrsh7th/nvim-cmp',
-  event = 'InsertEnter',
+  -- event = 'InsertEnter',
   config = function()
     local cmp = require('cmp')
     local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
