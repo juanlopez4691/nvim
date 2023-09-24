@@ -1,7 +1,7 @@
 return {
   'neovim/nvim-lspconfig',
-  cmd = 'LspInfo',
-  event = {'BufReadPre', 'BufNewFile'},
+  -- cmd = 'LspInfo',
+  -- event = {'BufReadPre', 'BufNewFile'},
   opts = {
     servers = {
       html = {
@@ -36,6 +36,8 @@ return {
       }
     })
 
+    local lspconfig = require('lspconfig')
+
     local lsp = require('lsp-zero').preset({
       call_servers = 'local',
       float_border = 'rounded',
@@ -57,7 +59,7 @@ return {
     })
 
     -- Avoid errors in css files using tailwind directives.
-    require('lspconfig').cssls.setup({
+    lspconfig.cssls.setup({
       settings = {
         css = {
           validate = false,
@@ -81,7 +83,7 @@ return {
     })
 
     -- (Optional) Configure lua language server for neovim
-    require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+    lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
     lsp.setup()
   end,
