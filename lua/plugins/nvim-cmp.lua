@@ -1,6 +1,6 @@
 -- Colorize the autocompletion menu icons.
 local colorize_cmp_menu = function()
-  local menu_colors = require('plugins.lsp.cmp_menu_colors')
+  local menu_colors = require('core.cmp_menu_colors')
 
   for key, colors in pairs(menu_colors) do
     vim.api.nvim_set_hl(0, key, colors)
@@ -9,7 +9,20 @@ end
 
 return {
   'hrsh7th/nvim-cmp',
-  -- event = 'InsertEnter',
+  dependencies = {
+    -- Completion sources.
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-cmdline' },
+    { 'hrsh7th/cmp-path' },
+    { 'hrsh7th/cmp-nvim-lua' },
+    { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+    -- Snippets.
+    {
+      'L3MON4D3/LuaSnip',
+    },
+  },
+  event = { 'CmdLineEnter', 'InsertEnter' },
   config = function()
     local cmp = require('cmp')
     local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
