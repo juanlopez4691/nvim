@@ -1,18 +1,26 @@
 return {
   {
     modes = { 'n' },
+    key = 'gd',
+    cmd = '<cmd>lua LspDefinitionsAtCursor()<CR>',
+    opt = {
+      desc = 'Show definitions',
+    },
+  },
+  {
+    modes = { 'n' },
     key = 'gr',
-    cmd = '<cmd>Telescope lsp_references<CR>',
+    cmd = '<cmd>lua LspReferencesAtCursor()<CR>',
     opt = {
       desc = 'Show references',
     },
   },
   {
     modes = { 'n' },
-    key = 'gd',
-    cmd = '<cmd>Telescope lsp_definitions<CR>',
+    key = 'gi',
+    cmd = '<cmd>lua LspImplementationsAtCursor()<CR>',
     opt = {
-      desc = 'Show definitions',
+      desc = 'Show implementations',
     },
   },
   {
@@ -29,14 +37,6 @@ return {
     cmd = '<cmd>Telescope lsp_workspace_symbols<CR>',
     opt = {
       desc = 'Workspace symbols',
-    },
-  },
-  {
-    modes = { 'n' },
-    key = 'gi',
-    cmd = '<cmd>Telescope lsp_implementations<CR>',
-    opt = {
-      desc = 'Show implementations',
     },
   },
 }

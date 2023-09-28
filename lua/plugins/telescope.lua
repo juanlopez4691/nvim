@@ -52,5 +52,32 @@ return {
     for extension, _ in pairs(extensions) do
       telescope.load_extension(extension)
     end
+
+    local lsp_preview_settings = {
+      jump_type = 'never',
+      layout_strategy = 'vertical',
+      path_display = { 'smart' },
+      layout_config = {
+        width = 0.8,
+        height = 0.8,
+        preview_cutoff = 0,
+        prompt_position = 'bottom',
+      },
+    }
+
+    -- Shows a preview window for LSP definitions at cursor position.
+    LspDefinitionsAtCursor = function()
+      require('telescope.builtin').lsp_definitions(lsp_preview_settings)
+    end
+
+    -- Shows a preview window for LSP references at cursor position.
+    LspReferencesAtCursor = function()
+      require('telescope.builtin').lsp_references(lsp_preview_settings)
+    end
+
+    -- Shows a preview window for LSP implementations at cursor position.
+    LspImplementationsAtCursor = function()
+      require('telescope.builtin').lsp_implementations(lsp_preview_settings)
+    end
   end
 }
