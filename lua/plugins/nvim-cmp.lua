@@ -89,15 +89,15 @@ return {
             cmdline = '[Cmd]',
           })[entry.source.name]
 
-          local kind_menu = ''
-          local kind_kind = '  '
-          if entry.source.name ~= 'cmdline' then
+          local kind_kind
+          if entry.source.name == 'cmdline' then
+            kind_kind = '  '
+          else
             kind_kind = ' ' .. (strings[1] or '') .. ' '
-            kind_menu = ' (' .. (strings[2] or '') .. ') ' .. (source_name or '')
           end
 
           kind.kind = kind_kind
-          kind.menu = kind_menu
+          kind.menu = ''
 
           return kind
         end,
