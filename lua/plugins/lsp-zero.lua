@@ -15,8 +15,5 @@ return {
         require('mason-lspconfig').setup()
       end,
     },
-    -- Autocompletion.
-    { 'hrsh7th/nvim-cmp' },
   }
 }
-
