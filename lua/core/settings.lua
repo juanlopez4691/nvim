@@ -2,6 +2,12 @@ local M = {}
 
 M.colorscheme = 'tokyonight-night'
 
+-- Set global limits for large files.
+M.max_file = {
+  size = 1024 * 100,
+  lines = 10000.
+}
+
 -- Set dimensions of terminal window.
 M.terminal = {
   size = {
