@@ -2,6 +2,7 @@ local M = {}
 
 M.colorscheme = 'tokyonight-night'
 
+-- Set dimensions of terminal window.
 M.terminal = {
   size = {
     float = {

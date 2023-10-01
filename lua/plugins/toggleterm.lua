@@ -3,15 +3,15 @@ return {
   version = '*',
   event = { 'BufWinEnter', 'BufReadPre', 'BufNewFile' },
   config = function ()
-    local config = require('core.settings')
+    local core_settings = require('core.settings')
 
     require('toggleterm').setup({
       size = function (term)
       print(term.direction)
         if term.direction == 'horizontal' then
-          return config.terminal.size.horizontal.height
+          return core_settings.terminal.size.horizontal.height
         elseif term.direction == 'vertical' then
-          return config.terminal.size.vertical.width
+          return core_settings.terminal.size.vertical.width
         end
       end,
       hide_numbers = true,
@@ -63,4 +63,3 @@ return {
     end
   end,
 }
-
