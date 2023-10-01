@@ -1,12 +1,3 @@
--- Colorize the autocompletion menu icons.
-local colorize_cmp_menu = function()
-  local menu_colors = require('core.cmp_menu_colors')
-
-  for key, colors in pairs(menu_colors) do
-    vim.api.nvim_set_hl(0, key, colors)
-  end
-end
-
 return {
   'hrsh7th/nvim-cmp',
   dependencies = {
@@ -28,7 +19,10 @@ return {
     local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
     local compare = require('cmp.config.compare')
 
-    colorize_cmp_menu()
+    -- Colorize the autocompletion menu icons.
+    local cmp_menu_colors = require('core.cmp_menu_colors')
+
+    cmp_menu_colors.colorize_cmp_menu()
 
     cmp.setup({
       preselect = 'item',
@@ -126,4 +120,3 @@ return {
     })
   end,
 }
-

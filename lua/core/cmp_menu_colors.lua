@@ -1,6 +1,8 @@
 -- Define colors for autcompletion menu entries.
 -- See https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance#how-to-get-types-on-the-left-and-offset-the-menu
-return {
+local M = {}
+
+M.cmp_menu_colors = {
   PmenuSel = { bg = '#282C34', fg = 'NONE' },
   Pmenu = { fg = '#C5CDD9', bg = '#22252A' },
 
@@ -43,3 +45,10 @@ return {
   CmpItemKindTypeParameter = { fg = '#22252A', bg = '#58B5A8' },
 }
 
+M.colorize_cmp_menu = function()
+  for key, colors in pairs(M.cmp_menu_colors) do
+    vim.api.nvim_set_hl(0, key, colors)
+  end
+end
+
+return M
