@@ -1,9 +1,5 @@
 return {
   'nvim-telescope/telescope.nvim', branch = '0.1.x',
-  -- Lazy load on events.
-  event = { 'BufWinEnter', 'BufReadPre', 'BufNewFile' },
-  -- Lazy loads on this commands.
-  cmd = { 'Telescope', 'Tel' },
   dependencies = require('plugins.telescope.dependencies'),
   config = function ()
     local telescope = require('telescope')
