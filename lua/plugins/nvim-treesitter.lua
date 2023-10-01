@@ -28,7 +28,6 @@ return {
     require('nvim-treesitter.configs').setup({
       ensure_installed = {
         'css',
-        'html',
         'javascript',
         'jsdoc',
         'json',
@@ -46,7 +45,10 @@ return {
       },
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = false,
+        use_languagetree = true,
+        additional_vim_regex_highlighting = {
+          'php',
+        },
         disable = function(_, bufnr)
           return vim.b[bufnr].large_buf
         end,
@@ -60,7 +62,6 @@ return {
       autotag = {
         enabled = true,
         filetypes = {
-          'html',
           'javascript',
           'javascriptreact',
           'php',
@@ -73,7 +74,10 @@ return {
         },
       },
       sync_install = false,
-      auto_install = true,
+      auto_install = false,
+      ignore_install = {
+        'html',
+      },
       context_commentstring = {
         enable = true,
       },
