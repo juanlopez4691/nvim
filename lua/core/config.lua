@@ -34,7 +34,7 @@ local options = {
   -- Line lenght marker at 80 columns.
   colorcolumn = '80',
   -- A comma separated list of options for Insert mode completion.
-  completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' },
+  completeopt = { 'menu', 'menuone', 'noinsert' },
   -- Enable folding.
   foldmethod = 'manual',
   foldlevelstart = 999,

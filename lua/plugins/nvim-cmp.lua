@@ -26,7 +26,9 @@ return {
 
     cmp.setup({
       preselect = 'item',
-      confirmation = { completeopt = 'menu,menuone,noinsert' },
+      confirmation = {
+        completeopt = 'menu,menuone,noinsert',
+      },
       completion = {
         completeopt = 'menu,menuone,noinsert'
       },
@@ -35,10 +37,11 @@ return {
         ['<Tab>'] = cmp.mapping.select_next_item(cmp_select_opts),
         ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select_opts),
         -- `Enter` key to confirm completion.
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
         -- Navigate completion docs.
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<Esc>'] = cmp.mapping.abort(),
       },
       window = {
         completion = cmp.config.window.bordered(),
