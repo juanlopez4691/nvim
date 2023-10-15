@@ -1,6 +1,6 @@
 return {
   'nvim-zh/colorful-winsep.nvim',
-  event = { 'BufWinEnter', 'BufReadPre', 'BufNewFile' },
+  event = 'VeryLazy',
   config = function()
     require('colorful-winsep').setup({
       -- highlight for Window separator

@@ -1,7 +1,7 @@
 return {
   'akinsho/toggleterm.nvim',
   version = '*',
-  event = { 'BufWinEnter', 'BufReadPre', 'BufNewFile' },
+  command = 'ToggleTerm',
   config = function ()
     local core_settings = require('core.settings')
 

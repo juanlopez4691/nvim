@@ -1,7 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  -- cmd = 'LspInfo',
-  -- event = {'BufReadPre', 'BufNewFile'},
+  lazy = 'true',
   opts = {
     servers = {
       html = {

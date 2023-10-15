@@ -17,7 +17,7 @@ return {
     'TSUpdate',
     'TSUpdateSync',
   },
-  event = { 'BufWinEnter', 'BufReadPre', 'BufNewFile' },
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     { 'JoosepAlviste/nvim-ts-context-commentstring' },
     { 'nvim-treesitter/nvim-treesitter-textobjects' },

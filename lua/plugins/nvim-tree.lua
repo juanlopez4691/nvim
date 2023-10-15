@@ -39,7 +39,6 @@ return {
   },
   -- tag = 'nightly',
   cmd = { 'NvimTreeToggle', 'NvimTreeOpen', 'NvimTreeFocus', 'NvimTreeFindFileToggle' },
-  event = 'User DirOpened',
   config = function ()
     require('nvim-tree').setup({
       on_attach = do_on_attach,

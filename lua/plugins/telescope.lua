@@ -1,6 +1,7 @@
 return {
   'nvim-telescope/telescope.nvim', branch = '0.1.x',
   dependencies = require('plugins.telescope.dependencies'),
+  cmd = 'Telescope',
   config = function ()
     local telescope = require('telescope')
     local actions = require('telescope.actions')

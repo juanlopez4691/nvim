@@ -5,7 +5,7 @@ return {
   },
   {
     'echasnovski/mini.comment',
-    event = 'VeryLazy',
+    event = { 'BufReadPre', 'BufNewFile' },
     opts = {
       options = {
         custom_commentstring = function()
