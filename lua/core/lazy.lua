@@ -18,12 +18,16 @@ require('lazy').setup({
   install = {
     colorscheme = { settings.colorscheme },
   },
+  concurrency = 4,
+  defaults = {
+    lazy = true,
+    version = '*',
+  },
   checker = {
     enabled = true,
     notify = true,
   },
-  change_detection = {
-    enabled = true,
-    notify = true,
+  ui = {
+    border = 'rounded',
   },
 })
