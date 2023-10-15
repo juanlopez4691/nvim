@@ -22,7 +22,7 @@ return {
     { 'JoosepAlviste/nvim-ts-context-commentstring' },
     { 'nvim-treesitter/nvim-treesitter-textobjects' },
     -- HACK: remove when https://github.com/windwp/nvim-ts-autotag/issues/125 closed.
-    { 'windwp/nvim-ts-autotag', opts = { autotag = { enable_close_on_slash = false } } },
+    { 'windwp/nvim-ts-autotag' },
   },
   config = function ()
     require('nvim-treesitter.configs').setup({
@@ -57,12 +57,9 @@ return {
       },
       autotag = {
         enabled = true,
-        filetypes = {
-          'javascript',
-          'javascriptreact',
-          'typescript',
-          'xml',
-        },
+        enable_rename = true,
+        enable_close = true,
+        enable_close_on_slash = true,
       },
       sync_install = true,
       auto_install = true,
