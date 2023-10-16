@@ -42,9 +42,6 @@ return {
       highlight = {
         enable = true,
         use_languagetree = true,
-        additional_vim_regex_highlighting = {
-          'php',
-        },
         disable = function(_, bufnr)
           return vim.b[bufnr].large_buf
         end,
