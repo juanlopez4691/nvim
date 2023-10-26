@@ -73,6 +73,9 @@ return {
       },
       filters = {
         dotfiles = true,
+        custom = {
+          "^.git$",
+        },
       },
     })
   end
