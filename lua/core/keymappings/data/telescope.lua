@@ -58,7 +58,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>fb',
-    cmd = '<cmd>Telescope buffers show_all_buffers=true prompt_prefix=👓› <CR>',
+    cmd = '<cmd>Telescope buffers prompt_prefix=👓› <CR>',
     opt = {
       desc = 'Buffers',
     },

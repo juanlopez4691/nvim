@@ -12,6 +12,9 @@ return {
     only_sort_text = true,
   },
   buffers = {
+    ignore_current_buffer = true,
+    sort_lastused = true,
+    show_all_buffers = false,
     mappings = {
       i = {
         ['<C-d>'] = actions.delete_buffer,
