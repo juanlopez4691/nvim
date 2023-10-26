@@ -84,6 +84,8 @@ local options = {
   -- When set case is ignored when completing file names and directories.
   wildignorecase = true,
   wildmode = 'full',
+  -- Set char to start wildcard expansion in command line for macros and mappings.
+  wildcharm=('\t'):byte(),
   -- No line wrapping.
   wrap = false,
   -- Wrap on word boundary.
