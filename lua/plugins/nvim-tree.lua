@@ -57,7 +57,18 @@ return {
         adaptive_size = true,
       },
       renderer = {
+        full_name = true,
         group_empty = true,
+        special_files = {
+          ".env",
+          "Cargo.toml",
+          "Makefile",
+          "README.md",
+          "readme.md",
+        },
+        indent_markers = {
+          enable = true,
+        },
         icons = {
           git_placement = "signcolumn",
           show = {
