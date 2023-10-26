@@ -57,6 +57,15 @@ return {
       },
       renderer = {
         group_empty = true,
+        icons = {
+          git_placement = "signcolumn",
+          show = {
+            file = true,
+            folder = false,
+            folder_arrow = false,
+            git = true,
+          },
+        },
       },
       filters = {
         dotfiles = true,
