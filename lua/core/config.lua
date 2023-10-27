@@ -36,9 +36,14 @@ local options = {
   -- A comma separated list of options for Insert mode completion.
   completeopt = { 'menu', 'menuone', 'noinsert' },
   -- Enable folding.
-  foldmethod = 'manual',
-  foldlevelstart = 999,
-  foldcolumn = 'auto:5',
+  foldmethod = 'syntax',
+  foldenable = true,
+  foldlevel = 99,
+  foldlevelstart = 99,
+  foldcolumn = '1',
+  foldnestmax = 4,
+  fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
+  statuscolumn = '%=%l%s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " }',
   -- Highlight cursor line.
   cursorline = true,
   -- Show line number.
