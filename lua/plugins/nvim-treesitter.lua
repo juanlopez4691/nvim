@@ -33,11 +33,18 @@ return {
         'json',
         'lua',
         'luadoc',
+        'php',
+        'phpdoc',
+        'query',
         'scss',
+        'twig',
         'typescript',
         'vim',
         'vimdoc',
         'yaml',
+      },
+      ignore_install = {
+        'html',
       },
       highlight = {
         enable = true,
@@ -45,6 +52,9 @@ return {
         disable = function(_, bufnr)
           return vim.b[bufnr].large_buf
         end,
+        additional_vim_regex_highlighting = {
+          'php',
+        },
       },
       indent = {
         enabled = true,
@@ -57,6 +67,10 @@ return {
         enable_rename = true,
         enable_close = true,
         enable_close_on_slash = true,
+        filetypes = {
+          'php',
+          'twig',
+        },
       },
       sync_install = true,
       auto_install = true,
