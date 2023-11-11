@@ -2,7 +2,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>h',
-    cmd = '<Cmd>noh<CR>',
+    cmd = '<cmd>noh<CR>',
     opt = {
       desc = 'Clear highligted search results',
     },
@@ -80,7 +80,7 @@ return {
   {
     modes = { 'n' },
     key = '<A-Up>',
-    cmd = '<Cmd>resize +2<CR>',
+    cmd = '<cmd>resize +2<CR>',
     opt = {
       desc = 'Grow horizontal split',
     },
@@ -88,7 +88,7 @@ return {
   {
     modes = { 'n' },
     key = '<A-Down>',
-    cmd = '<Cmd>resize -2<CR>',
+    cmd = '<cmd>resize -2<CR>',
     opt = {
       desc = 'Reduce horizontal split',
     },
@@ -96,7 +96,7 @@ return {
   {
     modes = { 'n' },
     key = '<A-Left>',
-    cmd = '<Cmd>vertical resize +2<CR>',
+    cmd = '<cmd>vertical resize +2<CR>',
     opt = {
       desc = 'Grow vertical split',
     },
@@ -104,7 +104,7 @@ return {
   {
     modes = { 'n' },
     key = '<A-Right>',
-    cmd = '<Cmd>vertical resize -2<CR>',
+    cmd = '<cmd>vertical resize -2<CR>',
     opt = {
       desc = 'Reduce vertical split',
     },
@@ -169,7 +169,7 @@ return {
   {
     modes = { 'n' },
     key = '<A-j>',
-    cmd = '<Cmd>m+<CR>==',
+    cmd = '<cmd>m+<CR>==',
     opt = {
       desc = 'Move current line down',
     },
@@ -177,7 +177,7 @@ return {
   {
     modes = { 'n' },
     key = '<A-k>',
-    cmd = '<Cmd>m-2<CR>==',
+    cmd = '<cmd>m-2<CR>==',
     opt = {
       desc = 'Move current line up',
     },
