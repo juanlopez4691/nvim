@@ -1,5 +1,8 @@
+local core_settings = require('core.settings')
+
 return {
   'nvim-zh/colorful-winsep.nvim',
+  cond = core_settings.plugins_enabled.colorful_winsep,
   event = 'VeryLazy',
   config = function()
     require('colorful-winsep').setup({

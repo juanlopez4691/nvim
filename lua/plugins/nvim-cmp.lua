@@ -1,5 +1,8 @@
+local core_settings = require('core.settings')
+
 return {
   'hrsh7th/nvim-cmp',
+  cond = core_settings.plugins_enabled.nvim_cmp,
   dependencies = {
     -- Completion sources.
     { 'hrsh7th/cmp-nvim-lsp' },

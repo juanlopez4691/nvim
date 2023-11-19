@@ -1,5 +1,8 @@
+local core_settings = require('core.settings')
+
 return {
   'rebelot/kanagawa.nvim',
+  cond = core_settings.plugins_enabled.kanagawa,
   priority = 10000, -- make sure to load this before all the other start plugins
   config = function ()
     require('kanagawa').setup({

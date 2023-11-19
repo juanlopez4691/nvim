@@ -1,5 +1,8 @@
+local core_settings = require('core.settings')
+
 return {
   'onsails/lspkind.nvim',
+  cond = core_settings.plugins_enabled.lspkind,
   config = function ()
     require('lspkind').init({
       mode = 'symbol',

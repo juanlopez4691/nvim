@@ -1,5 +1,8 @@
+local core_settings = require('core.settings')
+
 return {
   "nvim-lualine/lualine.nvim",
+  cond = core_settings.plugins_enabled.lualine,
   dependencies = { "nvim-tree/nvim-web-devicons" },
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()

@@ -1,5 +1,8 @@
+local core_settings = require('core.settings')
+
 return {
   'akinsho/toggleterm.nvim',
+  cond = core_settings.plugins_enabled.toggleterm,
   version = '*',
   command = 'ToggleTerm',
   config = function ()

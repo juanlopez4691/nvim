@@ -2,6 +2,7 @@ local core_settings = require('core.settings')
 
 return {
   'stevearc/aerial.nvim',
+  cond = core_settings.plugins_enabled.aerial,
   event = 'VeryLazy',
   dependencies = {
      'nvim-treesitter/nvim-treesitter',
