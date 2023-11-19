@@ -74,10 +74,6 @@ return {
       },
       sync_install = true,
       auto_install = true,
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
     })
   end,
 }
