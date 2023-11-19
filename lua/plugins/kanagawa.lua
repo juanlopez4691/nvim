@@ -5,6 +5,10 @@ return {
   cond = core_settings.plugins_enabled.kanagawa,
   priority = 10000, -- make sure to load this before all the other start plugins
   config = function ()
+    if not core_settings.plugins_enabled.kanagawa then
+      return
+    end
+
     require('kanagawa').setup({
       compile = false,             -- enable compiling the colorscheme
       undercurl = true,            -- enable undercurls

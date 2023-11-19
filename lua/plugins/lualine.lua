@@ -11,6 +11,9 @@ return {
     local lazy_status = require("lazy.status")
 
     lualine.setup({
+      theme = {
+        colorscheme = core_settings.colorscheme,
+      },
       options = {
         icons_enabled = true,
         component_separators = '|',

@@ -1,5 +1,10 @@
 local settings = require('core.settings')
 
-vim.cmd('colorscheme ' .. settings.colorscheme)
+local colorscheme = settings.colorscheme_default
+local ok, _ = pcall(require, settings.colorscheme)
+if ok then
+  colorscheme = settings.colorscheme_variant
+end
 
-require('lualine').setup({ theme = settings.colorscheme })
+vim.cmd('colorscheme ' .. colorscheme)
+

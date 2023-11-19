@@ -13,10 +13,21 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local colorscheme = function()
+  local colorscheme = { settings.colorscheme_default }
+  local ok, _ = pcall(require, settings.colorscheme)
+
+  if ok then
+    table.insert(colorscheme, settings.colorscheme_variant)
+  end
+
+  return colorscheme
+end
+
 require('lazy').setup({
   import = 'plugins',
   install = {
-    colorscheme = { settings.colorscheme },
+    colorscheme = colorscheme()
   },
   concurrency = 4,
   defaults = {
