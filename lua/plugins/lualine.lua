@@ -4,7 +4,7 @@ return {
   "nvim-lualine/lualine.nvim",
   cond = core_settings.plugins_enabled.lualine,
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = "VeryLazy",
   config = function()
     local icons = require("core.icons")
     local lualine = require("lualine")
