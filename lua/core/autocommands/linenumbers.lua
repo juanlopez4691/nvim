@@ -9,6 +9,10 @@ vim.api.nvim_create_autocmd(
     pattern = '*',
     group = augroup,
     callback = function()
+      if vim.o.filetype == 'NvimTree' then
+        return
+      end
+
       if vim.o.nu and vim.api.nvim_get_mode().mode ~= 'i' then
         opt.relativenumber = true
         opt.statuscolumn = '%=%{v:relnum ? v:relnum : v:lnum }%s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " }'
@@ -23,6 +27,10 @@ vim.api.nvim_create_autocmd(
     pattern = '*',
     group = augroup,
     callback = function()
+      if vim.o.filetype == 'NvimTree' then
+        return
+      end
+
       if vim.o.nu then
         opt.relativenumber = false
         opt.statuscolumn = '%=%l%s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " }'
