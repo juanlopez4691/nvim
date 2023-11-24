@@ -2,7 +2,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>tt',
-    cmd = '<cmd>ToggleTerm direction=float<CR>',
+    cmd = '<cmd>100ToggleTerm direction=float<CR>',
     opt = {
       desc = 'Terminal float',
     },
