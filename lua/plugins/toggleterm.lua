@@ -6,8 +6,6 @@ return {
   version = '*',
   command = 'ToggleTerm',
   config = function ()
-    local core_settings = require('core.settings')
-
     require('toggleterm').setup({
       size = function (term)
       print(term.direction)
