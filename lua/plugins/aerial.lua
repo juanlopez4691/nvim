@@ -20,6 +20,18 @@ return {
         min_width = { 30, 0.2 },
         resize_to_content = true,
       },
+      nav = {
+        relative = 'win',
+        max_height = 0.7,
+        min_height = { 20, 0.5 },
+        max_width = 0.8,
+        min_width = { 20, 0.3 },
+        win_opts = {
+          cursorline = true,
+          winblend = 0,
+        },
+        preview = true,
+      },
       autojump = true,
       show_guides = true,
       filter_kind = false,
