@@ -15,6 +15,7 @@ M.plugins_enabled = {
   mini_indentscope = true,
   mini_surround = true,
   nvim_autopairs = true,
+  nvim_bqf = true,
   nvim_cmp = true,
   nvim_colorizer = true,
   nvim_spectre = true,
