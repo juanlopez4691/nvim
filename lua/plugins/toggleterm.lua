@@ -39,6 +39,11 @@ return {
       },
     })
 
+    ToggleSomeTerminal = function (size, direction)
+      local count = vim.v.count1
+      require('toggleterm').toggle(count, size, vim.loop.cwd(), direction)
+    end
+
     TerminalFullWindow = function(cmd)
       local Terminal  = require('toggleterm.terminal').Terminal
 

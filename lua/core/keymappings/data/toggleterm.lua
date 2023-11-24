@@ -10,7 +10,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>th',
-    cmd = '<cmd>ToggleTerm direction=horizontal<CR>',
+    cmd = '<cmd>lua ToggleSomeTerminal(20, "horizontal")<cr>',
     opt = {
       desc = 'Terminal horizontal',
     },
@@ -18,7 +18,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>tv',
-    cmd = '<cmd>ToggleTerm direction=vertical<CR>',
+    cmd = '<cmd>lua ToggleSomeTerminal(0, "vertical")<cr>',
     opt = {
       desc = 'Terminal vertical',
     },
