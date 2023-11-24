@@ -2,7 +2,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>aa',
-    cmd = '<cmd>AerialToggle<CR>',
+    cmd = '<cmd>lua ToggleAerial()<CR>',
     opt = {
       desc = 'Toggle Aerial',
     },

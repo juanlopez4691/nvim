@@ -43,6 +43,11 @@ return {
       },
     })
 
+    ToggleAerial = function()
+      vim.cmd('AerialToggle')
+      vim.opt.statuscolumn = ''
+    end
+
     -- Global methods to be used in keymaps.
     AerialNavIsOpen = function()
       return aerial.nav_is_open()
