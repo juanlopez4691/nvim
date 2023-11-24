@@ -26,7 +26,7 @@ return {
   {
     modes = { 't' },
     key = '<C-h>',
-    cmd = '<cmd>wincmd h',
+    cmd = '<cmd>wincmd h<cr>',
     opt = {
       desc = 'Terminal: jump to split left',
     },
@@ -34,7 +34,7 @@ return {
   {
     modes = { 't' },
     key = '<C-j>',
-    cmd = '<cmd>wincmd j',
+    cmd = '<cmd>wincmd j<cr>',
     opt = {
       desc = 'Terminal: jump to split down',
     },
@@ -42,7 +42,7 @@ return {
   {
     modes = { 't' },
     key = '<C-k>',
-    cmd = '<cmd>wincmd k',
+    cmd = '<cmd>wincmd k<cr>',
     opt = {
       desc = 'Terminal: jump to split up',
     },
@@ -50,7 +50,7 @@ return {
   {
     modes = { 't' },
     key = '<C-l>',
-    cmd = '<cmd>wincmd l',
+    cmd = '<cmd>wincmd l<cr>',
     opt = {
       desc = 'Terminal: jump to split right',
     },
