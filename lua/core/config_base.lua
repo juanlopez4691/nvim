@@ -40,6 +40,8 @@ local options = {
   number = true,
   -- Absolute line numbers.
   relativenumber = false,
+  -- Set space for signs in status column.
+  signcolumn = 'yes:1',
   -- Highlight matching parenthesis.
   showmatch = true,
   -- Ignore case letters when search.
