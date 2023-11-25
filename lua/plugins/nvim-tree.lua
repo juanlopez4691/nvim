@@ -76,7 +76,7 @@ return {
           git_placement = "signcolumn",
           show = {
             file = true,
-            folder = false,
+            folder = true,
             folder_arrow = false,
             git = true,
           },
