@@ -40,7 +40,7 @@ return {
         {
           modes = { 'n' },
           key = '<leader>cw',
-          cmd = '<cmd>Telescope lsp_workspace_symbols<CR>',
+          cmd = '<cmd>Telescope lsp_workspace_symbols query=main<CR>',
           opt = {
             desc = 'Workspace symbols',
           },
