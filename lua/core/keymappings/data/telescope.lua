@@ -118,6 +118,21 @@ return {
     },
     {
       whichkey = true,
+      prefix = '<leader>g',
+      name = 'Git',
+      mappings = {
+        {
+          modes = { 'n' },
+          key = '<leader>gl',
+          cmd = '<cmd>Telescope git_commits prompt_prefix=💡›<CR>',
+          opt = {
+            desc = 'Commits log',
+          },
+        },
+      },
+    },
+    {
+      whichkey = true,
       prefix = '<leader>h',
       name = 'Help',
       mappings = {
