@@ -4,8 +4,9 @@ return {
   'nvim-telescope/telescope.nvim', branch = '0.1.x',
   cond = core_settings.plugins_enabled.telescope,
   dependencies = require('plugins.telescope.dependencies'),
-  cmd = 'Telescope',
-  event = { 'BufReadPre', 'BufNewFile' },
+  -- cmd = 'Telescope',
+  -- event = { 'BufReadPre', 'BufNewFile' },
+  event = 'VeryLazy',
   config = function ()
     local telescope = require('telescope')
     local actions = require('telescope.actions')
@@ -57,17 +58,78 @@ return {
       telescope.load_extension(extension)
     end
 
+    local layout_vertical_config = {
+      width = 0.95,
+      height = 0.9,
+      preview_cutoff = 0,
+      prompt_position = 'bottom',
+    }
+
     local lsp_preview_settings = {
       jump_type = 'never',
+      path_display = function(opts, path)
+        local tail = require('telescope.utils').path_tail(path)
+        return string.format('%s (%s)', tail, path)
+      end,
       layout_strategy = 'vertical',
-      path_display = { 'smart' },
-      layout_config = {
-        width = 0.9,
-        height = 0.8,
-        preview_cutoff = 0,
-        prompt_position = 'bottom',
-      },
+      layout_config = layout_vertical_config,
     }
+
+    -- Global functions used in keymappings
+    FindFiles = function()
+      require('plugins.telescope.pretty_pickers').prettyFilesPicker({
+        picker = 'find_files',
+        options = {
+          prompt_prefix = '🔭›',
+          layout_strategy = 'vertical',
+          layout_config = layout_vertical_config,
+        }
+      })
+    end
+
+    TelescopeOldFiles = function()
+      require('plugins.telescope.pretty_pickers').prettyFilesPicker({
+        picker = 'oldfiles',
+        options = {
+          prompt_prefix = '💾›',
+          layout_strategy = 'vertical',
+          layout_config = layout_vertical_config,
+        }
+      })
+    end
+
+    TelescopeLiveGrep = function()
+      require('plugins.telescope.pretty_pickers').prettyGrepPicker({
+        picker = 'live_grep',
+        options = {
+          prompt_prefix = '🔍›',
+          layout_strategy = 'vertical',
+          layout_config = layout_vertical_config,
+        }
+      })
+    end
+
+    TelescopeLiveGrepArgs = function()
+      require('plugins.telescope.pretty_pickers').prettyGrepPicker({
+        picker = 'live_grep_args',
+        options = {
+          prompt_prefix = '🔍›',
+          layout_strategy = 'vertical',
+          layout_config = layout_vertical_config,
+        }
+      })
+    end
+
+    TelescopeGrepString = function()
+      require('plugins.telescope.pretty_pickers').prettyGrepPicker({
+        picker = 'grep_string',
+        options = {
+          prompt_prefix = '🔍›',
+          layout_strategy = 'vertical',
+          layout_config = layout_vertical_config,
+        }
+      })
+    end
 
     -- Shows a preview window for LSP definitions at cursor position.
     LspDefinitionsAtCursor = function()

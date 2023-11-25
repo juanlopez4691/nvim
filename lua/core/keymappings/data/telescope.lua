@@ -55,7 +55,7 @@ return {
         {
           modes = { 'n' },
           key = '<leader>ff',
-          cmd = '<cmd>Telescope find_files prompt_prefix=🔭›<CR>',
+          cmd = "<cmd>lua FindFiles()<CR>",
           opt = {
             desc = 'Find files',
           },
@@ -63,7 +63,7 @@ return {
         {
           modes = { 'n' },
           key = '<leader>fr',
-          cmd = '<cmd>Telescope oldfiles prompt_prefix=💾›<CR>',
+          cmd = '<cmd>lua TelescopeOldFiles()<CR>',
           opt = {
             desc = 'Recent files',
           },
@@ -93,7 +93,7 @@ return {
         {
           modes = { 'n' },
           key = '<leader>sg',
-          cmd = '<cmd>Telescope live_grep prompt_prefix=🔍›<CR>',
+          cmd = '<cmd>lua TelescopeLiveGrep()<CR>',
           opt = {
             desc = 'Live Grep (root dir)',
           },
@@ -101,9 +101,17 @@ return {
         {
           modes = { 'n' },
           key = '<leader>sG',
-          cmd = '<cmd>Telescope live_grep_args prompt_prefix=🔍›<CR>',
+          cmd = '<cmd>lua TelescopeLiveGrepArgs()<CR>',
           opt = {
             desc = 'Live Grep with arguments (root dir)',
+          },
+        },
+        {
+          modes = { 'n' },
+          key = '<leader>sw',
+          cmd = '<cmd>lua TelescopeGrepString()<CR>',
+          opt = {
+            desc = 'Find word under cursor',
           },
         },
       },

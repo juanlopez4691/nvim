@@ -36,4 +36,3 @@ return {
     enable_preview = true,
   },
 }
-
