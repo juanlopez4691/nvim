@@ -129,6 +129,14 @@ return {
             desc = 'Commits log',
           },
         },
+        {
+          modes = { 'n' },
+          key = '<leader>gc',
+          cmd = '<cmd>Telescope git_bcommits prompt_prefix=📝›<CR>',
+          opt = {
+            desc = 'Buffer commits',
+          },
+        },
       },
     },
     {
