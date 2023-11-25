@@ -42,7 +42,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>ff',
-    cmd = '<cmd>Telescope find_files prompt_prefix=🔭› <CR>',
+    cmd = '<cmd>Telescope find_files prompt_prefix=🔭›<CR>',
     opt = {
       desc = 'Find files',
     },
@@ -50,7 +50,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>fr',
-    cmd = '<cmd>Telescope oldfiles prompt_prefix=💾› <CR>',
+    cmd = '<cmd>Telescope oldfiles prompt_prefix=💾›<CR>',
     opt = {
       desc = 'Recent files',
     },
@@ -58,7 +58,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>fb',
-    cmd = '<cmd>Telescope buffers prompt_prefix=👓› <CR>',
+    cmd = '<cmd>Telescope buffers prompt_prefix=👓›<CR>',
     opt = {
       desc = 'Buffers',
     },
@@ -66,7 +66,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>fe',
-    cmd = '<cmd>Telescope file_browser prompt_prefix=🗂️› <CR>',
+    cmd = '<cmd>Telescope file_browser prompt_prefix=🗂️›<CR>',
     opt = {
       desc = 'File Browser',
     },
@@ -74,7 +74,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>fg',
-    cmd = '<cmd>Telescope live_grep prompt_prefix=🔍› <CR>',
+    cmd = '<cmd>Telescope live_grep prompt_prefix=🔍›<CR>',
     opt = {
       desc = 'Live Grep (root dir)',
     },
@@ -82,7 +82,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>fgg',
-    cmd = '<cmd>Telescope live_grep_args prompt_prefix=🔍› <CR>',
+    cmd = '<cmd>Telescope live_grep_args prompt_prefix=🔍›<CR>',
     opt = {
       desc = 'Live Grep with arguments (root dir)',
     },
@@ -90,7 +90,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>fh',
-    cmd = '<cmd>Telescope help_tags prompt_prefix=💡› <CR>',
+    cmd = '<cmd>Telescope help_tags prompt_prefix=💡›<CR>',
     opt = {
       desc = 'Help pages',
     },
@@ -98,7 +98,7 @@ return {
   {
     modes = { 'n' },
     key = '<leader>fu',
-    cmd = '<cmd>Telescope help_tags prompt_prefix=💡› <CR>',
+    cmd = '<cmd>Telescope help_tags prompt_prefix=💡›<CR>',
     opt = {
       desc = 'Undo tree',
     },
