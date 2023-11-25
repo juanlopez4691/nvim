@@ -74,14 +74,6 @@ return {
         },
         {
           modes = { 'n' },
-          key = '<leader>fe',
-          cmd = '<cmd>Telescope file_browser prompt_prefix=🗂️›<CR>',
-          opt = {
-            desc = 'File Browser',
-          },
-        },
-        {
-          modes = { 'n' },
           key = '<leader>fg',
           cmd = '<cmd>Telescope live_grep prompt_prefix=🔍›<CR>',
           opt = {
