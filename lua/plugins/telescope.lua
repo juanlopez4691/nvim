@@ -62,7 +62,7 @@ return {
       layout_strategy = 'vertical',
       path_display = { 'smart' },
       layout_config = {
-        width = 0.8,
+        width = 0.9,
         height = 0.8,
         preview_cutoff = 0,
         prompt_position = 'bottom',
