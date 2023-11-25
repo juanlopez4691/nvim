@@ -1,11 +1,13 @@
 return {
   groups = {
     {
-      name = 'File tree',
+      whichkey = true,
+      prefix = '<leader>f',
+      name = 'Files',
       mappings = {
         {
           modes = { 'n' },
-          key = '<leader>ee',
+          key = '<leader>ft',
           cmd = '<cmd>NvimTreeToggle<CR>',
           opt = {
             desc = 'Toggle file explorer',
@@ -13,30 +15,13 @@ return {
         },
         {
           modes = { 'n' },
-          key = '<leader>ef',
+          key = '<leader>fT',
           cmd = '<cmd>NvimTreeFindFileToggle<CR>',
           opt = {
             desc = 'Toggle file explorer on current file',
-          },
-        },
-        {
-          modes = { 'n' },
-          key = '<leader>ec',
-          cmd = '<cmd>NvimTreeCollapse<CR>',
-          opt = {
-            desc = 'Collapse file explorer',
-          },
-        },
-        {
-          modes = { 'n' },
-          key = '<leader>er',
-          cmd = '<cmd>NvimTreeRefresh<CR>',
-          opt = {
-            desc = 'Refresh file explorer',
           },
         },
       },
     },
   },
 }
-

@@ -1,19 +1,21 @@
 return {
   groups = {
     {
+      whichkey = true,
+      prefix = '<leader>c',
       name = 'Code',
       mappings = {
         {
           modes = { 'n' },
-          key = '<leader>aa',
+          key = '<leader>co',
           cmd = '<cmd>lua ToggleAerial()<CR>',
           opt = {
-            desc = 'Toggle Aerial',
+            desc = 'Code outline',
           },
         },
         {
           modes = { 'n' },
-          key = '<leader>an',
+          key = '<leader>cn',
           cmd = '<cmd>AerialNavToggle<CR>',
           opt = {
             desc = 'Toggle Aerial Nav window',
@@ -31,4 +33,3 @@ return {
     },
   },
 }
-

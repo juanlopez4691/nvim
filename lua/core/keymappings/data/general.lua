@@ -1,20 +1,8 @@
 return {
   groups = {
     {
-      name = 'Search',
-      mappings = {
-        {
-          modes = { 'n' },
-          key = '<leader>h',
-          cmd = '<cmd>noh<CR>',
-          opt = {
-            desc = 'Clear highligted search results',
-          },
-        },
-      },
-    },
-    {
-      name = 'Navigation',
+      whichkey = false,
+      -- Navigation
       mappings = {
         {
           modes = { 'n' },
@@ -48,11 +36,16 @@ return {
             desc = 'Scroll up half screen',
           },
         },
-      },
-    },
-    {
-      name = 'Splits',
-      mappings = {
+        -- Clear search
+        {
+          modes = { 'n' },
+          key = '<leader>h',
+          cmd = '<cmd>noh<CR>',
+          opt = {
+            desc = 'Clear highligted search results',
+          },
+        },
+        -- Splits
         {
           modes = { 'n' },
           key = '<C-h>',
@@ -118,11 +111,6 @@ return {
             desc = 'Reduce vertical split',
           },
         },
-      },
-    },
-    {
-      name = 'General',
-      mappings = {
         -- Improved cursor movement.
         {
           modes = { 'n' },
@@ -227,4 +215,3 @@ return {
     },
   },
 }
-

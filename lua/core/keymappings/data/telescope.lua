@@ -1,11 +1,13 @@
 return {
   groups = {
     {
+      whichkey = true,
+      prefix = '<leader>c',
       name = 'Code',
       mappings = {
         {
           modes = { 'n' },
-          key = '<leader>gd',
+          key = '<leader>cd',
           cmd = '<cmd>lua LspDefinitionsAtCursor()<CR>',
           opt = {
             desc = 'Show definitions',
@@ -13,7 +15,7 @@ return {
         },
         {
           modes = { 'n' },
-          key = '<leader>gr',
+          key = '<leader>cr',
           cmd = '<cmd>lua LspReferencesAtCursor()<CR>',
           opt = {
             desc = 'Show references',
@@ -21,7 +23,7 @@ return {
         },
         {
           modes = { 'n' },
-          key = '<leader>gi',
+          key = '<leader>ci',
           cmd = '<cmd>lua LspImplementationsAtCursor()<CR>',
           opt = {
             desc = 'Show implementations',
@@ -29,7 +31,7 @@ return {
         },
         {
           modes = { 'n' },
-          key = '<leader>gs',
+          key = '<leader>cs',
           cmd = '<cmd>Telescope lsp_document_symbols<CR>',
           opt = {
             desc = 'Document symbols',
@@ -37,7 +39,7 @@ return {
         },
         {
           modes = { 'n' },
-          key = '<leader>gws',
+          key = '<leader>cw',
           cmd = '<cmd>Telescope lsp_workspace_symbols<CR>',
           opt = {
             desc = 'Workspace symbols',
@@ -46,6 +48,8 @@ return {
       },
     },
     {
+      whichkey = true,
+      prefix = '<leader>f',
       name = 'Files',
       mappings = {
         {
@@ -64,17 +68,31 @@ return {
             desc = 'Recent files',
           },
         },
+      },
+    },
+    {
+      whichkey = true,
+      prefix = '<leader>b',
+      name = 'Buffers',
+      mappings = {
         {
           modes = { 'n' },
-          key = '<leader>fb',
+          key = '<leader>bb',
           cmd = '<cmd>Telescope buffers prompt_prefix=👓›<CR>',
           opt = {
             desc = 'Buffers',
           },
         },
+      },
+    },
+    {
+      whichkey = true,
+      prefix = '<leader>s',
+      name = 'Search',
+      mappings = {
         {
           modes = { 'n' },
-          key = '<leader>fg',
+          key = '<leader>sg',
           cmd = '<cmd>Telescope live_grep prompt_prefix=🔍›<CR>',
           opt = {
             desc = 'Live Grep (root dir)',
@@ -82,7 +100,7 @@ return {
         },
         {
           modes = { 'n' },
-          key = '<leader>fgg',
+          key = '<leader>sG',
           cmd = '<cmd>Telescope live_grep_args prompt_prefix=🔍›<CR>',
           opt = {
             desc = 'Live Grep with arguments (root dir)',
@@ -91,26 +109,34 @@ return {
       },
     },
     {
+      whichkey = true,
+      prefix = '<leader>h',
       name = 'Help',
       mappings = {
         {
           modes = { 'n' },
-          key = '<leader>fh',
+          key = '<leader>h',
           cmd = '<cmd>Telescope help_tags prompt_prefix=💡›<CR>',
           opt = {
             desc = 'Help pages',
           },
         },
+      },
+    },
+    {
+      whichkey = true,
+      prefix = '<leader>u',
+      name = 'Undo',
+      mappings = {
         {
           modes = { 'n' },
-          key = '<leader>fu',
-          cmd = '<cmd>Telescope help_tags prompt_prefix=💡›<CR>',
+          key = '<leader>ut',
+          cmd = '<cmd>Telescope undo<CR>',
           opt = {
             desc = 'Undo tree',
           },
         },
-      },
+      }
     },
   },
 }
-

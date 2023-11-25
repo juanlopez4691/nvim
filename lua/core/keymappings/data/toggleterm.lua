@@ -1,6 +1,8 @@
 return {
   groups = {
     {
+      whichkey = true,
+      prefix = '<leader>t',
       name = 'Terminal',
       mappings = {
         {
@@ -27,6 +29,11 @@ return {
             desc = 'Terminal vertical',
           },
         },
+      },
+    },
+    {
+      whichkey = false,
+      mappings = {
         {
           modes = { 't' },
           key = '<C-h>',
@@ -100,8 +107,7 @@ return {
             desc = 'Reduce vertical split',
           },
         },
-      },
+      }
     },
   },
 }
-

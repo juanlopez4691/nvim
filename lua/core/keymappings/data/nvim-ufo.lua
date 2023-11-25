@@ -13,6 +13,8 @@ end
 return {
   groups = {
     {
+      whichkey = true,
+      prefix = '<leader>z',
       name = 'Folds',
       mappings = {
         {
@@ -43,4 +45,3 @@ return {
     },
   },
 }
-

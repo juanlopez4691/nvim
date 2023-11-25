@@ -1,6 +1,8 @@
 return {
   groups = {
     {
+      whichkey = true,
+      prefix = '<leader>x',
       name = 'Trouble',
       mappings = {
         {
@@ -15,4 +17,3 @@ return {
     }
   },
 }
-

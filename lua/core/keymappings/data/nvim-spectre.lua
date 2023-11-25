@@ -5,6 +5,8 @@ end
 return {
   groups = {
     {
+      whichkey = true,
+      prefix = '<leader>s',
       name = 'Search',
       mappings = {
         {
@@ -19,4 +21,3 @@ return {
     },
   },
 }
-
