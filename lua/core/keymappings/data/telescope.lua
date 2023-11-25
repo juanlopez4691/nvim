@@ -137,6 +137,14 @@ return {
             desc = 'Buffer commits',
           },
         },
+        {
+          modes = { 'n' },
+          key = '<leader>gb',
+          cmd = '<cmd>Telescope git_branches prompt_prefix=🌳›<CR>',
+          opt = {
+            desc = 'Branches',
+          },
+        },
       },
     },
     {
