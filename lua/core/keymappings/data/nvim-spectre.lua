@@ -3,12 +3,19 @@ local searchReplace = function ()
 end
 
 return {
-  {
-    modes = { 'n' },
-    key = '<leader>sr',
-    cmd = searchReplace,
-    opt = {
-      desc = 'Search and replace in files',
+  groups = {
+    {
+      name = 'Search',
+      mappings = {
+        {
+          modes = { 'n' },
+          key = '<leader>sr',
+          cmd = searchReplace,
+          opt = {
+            desc = 'Search and replace in files',
+          },
+        },
+      },
     },
   },
 }

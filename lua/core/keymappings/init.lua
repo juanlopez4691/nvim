@@ -16,7 +16,10 @@ local files = vim.fn.readdir(
 for _, file in ipairs(files) do
   local keymappings = require('core.keymappings.data.' .. file:gsub('%.lua$', ''))
 
-  for _, keymap in ipairs(keymappings) do
-    helpers.map(keymap.modes, keymap.key, keymap.cmd, keymap.opt)
+  for _, group in ipairs(keymappings.groups) do
+    for _, mapping in ipairs(group.mappings) do
+      helpers.map(mapping.modes, mapping.key, mapping.cmd, mapping.opt)
+    end
   end
 end
+
