@@ -31,6 +31,8 @@ local options = {
   -- clipboard = 'unnamedplus',
   -- Enable 24-bit RGB colors.
   termguicolors = true,
+  -- Make backspace behave in a sane manner.
+  backspace = { 'indent', 'eol,start' },
   -- Line lenght marker at 80 columns.
   colorcolumn = '80',
   -- A comma separated list of options for Insert mode completion.
@@ -50,6 +52,8 @@ local options = {
   number = true,
   -- Relative line numbers.
   relativenumber = true,
+  -- Set space for signs in status column.
+  signcolumn = 'yes:1',
   -- Highlight matching parenthesis.
   showmatch = true,
   -- Ignore lowercase for the whole pattern.
@@ -82,10 +86,13 @@ local options = {
   scrolloff = 4,
   -- Faster scrolling
   lazyredraw = true,
+  -- Faster redrawing.
+  ttyfast = true,
+  regexpengine = 0,
   -- ms to wait for trigger an event.
   updatetime = 250,
   -- Max column for syntax highlight.
-  synmaxcol = 240,
+  synmaxcol = 250,
   -- When set case is ignored when completing file names and directories.
   wildignorecase = true,
   wildmode = 'full',
