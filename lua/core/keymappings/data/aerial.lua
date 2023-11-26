@@ -13,22 +13,6 @@ return {
             desc = 'Code outline',
           },
         },
-        {
-          modes = { 'n' },
-          key = '<leader>cn',
-          cmd = '<cmd>AerialNavToggle<CR>',
-          opt = {
-            desc = 'Toggle Aerial Nav window',
-          },
-        },
-        {
-          modes = { 'n' },
-          key = 'q',
-          cmd = '<cmd>lua if AerialNavIsOpen() then AerialNavClose() end<CR>',
-          opt = {
-            desc = 'Toggle Aerial Nav window',
-          },
-        },
       },
     },
   },
