@@ -3,7 +3,7 @@ return {
     {
       whichkey = true,
       prefix = '<leader>t',
-      name = 'Terminal',
+      name = '+Terminal',
       mappings = {
         {
           modes = { 'n' },

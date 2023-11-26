@@ -3,7 +3,7 @@ return {
     {
       whichkey = true,
       prefix = '<leader>c',
-      name = 'Code',
+      name = '+Code',
       mappings = {
         {
           modes = { 'n' },
@@ -50,7 +50,7 @@ return {
     {
       whichkey = true,
       prefix = '<leader>f',
-      name = 'Files',
+      name = '+Files',
       mappings = {
         {
           modes = { 'n' },
@@ -77,10 +77,10 @@ return {
       mappings = {
         {
           modes = { 'n' },
-          key = '<leader>bb',
+          key = '<leader>bl',
           cmd = '<cmd>Telescope buffers prompt_prefix=👓›<CR>',
           opt = {
-            desc = 'Buffers',
+            desc = 'Buffers list',
           },
         },
       },
@@ -88,7 +88,7 @@ return {
     {
       whichkey = true,
       prefix = '<leader>s',
-      name = 'Search',
+      name = '+Search',
       mappings = {
         {
           modes = { 'n' },
@@ -119,7 +119,7 @@ return {
     {
       whichkey = true,
       prefix = '<leader>g',
-      name = 'Git',
+      name = '+Git',
       mappings = {
         {
           modes = { 'n' },
