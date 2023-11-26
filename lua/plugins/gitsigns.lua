@@ -5,7 +5,9 @@ return {
   cond = core_settings.plugins_enabled.gitsigns,
   event = { 'BufReadPre', 'BufNewFile' },
   config = function ()
-    require('gitsigns').setup({
+    local gs = require('gitsigns')
+
+    gs.setup({
       signs = {
         add = { text = "+" },
         change = { text = "~" },
@@ -14,6 +16,7 @@ return {
         changedelete = { text = "/" },
         untracked = { text = "?" },
       },
+      current_line_blame = true,
     })
   end,
 }
