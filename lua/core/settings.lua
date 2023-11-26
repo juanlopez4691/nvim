@@ -30,11 +30,11 @@ M.plugins_enabled = {
 
 M.colorscheme_default = 'habamax'
 
--- M.colorscheme = 'tokyonight'
--- M.colorscheme_variant = 'tokyonight-night'
+M.colorscheme = 'tokyonight'
+M.colorscheme_variant = 'tokyonight-night'
 
-M.colorscheme = 'kanagawa'
-M.colorscheme_variant = 'kanagawa-wave'
+-- M.colorscheme = 'kanagawa'
+-- M.colorscheme_variant = 'kanagawa-wave'
 
 M.plugins_enabled.tokyonight = M.colorscheme == 'tokyonight'
 M.plugins_enabled.kanagawa = M.colorscheme == 'kanagawa'
