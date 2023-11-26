@@ -14,6 +14,7 @@ M.plugins_enabled = {
   lualine = true,
   mini_indentscope = true,
   mini_surround = true,
+  none_ls = true,
   nvim_autopairs = true,
   nvim_bqf = true,
   nvim_cmp = true,
