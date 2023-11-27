@@ -1,6 +1,29 @@
 return {
   groups = {
     {
+      whichkey = true,
+      prefix = "<leader>f",
+      name = "+Files",
+      mappings = {
+        {
+          modes = { "n" },
+          key = "<leader>fw",
+          cmd = "<cmd>write<cr>",
+          opt = {
+            desc = "Save",
+          },
+        },
+        {
+          modes = { "n" },
+          key = "<leader>fW",
+          cmd = "",
+          opt = {
+            desc = "Save without formatting",
+          },
+        },
+      },
+    },
+    {
       whichkey = false,
       -- Navigation
       mappings = {
