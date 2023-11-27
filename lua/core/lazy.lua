@@ -1,5 +1,4 @@
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-local settings = require('core.settings')
 
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -14,11 +13,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local colorscheme = function()
-  local colorscheme = { settings.colorscheme_default }
-  local ok, _ = pcall(require, settings.colorscheme)
+  local colorscheme = { _G.Settings.colorscheme_default }
+  local ok, _ = pcall(require, _G.Settings.colorscheme)
 
   if ok then
-    table.insert(colorscheme, settings.colorscheme_variant)
+    table.insert(colorscheme, _G.Settings.colorscheme_variant)
   end
 
   return colorscheme

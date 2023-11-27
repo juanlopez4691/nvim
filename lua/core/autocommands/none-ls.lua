@@ -1,5 +1,9 @@
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
+if not _G.Settings.plugins_enabled.none_ls then
+  return
+end
+
 -- Based on null-ls documentation.
 -- See https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#code
 -- See https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#choosing-a-client-for-formatting

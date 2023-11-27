@@ -1,5 +1,3 @@
-local core_settings = require('core.settings')
-
 -- Sets custom key mappings
 local function do_on_attach(bufnr)
   local api = require('nvim-tree.api')
@@ -36,7 +34,7 @@ end
 -- Init plugin nvim-tree.
 return {
   'nvim-tree/nvim-tree.lua',
-  cond = core_settings.plugins_enabled.nvim_tree,
+  cond = _G.Settings.plugins_enabled.nvim_tree,
   dependencies = {
     'nvim-tree/nvim-web-devicons',
   },

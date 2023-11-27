@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   'VonHeikemen/lsp-zero.nvim',
-  cond = core_settings.plugins_enabled.lsp_zero,
+  cond = _G.Settings.plugins_enabled.lsp_zero,
   branch = 'v2.x',
   cmd = 'LspInfo',
   event = { 'BufReadPre', 'BufNewFile' },

@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   'lukas-reineke/indent-blankline.nvim',
-  cond = core_settings.plugins_enabled.indent_blankline,
+  cond = _G.Settings.plugins_enabled.indent_blankline,
   event = { 'BufReadPre', 'BufNewFile' },
   main = 'ibl',
   dependencies = {

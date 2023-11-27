@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   'NvChad/nvim-colorizer.lua',
-  cond = core_settings.plugins_enabled.nvim_colorizer,
+  cond = _G.Settings.plugins_enabled.nvim_colorizer,
   event = { 'BufReadPre', 'BufNewFile' },
   config = function ()
     require("colorizer").setup {

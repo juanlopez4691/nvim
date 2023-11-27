@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   "folke/which-key.nvim",
-  cond = core_settings.plugins_enabled.which_key,
+  cond = _G.Settings.plugins_enabled.which_key,
   cmd = "WhichKey",
   event = "VeryLazy",
   config = function()
@@ -18,4 +16,3 @@ return {
     })
   end,
 }
-

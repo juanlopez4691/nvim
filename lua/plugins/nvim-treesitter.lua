@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   'nvim-treesitter/nvim-treesitter',
-  cond = core_settings.plugins_enabled.nvim_treesitter,
+  cond = _G.Settings.plugins_enabled.nvim_treesitter,
   build = ':TSUpdate',
   cmd = {
     'TSBufDisable',

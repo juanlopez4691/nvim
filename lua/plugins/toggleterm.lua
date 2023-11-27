@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   'akinsho/toggleterm.nvim',
-  cond = core_settings.plugins_enabled.toggleterm,
+  cond = _G.Settings.plugins_enabled.toggleterm,
   version = '*',
   command = 'ToggleTerm',
   config = function ()
@@ -10,9 +8,9 @@ return {
       size = function (term)
       print(term.direction)
         if term.direction == 'horizontal' then
-          return core_settings.terminal.size.horizontal.height
+          return _G.Settings.terminal.size.horizontal.height
         elseif term.direction == 'vertical' then
-          return core_settings.terminal.size.vertical.width
+          return _G.Settings.terminal.size.vertical.width
         end
       end,
       hide_numbers = true,

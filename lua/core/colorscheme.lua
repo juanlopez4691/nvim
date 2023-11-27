@@ -1,10 +1,8 @@
-local settings = require('core.settings')
+local colorscheme = _G.Settings.colorscheme_default
+local ok, _ = pcall(require, _G.Settings.colorscheme)
 
-local colorscheme = settings.colorscheme_default
-local ok, _ = pcall(require, settings.colorscheme)
 if ok then
-  colorscheme = settings.colorscheme_variant
+  colorscheme = _G.Settings.colorscheme_variant
 end
 
 vim.cmd('colorscheme ' .. colorscheme)
-

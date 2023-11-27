@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   'lewis6991/gitsigns.nvim',
-  cond = core_settings.plugins_enabled.gitsigns,
+  cond = _G.Settings.plugins_enabled.gitsigns,
   event = { 'BufReadPre', 'BufNewFile' },
   config = function ()
     local gs = require('gitsigns')

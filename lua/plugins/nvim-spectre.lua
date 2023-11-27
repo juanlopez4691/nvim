@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   'nvim-pack/nvim-spectre',
-  cond = core_settings.plugins_enabled.nvim_spectre,
+  cond = _G.Settings.plugins_enabled.nvim_spectre,
   build = false,
   cmd = 'Spectre',
   opts = {
@@ -10,4 +8,3 @@ return {
   },
   -- stylua: ignore
 }
-

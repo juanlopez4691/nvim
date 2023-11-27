@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   'echasnovski/mini.indentscope',
-  cond = core_settings.plugins_enabled.mini_indentscope,
+  cond = _G.Settings.plugins_enabled.mini_indentscope,
   version = '*',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function ()
@@ -19,4 +17,3 @@ return {
     })
   end,
 }
-

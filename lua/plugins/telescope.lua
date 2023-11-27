@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   'nvim-telescope/telescope.nvim', branch = '0.1.x',
-  cond = core_settings.plugins_enabled.telescope,
+  cond = _G.Settings.plugins_enabled.telescope,
   dependencies = require('plugins.telescope.dependencies'),
   -- cmd = 'Telescope',
   -- event = { 'BufReadPre', 'BufNewFile' },

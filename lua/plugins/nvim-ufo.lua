@@ -1,5 +1,3 @@
-local core_settings = require('core.settings')
-
 local virtual_text_handler = function(virtText, lnum, endLnum, width, truncate)
   local newVirtText = {}
   local suffix = (' 󰁂 %d '):format(endLnum - lnum)
@@ -30,7 +28,7 @@ end
 
 return {
   'kevinhwang91/nvim-ufo',
-  cond = core_settings.plugins_enabled.nvim_ufo,
+  cond = _G.Settings.plugins_enabled.nvim_ufo,
   dependencies = {
     'kevinhwang91/promise-async'
   },

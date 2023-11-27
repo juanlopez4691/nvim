@@ -1,9 +1,7 @@
-local core_settings = require('core.settings')
-
 return {
   {
     'echasnovski/mini.comment',
-    cond = core_settings.plugins_enabled.comments,
+    cond = _G.Settings.plugins_enabled.comments,
     event = { 'BufReadPre', 'BufNewFile' },
     config = function ()
       require('mini.comment').setup({
@@ -17,4 +15,3 @@ return {
     end,
   },
 }
-

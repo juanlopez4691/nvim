@@ -1,8 +1,6 @@
-local core_settings = require('core.settings')
-
 return {
   'stevearc/aerial.nvim',
-  cond = core_settings.plugins_enabled.aerial,
+  cond = _G.Settings.plugins_enabled.aerial,
   event = 'VeryLazy',
   dependencies = {
      'nvim-treesitter/nvim-treesitter',
@@ -14,8 +12,8 @@ return {
     aerial.setup({
       attach_mode = 'global',
       backends = { 'lsp', 'treesitter', 'markdown', 'man' },
-      disable_max_lines = core_settings.max_file.lines,
-      disable_max_size = core_settings.max_file.size,
+      disable_max_lines = _G.Settings.max_file.lines,
+      disable_max_size = _G.Settings.max_file.size,
       layout = {
         min_width = { 30, 0.2 },
         resize_to_content = true,
