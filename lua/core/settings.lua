@@ -61,3 +61,17 @@ _G.Settings.terminal = {
 	},
 }
 
+_G.Settings.format_on_save = true
+
+_G.ToggleSetting = function(setting)
+	local status = "off"
+
+	setting = not setting
+
+	if setting then
+		status = "on"
+	end
+	print("Formatting on save is " .. status)
+
+	return setting
+end
