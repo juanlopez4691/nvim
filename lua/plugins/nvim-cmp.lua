@@ -17,6 +17,7 @@ return {
   event = { "CmdLineEnter", "InsertEnter" },
   config = function()
     local cmp = require("cmp")
+    local neogen = require("neogen")
     local cmp_select_opts = { behavior = cmp.SelectBehavior.Select }
     local compare = require("cmp.config.compare")
 
@@ -35,9 +36,32 @@ return {
       },
       mapping = {
         -- Navigate completion menu.
-        ["<Tab>"] = cmp.mapping.select_next_item(cmp_select_opts),
-        ["<S-Tab>"] = cmp.mapping.select_prev_item(cmp_select_opts),
-        -- `Enter` key to confirm completion.
+        ["<Tab>"] = function(fallback)
+          if cmp.visible() then
+            if #cmp.get_entries() == 1 then
+              cmp.confirm({ select = true })
+            else
+              cmp.select_next_item()
+            end
+          elseif neogen.jumpable() then
+            neogen.jump_next()
+          else
+            fallback()
+          end
+        end,
+        ["<S-Tab>"] = function(fallback)
+          if cmp.visible() then
+            if #cmp.get_entries() == 1 then
+              cmp.confirm({ select = true })
+            else
+              cmp.select_prev_item()
+            end
+          elseif neogen.jumpable() then
+            neogen.jump_prev()
+          else
+            fallback()
+          end
+        end,
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         -- Navigate completion docs.
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
