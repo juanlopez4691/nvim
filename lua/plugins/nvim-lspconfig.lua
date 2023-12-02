@@ -1,26 +1,26 @@
 return {
-  'neovim/nvim-lspconfig',
-  lazy = 'true',
+  "neovim/nvim-lspconfig",
+  lazy = "true",
   opts = {
     servers = {
       html = {
         filetypes = {
-          'html',
-          'javascript',
-          'javascript.jsx',
-          'javascriptreact',
-          'typescript',
-          'typescript.tsx',
-          'typescriptreact',
+          "html",
+          "javascript",
+          "javascript.jsx",
+          "javascriptreact",
+          "typescript",
+          "typescript.tsx",
+          "typescriptreact",
         },
       },
       tailwindcss = {
-        filetypes_exclude = { 'markdown' },
+        filetypes_exclude = { "markdown" },
       },
     },
     setup = {
       tailwindcss = function(_, opts)
-        local tw = require 'lspconfig.server_configurations.tailwindcss'
+        local tw = require("lspconfig.server_configurations.tailwindcss")
         --- @param ft string
         opts.filetypes = vim.tbl_filter(function(ft)
           return not vim.tbl_contains(opts.filetypes_exclude or {}, ft)
@@ -29,17 +29,17 @@ return {
     },
   },
   config = function()
-    require('mason').setup({
+    require("mason").setup({
       ui = {
-        border = 'rounded'
-      }
+        border = "rounded",
+      },
     })
 
-    local lspconfig = require('lspconfig')
+    local lspconfig = require("lspconfig")
 
-    local lsp = require('lsp-zero').preset({
-      call_servers = 'local',
-      float_border = 'rounded',
+    local lsp = require("lsp-zero").preset({
+      call_servers = "local",
+      float_border = "rounded",
       configure_diagnostics = true,
       setup_servers_on_start = true,
     })
@@ -47,14 +47,14 @@ return {
     lsp.on_attach(function(client, bufnr)
       -- see :help lsp-zero-keybindings
       -- to learn the available actions
-      lsp.default_keymaps({buffer = bufnr})
+      lsp.default_keymaps({ buffer = bufnr })
     end)
 
     lsp.set_sign_icons({
-      error = '✘',
-      warn = '▲',
-      hint = '⚑',
-      info = '»'
+      error = "✘",
+      warn = "▲",
+      hint = "⚑",
+      info = "»",
     })
 
     -- Avoid errors in css files using tailwind directives.
@@ -63,20 +63,20 @@ return {
         css = {
           validate = false,
           lint = {
-            unknownAtRules = 'ignore',
+            unknownAtRules = "ignore",
           },
         },
       },
       scss = {
         validate = false,
         lint = {
-          unknownAtRules = 'ignore',
+          unknownAtRules = "ignore",
         },
       },
       less = {
         validate = false,
         lint = {
-          unknownAtRules = 'ignore',
+          unknownAtRules = "ignore",
         },
       },
     })
@@ -87,4 +87,3 @@ return {
     lsp.setup()
   end,
 }
-

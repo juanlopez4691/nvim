@@ -1,21 +1,21 @@
 return {
-  'VonHeikemen/lsp-zero.nvim',
+  "VonHeikemen/lsp-zero.nvim",
   cond = _G.Settings.plugins_enabled.lsp_zero,
-  branch = 'v2.x',
-  cmd = 'LspInfo',
-  event = { 'BufReadPre', 'BufNewFile' },
+  branch = "v2.x",
+  cmd = "LspInfo",
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
-    require('lsp-zero.settings').preset({})
+    require("lsp-zero.settings").preset({})
   end,
   dependencies = {
     -- LSP Support
-    { 'neovim/nvim-lspconfig' },
-    { 'williamboman/mason.nvim' },
+    { "neovim/nvim-lspconfig" },
+    { "williamboman/mason.nvim" },
     {
-      'williamboman/mason-lspconfig.nvim',
+      "williamboman/mason-lspconfig.nvim",
       config = function()
-        require('mason-lspconfig').setup()
+        require("mason-lspconfig").setup({})
       end,
     },
-  }
+  },
 }
