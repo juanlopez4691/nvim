@@ -20,7 +20,6 @@ _G.Settings.plugins_enabled = {
   nvim_bqf = true,
   nvim_cmp = true,
   nvim_colorizer = true,
-  nvim_spectre = true,
   nvim_tree = true,
   nvim_treesitter = true,
   nvim_ufo = true,
