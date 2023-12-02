@@ -34,12 +34,6 @@ return {
     },
   },
   config = function()
-    require("mason").setup({
-      ui = {
-        border = "rounded",
-      },
-    })
-
     local lspconfig = require("lspconfig")
 
     local lsp = require("lsp-zero").preset({
@@ -47,6 +41,27 @@ return {
       float_border = "rounded",
       configure_diagnostics = true,
       setup_servers_on_start = true,
+    })
+
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+    capabilities.textDocument.foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    }
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+    capabilities.textDocument.completion.completionItem.resolveSupport = {
+      properties = {
+        "documentation",
+        "detail",
+        "additionalTextEdits",
+      },
+    }
+
+    require("mason").setup({
+      ui = {
+        border = "rounded",
+      },
     })
 
     lsp.on_attach(function(client, bufnr)
