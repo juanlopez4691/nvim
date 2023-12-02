@@ -17,6 +17,11 @@ return {
       tailwindcss = {
         filetypes_exclude = { "markdown" },
       },
+      intelephense = {
+        filetypes = {
+          "php",
+        },
+      },
     },
     setup = {
       tailwindcss = function(_, opts)
@@ -79,6 +84,21 @@ return {
           unknownAtRules = "ignore",
         },
       },
+    })
+
+    lspconfig.intelephense.setup({
+      settings = {
+        intelephense = {
+          stubs = require("plugins.intelephense.stubs"),
+        },
+        files = {
+          maxSize = 5000000,
+        },
+        telemetry = {
+          enabled = false,
+        },
+      },
+      capabilities = capabilities,
     })
 
     -- (Optional) Configure lua language server for neovim
