@@ -1,48 +1,48 @@
 return {
-  'hrsh7th/nvim-cmp',
+  "hrsh7th/nvim-cmp",
   cond = _G.Settings.plugins_enabled.nvim_cmp,
   dependencies = {
     -- Completion sources.
-    { 'hrsh7th/cmp-nvim-lsp' },
-    { 'hrsh7th/cmp-buffer' },
-    { 'hrsh7th/cmp-cmdline' },
-    { 'hrsh7th/cmp-path' },
-    { 'hrsh7th/cmp-nvim-lua' },
-    { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-cmdline" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-nvim-lua" },
+    { "hrsh7th/cmp-nvim-lsp-signature-help" },
     -- Snippets.
     {
-      'L3MON4D3/LuaSnip',
+      "L3MON4D3/LuaSnip",
     },
   },
-  event = { 'CmdLineEnter', 'InsertEnter' },
+  event = { "CmdLineEnter", "InsertEnter" },
   config = function()
-    local cmp = require('cmp')
-    local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
-    local compare = require('cmp.config.compare')
+    local cmp = require("cmp")
+    local cmp_select_opts = { behavior = cmp.SelectBehavior.Select }
+    local compare = require("cmp.config.compare")
 
     -- Colorize the autocompletion menu icons.
-    local cmp_menu_colors = require('core.cmp_menu_colors')
+    local cmp_menu_colors = require("core.cmp_menu_colors")
 
     cmp_menu_colors.colorize_cmp_menu()
 
     cmp.setup({
-      preselect = 'item',
+      preselect = "item",
       confirmation = {
-        completeopt = 'menu,menuone,noinsert',
+        completeopt = "menu,menuone,noinsert",
       },
       completion = {
-        completeopt = 'menu,menuone,noinsert'
+        completeopt = "menu,menuone,noinsert",
       },
       mapping = {
         -- Navigate completion menu.
-        ['<Tab>'] = cmp.mapping.select_next_item(cmp_select_opts),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select_opts),
+        ["<Tab>"] = cmp.mapping.select_next_item(cmp_select_opts),
+        ["<S-Tab>"] = cmp.mapping.select_prev_item(cmp_select_opts),
         -- `Enter` key to confirm completion.
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
         -- Navigate completion docs.
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<Esc>'] = cmp.mapping.abort(),
+        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<Esc>"] = cmp.mapping.abort(),
       },
       window = {
         completion = cmp.config.window.bordered(),
@@ -50,16 +50,16 @@ return {
       },
       snippet = {
         expand = function(args)
-          require'luasnip'.lsp_expand(args.body)
-        end
+          require("luasnip").lsp_expand(args.body)
+        end,
       },
       sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'buffer' },
-        { name = 'path' },
-        { name = 'nvim_lsp_signature_help' },
-        { name = 'nvim-lua' },
-        { name = 'luasnip' },
+        { name = "nvim_lsp" },
+        { name = "buffer" },
+        { name = "path" },
+        { name = "nvim_lsp_signature_help" },
+        { name = "nvim-lua" },
+        { name = "luasnip" },
       }),
       sorting = {
         priority_weight = 2,
@@ -77,48 +77,48 @@ return {
         },
       },
       formatting = {
-        fields = { 'kind', 'abbr', 'menu' },
+        fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-          local kind = require('lspkind').cmp_format({
-            mode = 'symbol_text',
+          local kind = require("lspkind").cmp_format({
+            mode = "symbol_text",
           })(entry, vim_item)
 
-          local strings = vim.split(kind.kind, '%s', { trimempty = true })
+          local strings = vim.split(kind.kind, "%s", { trimempty = true })
           local source_name = ({
-            nvim_lsp = '[LSP]',
-            buffer = '[Buffer]',
-            path = '[Path]',
-            nvim_lua = '[Lua]',
-            cmdline = '[Cmd]',
+            nvim_lsp = "[LSP]",
+            buffer = "[Buffer]",
+            path = "[Path]",
+            nvim_lua = "[Lua]",
+            cmdline = "[Cmd]",
           })[entry.source.name]
 
           local kind_kind
-          if entry.source.name == 'cmdline' then
-            kind_kind = '  '
+          if entry.source.name == "cmdline" then
+            kind_kind = "  "
           else
-            kind_kind = ' ' .. (strings[1] or '') .. ' '
+            kind_kind = " " .. (strings[1] or "") .. " "
           end
 
           kind.kind = kind_kind
-          kind.menu = ''
+          kind.menu = ""
 
           return kind
         end,
       },
     })
     -- Use buffer source for `/` and `?`.
-    cmp.setup.cmdline({ '/', '?' }, {
+    cmp.setup.cmdline({ "/", "?" }, {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
-        { name = 'buffer' }
-      }
+        { name = "buffer" },
+      },
     })
     -- Use cmdline & path source for ':'.
-    cmp.setup.cmdline(':', {
+    cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
-        { name = 'path' },
-        { name = 'cmdline' },
+        { name = "path" },
+        { name = "cmdline" },
       },
     })
   end,
