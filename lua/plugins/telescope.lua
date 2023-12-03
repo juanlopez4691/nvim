@@ -68,7 +68,7 @@ return {
 
     local lsp_preview_settings = {
       jump_type = "never",
-      path_display = function(opts, path)
+      path_display = function(_, path)
         local tail = require("telescope.utils").path_tail(path)
         return string.format("%s (%s)", tail, path)
       end,
