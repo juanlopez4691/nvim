@@ -13,6 +13,22 @@ return {
             desc = "Trouble toggle",
           },
         },
+        {
+          modes = { "n" },
+          key = "<leader>xd",
+          cmd = "<cmd>Trouble document_diagnostics<CR>",
+          opt = {
+            desc = "Document diagnostics",
+          },
+        },
+        {
+          modes = { "n" },
+          key = "<leader>xw",
+          cmd = "<cmd>Trouble workspace_diagnostics<CR>",
+          opt = {
+            desc = "Workspace diagnostics",
+          },
+        },
       },
     },
   },
