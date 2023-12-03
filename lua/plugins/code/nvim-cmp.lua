@@ -123,8 +123,11 @@ return {
             kind_kind = " " .. (strings[1] or "") .. " "
           end
 
-          kind.kind = kind_kind
-          kind.menu = ""
+          if source_name ~= nil then
+            kind.menu = source_name
+          else
+            kind.menu = ""
+          end
 
           return kind
         end,
