@@ -104,7 +104,7 @@ return {
     lspconfig.intelephense.setup({
       settings = {
         intelephense = {
-          stubs = require("plugins.intelephense.stubs"),
+          stubs = require("plugins.code.intelephense.stubs"),
         },
         files = {
           maxSize = 5000000,
