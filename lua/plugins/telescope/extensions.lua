@@ -1,5 +1,3 @@
-local actions = require("telescope.actions")
-
 return {
   fzf = {
     fuzzy = true, -- false will only do exact matching
