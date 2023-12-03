@@ -1,36 +1,36 @@
 return {
-  'lukas-reineke/indent-blankline.nvim',
+  "lukas-reineke/indent-blankline.nvim",
   cond = _G.Settings.plugins_enabled.indent_blankline,
-  event = { 'BufReadPre', 'BufNewFile' },
-  main = 'ibl',
+  event = { "BufReadPre", "BufNewFile" },
+  main = "ibl",
   dependencies = {
-    { 'nvim-treesitter/nvim-treesitter' },
+    { "nvim-treesitter/nvim-treesitter" },
   },
-  config = function ()
-    require('ibl').setup({
+  config = function()
+    require("ibl").setup({
       indent = {
-        char = '│',
+        char = "│",
       },
       exclude = {
         filetypes = {
-          '',
-          'alpha',
-          'checkhealth',
-          'dashboard',
-          'gitcommit',
-          'help',
-          'lazy',
-          'lazyterm',
-          'lspinfo',
-          'man',
-          'mason',
-          'neo-tree',
-          'notify',
-          'packer',
-          'TelescopePrompt',
-          'TelescopeResults',
-          'toggleterm',
-          'Trouble',
+          "",
+          "alpha",
+          "checkhealth",
+          "dashboard",
+          "gitcommit",
+          "help",
+          "lazy",
+          "lazyterm",
+          "lspinfo",
+          "man",
+          "mason",
+          "neo-tree",
+          "notify",
+          "packer",
+          "TelescopePrompt",
+          "TelescopeResults",
+          "toggleterm",
+          "Trouble",
         },
       },
       scope = {
@@ -38,5 +38,5 @@ return {
         show_end = false,
       },
     })
-  end
+  end,
 }

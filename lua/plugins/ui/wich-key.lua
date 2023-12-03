@@ -7,10 +7,10 @@ return {
     vim.o.timeout = true
     vim.o.timeoutlen = 300
 
-    require('which-key').setup({
+    require("which-key").setup({
       sort_by_description = true,
       window = {
-        border = 'single',
+        border = "single",
         margin = { 1, 1, 1, 1 },
       },
     })

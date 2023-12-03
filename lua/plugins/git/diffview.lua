@@ -1,5 +1,5 @@
 return {
-  'sindrets/diffview.nvim',
+  "sindrets/diffview.nvim",
   cond = _G.Settings.plugins_enabled.diffview,
-  cmd = { 'DiffviewOpen', 'DiffviewClose', 'DiffviewToggleFiles', 'DiffviewFocusFiles' },
+  cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
 }

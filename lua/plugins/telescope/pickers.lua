@@ -1,4 +1,4 @@
-local actions = require('telescope.actions')
+local actions = require("telescope.actions")
 
 return {
   find_files = {
@@ -17,10 +17,10 @@ return {
     show_all_buffers = false,
     mappings = {
       i = {
-        ['<C-d>'] = actions.delete_buffer,
+        ["<C-d>"] = actions.delete_buffer,
       },
       n = {
-        ['dd'] = actions.delete_buffer,
+        ["dd"] = actions.delete_buffer,
       },
     },
   },

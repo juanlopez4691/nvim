@@ -1,9 +1,9 @@
 return {
-  'NvChad/nvim-colorizer.lua',
+  "NvChad/nvim-colorizer.lua",
   cond = _G.Settings.plugins_enabled.nvim_colorizer,
-  event = { 'BufReadPre', 'BufNewFile' },
-  config = function ()
-    require("colorizer").setup {
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
+    require("colorizer").setup({
       filetypes = { "*" },
       user_default_options = {
         css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
@@ -14,14 +14,14 @@ return {
         -- True is same as normal
         tailwind = true, -- Enable tailwind colors
         -- parsers can contain values used in |user_default_options|
-        sass = { enable = true, parsers = { "css" }, }, -- Enable sass colors
+        sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
         virtualtext = "■",
         -- update color values even if buffer is not focused
         -- example use: cmp_menu, cmp_docs
-        always_update = true
+        always_update = true,
       },
       -- all the sub-options of filetypes apply to buftypes
       buftypes = {},
-    }
+    })
   end,
 }

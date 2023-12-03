@@ -1,17 +1,17 @@
 return {
-  'stevearc/aerial.nvim',
+  "stevearc/aerial.nvim",
   cond = _G.Settings.plugins_enabled.aerial,
-  event = 'VeryLazy',
+  event = "VeryLazy",
   dependencies = {
-     'nvim-treesitter/nvim-treesitter',
-     'nvim-tree/nvim-web-devicons'
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-tree/nvim-web-devicons",
   },
   config = function()
-    local aerial = require('aerial')
+    local aerial = require("aerial")
 
     aerial.setup({
-      attach_mode = 'global',
-      backends = { 'lsp', 'treesitter', 'markdown', 'man' },
+      attach_mode = "global",
+      backends = { "lsp", "treesitter", "markdown", "man" },
       disable_max_lines = _G.Settings.max_file.lines,
       disable_max_size = _G.Settings.max_file.size,
       layout = {
@@ -19,7 +19,7 @@ return {
         resize_to_content = true,
       },
       nav = {
-        relative = 'win',
+        relative = "win",
         max_height = 0.7,
         min_height = { 20, 0.5 },
         max_width = 0.8,
@@ -34,16 +34,16 @@ return {
       show_guides = true,
       filter_kind = false,
       guides = {
-        mid_item = '├╴',
-        last_item = '╰╴',
-        nested_top = '│ ',
-        whitespace = '  ',
+        mid_item = "├╴",
+        last_item = "╰╴",
+        nested_top = "│ ",
+        whitespace = "  ",
       },
     })
 
     ToggleAerial = function()
-      vim.cmd('AerialToggle')
-      vim.opt.statuscolumn = ''
+      vim.cmd("AerialToggle")
+      vim.opt.statuscolumn = ""
     end
 
     -- Global methods to be used in keymaps.

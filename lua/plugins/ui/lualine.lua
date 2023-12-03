@@ -14,13 +14,13 @@ return {
       },
       options = {
         icons_enabled = true,
-        component_separators = '|',
+        component_separators = "|",
         -- section_separators = '',
       },
       extensions = {
-        'nvim-tree',
-        'lazy',
-        'symbols-outline',
+        "nvim-tree",
+        "lazy",
+        "symbols-outline",
       },
       sections = {
         lualine_a = { "mode" },

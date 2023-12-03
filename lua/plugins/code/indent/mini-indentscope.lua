@@ -1,10 +1,10 @@
 return {
-  'echasnovski/mini.indentscope',
+  "echasnovski/mini.indentscope",
   cond = _G.Settings.plugins_enabled.mini_indentscope,
-  version = '*',
-  event = { 'BufReadPre', 'BufNewFile' },
-  config = function ()
-    local indentsc = require('mini.indentscope')
+  version = "*",
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
+    local indentsc = require("mini.indentscope")
 
     indentsc.setup({
       draw = {
