@@ -1,20 +1,19 @@
 return {
-  'williamboman/mason.nvim',
+  "williamboman/mason.nvim",
   lazy = true,
-  cmd = 'Mason',
+  cmd = "Mason",
   config = function()
-    require('mason').setup({
+    require("mason").setup({
       ui = {
-        border = 'rounded',
+        border = "rounded",
         width = 0.95,
         height = 0.85,
         icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
         },
       },
     })
   end,
 }
-
