@@ -1,12 +1,12 @@
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
-    'git',
-    'clone',
-    '--filter=blob:none',
-    'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable', -- latest stable release
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
     lazypath,
   })
 end
@@ -23,21 +23,21 @@ local colorscheme = function()
   return colorscheme
 end
 
-require('lazy').setup({
-  import = 'plugins',
+require("lazy").setup({
+  import = "plugins",
   install = {
-    colorscheme = colorscheme()
+    colorscheme = colorscheme(),
   },
   concurrency = 4,
   defaults = {
     lazy = true,
-    version = '*',
+    version = "*",
   },
   checker = {
     enabled = true,
     notify = true,
   },
   ui = {
-    border = 'rounded',
+    border = "rounded",
   },
 })
