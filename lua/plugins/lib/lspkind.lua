@@ -1,10 +1,10 @@
 return {
-  'onsails/lspkind.nvim',
+  "onsails/lspkind.nvim",
   cond = _G.Settings.plugins_enabled.lspkind,
-  config = function ()
-    require('lspkind').init({
-      mode = 'symbol',
-      preset = 'default',
+  config = function()
+    require("lspkind").init({
+      mode = "symbol",
+      preset = "default",
       symbol_map = {
         Text = "󰉿",
         Method = "󰆧",
@@ -33,5 +33,5 @@ return {
         TypeParameter = "",
       },
     })
-  end
+  end,
 }
