@@ -18,7 +18,6 @@ return {
   config = function()
     local cmp = require("cmp")
     local neogen = require("neogen")
-    local cmp_select_opts = { behavior = cmp.SelectBehavior.Select }
     local compare = require("cmp.config.compare")
 
     -- Colorize the autocompletion menu icons.
