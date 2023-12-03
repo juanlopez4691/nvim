@@ -29,6 +29,14 @@ return {
             desc = "Workspace diagnostics",
           },
         },
+        {
+          modes = { "n" },
+          key = "<leader>xr",
+          cmd = "<cmd>Trouble lsp_references<CR>",
+          opt = {
+            desc = "Symbol references",
+          },
+        },
       },
     },
   },
