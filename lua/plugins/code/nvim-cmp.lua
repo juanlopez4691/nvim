@@ -116,11 +116,10 @@ return {
             cmdline = "[Cmd]",
           })[entry.source.name]
 
-          local kind_kind
           if entry.source.name == "cmdline" then
-            kind_kind = "  "
+            kind.kind = "  "
           else
-            kind_kind = " " .. (strings[1] or "") .. " "
+            kind.kind = " " .. (strings[1] or "") .. " "
           end
 
           if source_name ~= nil then
