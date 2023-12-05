@@ -40,7 +40,7 @@ return {
       require("toggleterm").toggle(count, size, vim.loop.cwd(), direction)
     end
 
-    TerminalFullWindow = function(cmd)
+    TerminalFullWindow = function(cmd, opts)
       local Terminal = require("toggleterm.terminal").Terminal
 
       Terminal:new({
@@ -54,9 +54,18 @@ return {
         },
         close_on_exit = true,
         on_open = function(term)
+          local bufnr = term.bufnr
+
           vim.cmd("startinsert!")
-          vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
-          vim.api.nvim_buf_set_keymap(term.bufnr, "n", "<ESC>", "", { noremap = true, silent = true })
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+          vim.api.nvim_buf_set_keymap(bufnr, "n", "<ESC>", "", { noremap = true, silent = true })
+
+          if opts.ctrl_hjkl == false then
+            vim.keymap.set("t", "<c-h>", "<c-h>", { buffer = bufnr, nowait = true })
+            vim.keymap.set("t", "<c-j>", "<c-j>", { buffer = bufnr, nowait = true })
+            vim.keymap.set("t", "<c-k>", "<c-k>", { buffer = bufnr, nowait = true })
+            vim.keymap.set("t", "<c-l>", "<c-l>", { buffer = bufnr, nowait = true })
+          end
         end,
         on_close = function()
           vim.cmd("startinsert!")
