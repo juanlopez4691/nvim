@@ -43,14 +43,18 @@ return {
       setup_servers_on_start = true,
     })
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
+    local ok, cmp_capabilities = pcall(require, "cmp_nvim_lsp")
+    if ok then
+      vim.tbl_deep_extend("force", lsp_capabilities, cmp_capabilities)
+    end
 
-    capabilities.textDocument.foldingRange = {
+    lsp_capabilities.textDocument.foldingRange = {
       dynamicRegistration = false,
       lineFoldingOnly = true,
     }
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-    capabilities.textDocument.completion.completionItem.resolveSupport = {
+    lsp_capabilities.textDocument.completion.completionItem.snippetSupport = true
+    lsp_capabilities.textDocument.completion.completionItem.resolveSupport = {
       properties = {
         "documentation",
         "detail",
@@ -113,7 +117,7 @@ return {
           enabled = false,
         },
       },
-      capabilities = capabilities,
+      capabilities = lsp_capabilities,
     })
 
     -- (Optional) Configure lua language server for neovim
