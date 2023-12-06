@@ -107,11 +107,12 @@ return {
 
           local strings = vim.split(kind.kind, "%s", { trimempty = true })
           local source_name = ({
-            nvim_lsp = "[LSP]",
             buffer = "[Buffer]",
-            path = "[Path]",
-            nvim_lua = "[Lua]",
             cmdline = "[Cmd]",
+            luasnip = "[Snip]",
+            nvim_lsp = "[LSP]",
+            nvim_lua = "[Lua]",
+            path = "[Path]",
           })[entry.source.name]
 
           if entry.source.name == "cmdline" then
