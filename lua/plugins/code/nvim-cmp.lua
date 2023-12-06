@@ -2,6 +2,7 @@ return {
   "hrsh7th/nvim-cmp",
   cond = _G.Settings.plugins_enabled.nvim_cmp,
   dependencies = {
+    { "onsails/lspkind.nvim" },
     -- Completion sources.
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-buffer" },
@@ -10,9 +11,7 @@ return {
     { "hrsh7th/cmp-nvim-lua" },
     { "hrsh7th/cmp-nvim-lsp-signature-help" },
     -- Snippets.
-    {
-      "L3MON4D3/LuaSnip",
-    },
+    { "L3MON4D3/LuaSnip" },
   },
   event = { "CmdLineEnter", "InsertEnter" },
   config = function()
