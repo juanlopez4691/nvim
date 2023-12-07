@@ -1,11 +1,15 @@
 return {
   "VonHeikemen/lsp-zero.nvim",
   cond = _G.Settings.plugins_enabled.lsp_zero,
-  branch = "v2.x",
+  branch = "v3.x",
   cmd = "LspInfo",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
-    require("lsp-zero.settings").preset({})
+    local lsp_zero = require("lsp-zero")
+
+    lsp_zero.on_attach(function(client, bufnr)
+      lsp_zero.default_keymaps({ buffer = bufnr })
+    end)
   end,
   dependencies = {
     -- LSP Support
