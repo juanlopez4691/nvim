@@ -2,7 +2,6 @@ return {
   "hrsh7th/nvim-cmp",
   cond = _G.Settings.plugins_enabled.nvim_cmp,
   dependencies = {
-    { "onsails/lspkind.nvim" },
     -- Completion sources.
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-buffer" },
@@ -101,13 +100,17 @@ return {
       formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-          local kind = require("lspkind").cmp_format({
-            mode = "symbol_text",
-            maxwidth = 50,
-            ellipsis_char = " ",
-          })(entry, vim_item)
+          local icons = require("core.icons")
 
-          local strings = vim.split(kind.kind, "%s", { trimempty = true })
+          -- Limit lenght of completion entry
+          if #vim_item.abbr > _G.Settings.cmp_max_length then
+            vim_item.abbr =
+              string.format("%s %s", string.sub(vim_item.abbr, 1, _G.Settings.cmp_max_length - 1), icons.ui.Ellipsis)
+          end
+
+          vim_item.kind = icons.kind[vim_item.kind]
+
+          local strings = vim.split(vim_item.kind, "%s", { trimempty = true })
           local source_name = ({
             buffer = "[Buffer]",
             cmdline = "[Cmd]",
@@ -118,18 +121,18 @@ return {
           })[entry.source.name]
 
           if entry.source.name == "cmdline" then
-            kind.kind = "  "
+            vim_item.kind = "  "
           else
-            kind.kind = " " .. (strings[1] or "") .. " "
+            vim_item.kind = string.format(" %s ", (strings[1] or ""))
           end
 
           if source_name ~= nil then
-            kind.menu = source_name
+            vim_item.menu = source_name
           else
-            kind.menu = ""
+            vim_item.menu = ""
           end
 
-          return kind
+          return vim_item
         end,
       },
     })

@@ -44,6 +44,8 @@ _G.Settings.max_file = {
   lines = 10000.,
 }
 
+_G.Settings.cmp_max_length = 50
+
 -- Set dimensions of terminal window.
 _G.Settings.terminal = {
   size = {
