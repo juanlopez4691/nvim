@@ -101,6 +101,23 @@ return {
             desc = "Jump to split right",
           },
         },
+        -- Zoom in/out window split
+        {
+          modes = { "n" },
+          key = "<C-w>zi",
+          cmd = "<C-w>_ | <C-w>|",
+          opt = {
+            desc = "Zoom in",
+          },
+        },
+        {
+          modes = { "n" },
+          key = "<C-w>zo",
+          cmd = "<C-w>=",
+          opt = {
+            desc = "Zoom out",
+          },
+        },
         -- Resize window splits.
         {
           modes = { "n" },
