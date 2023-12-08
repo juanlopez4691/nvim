@@ -16,7 +16,7 @@ return {
       color_devicons = true,
       defaults = {
         path_display = { "smart" },
-        initial_mode = "normal",
+        initial_mode = "insert",
         selection_caret = "❯ ",
         layout_config = {
           vertical = {
