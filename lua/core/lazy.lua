@@ -24,7 +24,12 @@ local colorscheme = function()
 end
 
 require("lazy").setup({
-  import = "plugins",
+  { import = "plugins.theme" },
+  { import = "plugins.lsp" },
+  { import = "plugins.ui" },
+  { import = "plugins.git" },
+  { import = "plugins.code" },
+  { import = "plugins.telescope.telescope" },
   install = {
     colorscheme = colorscheme(),
   },
