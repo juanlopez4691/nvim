@@ -140,9 +140,17 @@ return {
         {
           modes = { "n" },
           key = "<leader>gb",
-          cmd = "<cmd>Telescope git_branches prompt_prefix=🌳›<CR>",
+          cmd = "<cmd>Telescope git_branches prompt_prefix=🌱›<CR>",
           opt = {
             desc = "Branches",
+          },
+        },
+        {
+          modes = { "n" },
+          key = "<leader>gs",
+          cmd = "<cmd>Telescope git_status prompt_prefix=🔎›<CR>",
+          opt = {
+            desc = "Status",
           },
         },
       },
