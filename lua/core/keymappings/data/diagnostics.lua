@@ -3,7 +3,7 @@ return {
     {
       whichkey = true,
       prefix = "<leader>x",
-      name = "Trouble",
+      name = "+Diagnostics",
       mappings = {
         {
           modes = { "n" },

@@ -37,6 +37,14 @@ return {
             desc = "Profile",
           },
         },
+        {
+          modes = { "n" },
+          key = "<leader>cM",
+          cmd = "<cmd>Mason<cr>",
+          opt = {
+            desc = "Open Mason",
+          },
+        },
       },
     },
   },
