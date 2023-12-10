@@ -8,8 +8,11 @@ return {
   event = "VeryLazy",
   config = function()
     local telescope = require("telescope")
+    local telescope_builtin = require("telescope.builtin")
     local actions = require("telescope.actions")
     local extensions = require("plugins.telescope.extensions")
+    local pickers = require("plugins.telescope.pickers")
+    local pretty_pickers = require("plugins.telescope.pretty_pickers")
 
     telescope.setup({
       file_ignore_patterns = {},
@@ -52,7 +55,7 @@ return {
         "--glob=!.git/",
       },
       extensions = extensions,
-      pickers = require("plugins.telescope.pickers"),
+      pickers = pickers,
     })
 
     for extension, _ in pairs(extensions) do
@@ -78,7 +81,7 @@ return {
 
     -- Global functions used in keymappings
     FindFiles = function()
-      require("plugins.telescope.pretty_pickers").prettyFilesPicker({
+      pretty_pickers.prettyFilesPicker({
         picker = "find_files",
         options = {
           prompt_prefix = "🔭›",
@@ -89,7 +92,7 @@ return {
     end
 
     TelescopeOldFiles = function()
-      require("plugins.telescope.pretty_pickers").prettyFilesPicker({
+      pretty_pickers.prettyFilesPicker({
         picker = "oldfiles",
         options = {
           prompt_prefix = "💾›",
@@ -100,7 +103,7 @@ return {
     end
 
     TelescopeLiveGrep = function()
-      require("plugins.telescope.pretty_pickers").prettyGrepPicker({
+      pretty_pickers.prettyGrepPicker({
         picker = "live_grep",
         options = {
           prompt_prefix = "🔍›",
@@ -111,7 +114,7 @@ return {
     end
 
     TelescopeLiveGrepArgs = function()
-      require("plugins.telescope.pretty_pickers").prettyGrepPicker({
+      pretty_pickers.prettyGrepPicker({
         picker = "live_grep_args",
         options = {
           prompt_prefix = "🔍›",
@@ -122,7 +125,7 @@ return {
     end
 
     TelescopeGrepString = function()
-      require("plugins.telescope.pretty_pickers").prettyGrepPicker({
+      pretty_pickers.prettyGrepPicker({
         picker = "grep_string",
         options = {
           prompt_prefix = "🔍›",
@@ -134,17 +137,17 @@ return {
 
     -- Shows a preview window for LSP definitions at cursor position.
     LspDefinitionsAtCursor = function()
-      require("telescope.builtin").lsp_definitions(lsp_preview_settings)
+      telescope_builtin.lsp_definitions(lsp_preview_settings)
     end
 
     -- Shows a preview window for LSP references at cursor position.
     LspReferencesAtCursor = function()
-      require("telescope.builtin").lsp_references(lsp_preview_settings)
+      telescope_builtin.lsp_references(lsp_preview_settings)
     end
 
     -- Shows a preview window for LSP implementations at cursor position.
     LspImplementationsAtCursor = function()
-      require("telescope.builtin").lsp_implementations(lsp_preview_settings)
+      telescope_builtin.lsp_implementations(lsp_preview_settings)
     end
   end,
 }
