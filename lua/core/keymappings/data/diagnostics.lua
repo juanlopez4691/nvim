@@ -2,12 +2,12 @@ return {
   groups = {
     {
       whichkey = true,
-      prefix = "<leader>x",
+      prefix = "<leader>d",
       name = "+Diagnostics",
       mappings = {
         {
           modes = { "n" },
-          key = "<leader>xx",
+          key = "<leader>dt",
           cmd = "<cmd>TroubleToggle<CR>",
           opt = {
             desc = "Trouble toggle",
@@ -15,7 +15,7 @@ return {
         },
         {
           modes = { "n" },
-          key = "<leader>xd",
+          key = "<leader>dd",
           cmd = "<cmd>Trouble document_diagnostics<CR>",
           opt = {
             desc = "Document diagnostics",
@@ -23,7 +23,7 @@ return {
         },
         {
           modes = { "n" },
-          key = "<leader>xw",
+          key = "<leader>dw",
           cmd = "<cmd>Trouble workspace_diagnostics<CR>",
           opt = {
             desc = "Workspace diagnostics",
@@ -31,7 +31,7 @@ return {
         },
         {
           modes = { "n" },
-          key = "<leader>xr",
+          key = "<leader>dr",
           cmd = "<cmd>Trouble lsp_references<CR>",
           opt = {
             desc = "Symbol references",
