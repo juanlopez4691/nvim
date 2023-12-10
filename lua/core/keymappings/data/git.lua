@@ -55,5 +55,36 @@ return {
         },
       },
     },
+    {
+      whichkey = true,
+      prefix = "<leader>gd",
+      name = "+Diff",
+      mappings = {
+        {
+          modes = { "n" },
+          key = "<leader>gdl",
+          cmd = "<cmd>DiffviewOpen<CR>",
+          opt = {
+            desc = "Open diff view",
+          },
+        },
+        {
+          modes = { "n" },
+          key = "<leader>gdh",
+          cmd = "<cmd>DiffviewFileHistory %<CR>",
+          opt = {
+            desc = "File history",
+          },
+        },
+        {
+          modes = { "n" },
+          key = "<leader>gdc",
+          cmd = "<cmd>DiffviewClose<CR>",
+          opt = {
+            desc = "Close diff",
+          },
+        },
+      },
+    },
   },
 }
