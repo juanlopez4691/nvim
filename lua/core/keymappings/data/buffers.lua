@@ -13,6 +13,30 @@ return {
             desc = "Buffers list",
           },
         },
+        {
+          modes = { "n" },
+          key = "<leader>bn",
+          cmd = "<cmd>bnext<CR>",
+          opt = {
+            desc = "Next buffer",
+          },
+        },
+        {
+          modes = { "n" },
+          key = "<leader>bp",
+          cmd = "<cmd>bprev<CR>",
+          opt = {
+            desc = "Previous buffer",
+          },
+        },
+        {
+          modes = { "n" },
+          key = "<leader>bu",
+          cmd = "<cmd>bunload<CR>",
+          opt = {
+            desc = "Unload buffer",
+          },
+        },
       },
     },
   },
