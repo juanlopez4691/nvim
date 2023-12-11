@@ -2,12 +2,12 @@ return {
   groups = {
     {
       whichkey = true,
-      prefix = "<leader>P",
+      prefix = "<leader>p",
       name = "+Packages",
       mappings = {
         {
           modes = { "n" },
-          key = "<leader>Pl",
+          key = "<leader>pl",
           cmd = "<cmd>Lazy<cr>",
           opt = {
             desc = "Open Lazy",
@@ -15,7 +15,7 @@ return {
         },
         {
           modes = { "n" },
-          key = "<leader>Pc",
+          key = "<leader>pc",
           cmd = "<cmd>Lazy check<cr>",
           opt = {
             desc = "Check packages",
@@ -23,7 +23,7 @@ return {
         },
         {
           modes = { "n" },
-          key = "<leader>Ps",
+          key = "<leader>ps",
           cmd = "<cmd>Lazy sync<cr>",
           opt = {
             desc = "Sync packages",
@@ -31,7 +31,7 @@ return {
         },
         {
           modes = { "n" },
-          key = "<leader>Pp",
+          key = "<leader>pp",
           cmd = "<cmd>Lazy profile<cr>",
           opt = {
             desc = "Profile",
