@@ -1,4 +1,10 @@
-require("core.autocommands.linenumbers")
-require("core.autocommands.toggleterm")
-require("core.autocommands.telescope")
-require("core.autocommands.none-ls")
+local autocommands = {
+  "linenumbers",
+  "toggleterm",
+  "telescope",
+  "none-ls",
+}
+
+for _, file in pairs(autocommands) do
+  require("core.autocommands." .. file)
+end
