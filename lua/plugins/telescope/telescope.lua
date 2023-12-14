@@ -85,7 +85,7 @@ return {
         picker = "find_files",
         options = {
           prompt_prefix = "🔭›",
-          layout_strategy = "vertical",
+          layout_strategy = "flex",
           layout_config = layout_vertical_config,
         },
       })
@@ -96,7 +96,7 @@ return {
         picker = "oldfiles",
         options = {
           prompt_prefix = "💾›",
-          layout_strategy = "vertical",
+          layout_strategy = "flex",
           layout_config = layout_vertical_config,
         },
       })
@@ -107,7 +107,7 @@ return {
         picker = "live_grep",
         options = {
           prompt_prefix = "🔍›",
-          layout_strategy = "vertical",
+          layout_strategy = "flex",
           layout_config = layout_vertical_config,
         },
       })
@@ -118,7 +118,7 @@ return {
         picker = "live_grep_args",
         options = {
           prompt_prefix = "🔍›",
-          layout_strategy = "vertical",
+          layout_strategy = "flex",
           layout_config = layout_vertical_config,
         },
       })
@@ -129,7 +129,7 @@ return {
         picker = "grep_string",
         options = {
           prompt_prefix = "🔍›",
-          layout_strategy = "vertical",
+          layout_strategy = "flex",
           layout_config = layout_vertical_config,
         },
       })
