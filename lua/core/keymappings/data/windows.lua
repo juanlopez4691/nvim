@@ -1,10 +1,12 @@
 return {
   groups = {
     {
+      enabled = true,
       whichkey = false,
       -- Navigation
       mappings = {
         {
+          enabled = true,
           modes = { "n" },
           key = "<C-h>",
           cmd = "<C-w>h",
@@ -13,6 +15,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<C-j>",
           cmd = "<C-w>j",
@@ -21,6 +24,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<C-k>",
           cmd = "<C-w>k",
@@ -29,6 +33,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<C-l>",
           cmd = "<C-w>l",
@@ -38,6 +43,7 @@ return {
         },
         -- Zoom in/out window split
         {
+          enabled = true,
           modes = { "n" },
           key = "<C-w>zi",
           cmd = "<C-w>_ | <C-w>|",
@@ -46,6 +52,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<C-w>zo",
           cmd = "<C-w>=",
@@ -55,6 +62,7 @@ return {
         },
         -- Resize window splits.
         {
+          enabled = true,
           modes = { "n" },
           key = "<A-Up>",
           cmd = "<cmd>resize +2<CR>",
@@ -63,6 +71,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<A-Down>",
           cmd = "<cmd>resize -2<CR>",
@@ -71,6 +80,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<A-Left>",
           cmd = "<cmd>vertical resize +2<CR>",
@@ -79,6 +89,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<A-Right>",
           cmd = "<cmd>vertical resize -2<CR>",

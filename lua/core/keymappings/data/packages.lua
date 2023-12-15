@@ -1,11 +1,13 @@
 return {
   groups = {
     {
+      enabled = true,
       whichkey = true,
       prefix = "<leader>p",
       name = "+Packages",
       mappings = {
         {
+          enabled = true,
           modes = { "n" },
           key = "<leader>pl",
           cmd = "<cmd>Lazy<cr>",
@@ -14,6 +16,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<leader>pc",
           cmd = "<cmd>Lazy check<cr>",
@@ -22,6 +25,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<leader>ps",
           cmd = "<cmd>Lazy sync<cr>",
@@ -30,6 +34,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<leader>pp",
           cmd = "<cmd>Lazy profile<cr>",
@@ -38,6 +43,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<leader>cM",
           cmd = "<cmd>Mason<cr>",

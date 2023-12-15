@@ -7,7 +7,14 @@ for _, file in ipairs(files) do
   local keymappings = require("core.keymappings.data." .. file:gsub("%.lua$", ""))
 
   for _, group in ipairs(keymappings.groups) do
+    if group.enabled == false then
+      goto skip_group
+    end
+
     for _, mapping in ipairs(group.mappings) do
+      if mapping.enabled == false then
+        goto skip_keymmaping
+      end
       helpers.map(mapping.modes, mapping.key, mapping.cmd, mapping.opt)
 
       if group.whichkey then
@@ -16,6 +23,9 @@ for _, file in ipairs(files) do
           [mapping.key] = { mapping.cmd, mapping.opt.desc },
         })
       end
+      ::skip_keymmaping::
     end
+
+    ::skip_group::
   end
 end

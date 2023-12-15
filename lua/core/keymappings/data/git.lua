@@ -1,11 +1,13 @@
 return {
   groups = {
     {
+      enabled = true,
       whichkey = true,
       prefix = "<leader>g",
       name = "+Git",
       mappings = {
         {
+          enabled = _G.Settings.plugins_enabled.toggleterm,
           modes = { "n" },
           key = "<leader>gg",
           cmd = "<cmd>lua TerminalFullWindow('lazygit --use-config-file=$HOME/.config/lazygit/config.yml', { ctrl_hjkl = false })<CR>",
@@ -14,6 +16,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>gl",
           cmd = "<cmd>Telescope git_commits prompt_prefix=💡›<CR>",
@@ -22,6 +25,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>gc",
           cmd = "<cmd>Telescope git_bcommits prompt_prefix=📝›<CR>",
@@ -30,6 +34,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>gb",
           cmd = "<cmd>Telescope git_branches prompt_prefix=🌱›<CR>",
@@ -38,6 +43,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>gs",
           cmd = "<cmd>Telescope git_status prompt_prefix=🔎›<CR>",
@@ -46,6 +52,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.gitsigns,
           modes = { "n" },
           key = "<leader>gk",
           cmd = "<cmd>lua GitSignsFullBlameLine()<CR>",
@@ -56,11 +63,13 @@ return {
       },
     },
     {
+      enabled = true,
       whichkey = true,
       prefix = "<leader>gd",
       name = "+Diff",
       mappings = {
         {
+          enabled = _G.Settings.plugins_enabled.diffview,
           modes = { "n" },
           key = "<leader>gdl",
           cmd = "<cmd>DiffviewOpen<CR>",
@@ -69,6 +78,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.diffview,
           modes = { "n" },
           key = "<leader>gdh",
           cmd = "<cmd>DiffviewFileHistory %<CR>",
@@ -77,6 +87,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.diffview,
           modes = { "n" },
           key = "<leader>gdc",
           cmd = "<cmd>DiffviewClose<CR>",

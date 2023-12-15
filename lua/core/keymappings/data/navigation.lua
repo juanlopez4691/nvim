@@ -1,10 +1,12 @@
 return {
   groups = {
     {
+      enabled = true,
       whichkey = false,
       -- Navigation
       mappings = {
         {
+          enabled = true,
           modes = { "n" },
           key = "<C-o>",
           cmd = "<C-o>zz",
@@ -13,6 +15,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<C-i>",
           cmd = "<C-i>zz",
@@ -21,6 +24,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<C-d>",
           cmd = "<C-d>zz",
@@ -29,6 +33,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<C-u>",
           cmd = "<C-u>zz",
@@ -38,6 +43,7 @@ return {
         },
         -- Improved cursor movement.
         {
+          enabled = true,
           modes = { "n" },
           key = "j",
           cmd = "gj",
@@ -46,6 +52,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "k",
           cmd = "gk",
@@ -55,6 +62,7 @@ return {
         },
         -- Move cursor in insert modes. You cheater!
         {
+          enabled = true,
           modes = { "i" },
           key = "<A-h>",
           cmd = "<C-o>h",
@@ -63,6 +71,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "i" },
           key = "<A-l>",
           cmd = "<C-o>l",

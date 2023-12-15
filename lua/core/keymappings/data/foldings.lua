@@ -13,11 +13,13 @@ end
 return {
   groups = {
     {
+      enabled = true,
       whichkey = true,
       prefix = "<leader>z",
       name = "+Folds",
       mappings = {
         {
+          enabled = _G.Settings.plugins_enabled.nvim_ufo,
           modes = { "n" },
           key = "zR",
           cmd = openAllFolds,
@@ -26,6 +28,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.nvim_ufo,
           modes = { "n" },
           key = "zM",
           cmd = closeAllFolds,
@@ -34,6 +37,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.nvim_ufo,
           modes = { "n" },
           key = "zK",
           cmd = peekFoldedLinesUnderCursor,

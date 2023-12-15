@@ -1,11 +1,13 @@
 return {
   groups = {
     {
+      enabled = true,
       whichkey = true,
       prefix = "<leader>d",
       name = "+Diagnostics",
       mappings = {
         {
+          enabled = _G.Settings.plugins_enabled.touble,
           modes = { "n" },
           key = "<leader>dt",
           cmd = "<cmd>TroubleToggle<CR>",
@@ -14,6 +16,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.touble,
           modes = { "n" },
           key = "<leader>dd",
           cmd = "<cmd>Trouble document_diagnostics<CR>",
@@ -22,6 +25,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.touble,
           modes = { "n" },
           key = "<leader>dw",
           cmd = "<cmd>Trouble workspace_diagnostics<CR>",
@@ -30,6 +34,7 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.touble,
           modes = { "n" },
           key = "<leader>dr",
           cmd = "<cmd>Trouble lsp_references<CR>",

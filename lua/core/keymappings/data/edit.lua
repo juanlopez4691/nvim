@@ -9,6 +9,7 @@ end
 return {
   groups = {
     {
+      enabled = true,
       whichkey = true,
       prefix = "<leader>e",
       name = "+Edit",
@@ -24,10 +25,12 @@ return {
       },
     },
     {
+      enabled = true,
       whichkey = false,
       mappings = {
         -- Indent/Reindent in visual modes.
         {
+          enabled = true,
           modes = { "v" },
           key = ">",
           cmd = ">gv",
@@ -36,6 +39,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "v" },
           key = "<",
           cmd = "<gv",
@@ -44,6 +48,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "v" },
           key = ">",
           cmd = "<cmd>lua autoIndentEmptyLine()<CR>",
@@ -53,6 +58,7 @@ return {
         },
         -- Move line(s) up/down.
         {
+          enabled = true,
           modes = { "n" },
           key = "<A-j>",
           cmd = "<cmd>m+<CR>==",
@@ -61,6 +67,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "n" },
           key = "<A-k>",
           cmd = "<cmd>m-2<CR>==",
@@ -69,6 +76,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "i" },
           key = "<A-j>",
           cmd = "<ESC>:m+<CR>==gi",
@@ -77,6 +85,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "i" },
           key = "<A-k>",
           cmd = "<ESC>:m-2<CR>==gi",
@@ -85,6 +94,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "v" },
           key = "<A-j>",
           cmd = ":m'>+<CR>gv=gv",
@@ -93,6 +103,7 @@ return {
           },
         },
         {
+          enabled = true,
           modes = { "v" },
           key = "<A-k>",
           cmd = ":m-2<CR>gv=gv",
