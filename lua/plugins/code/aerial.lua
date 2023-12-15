@@ -1,7 +1,7 @@
 return {
   "stevearc/aerial.nvim",
   cond = _G.Settings.plugins_enabled.aerial,
-  event = "VeryLazy",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "nvim-tree/nvim-web-devicons",
