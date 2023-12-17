@@ -30,6 +30,7 @@ require("lazy").setup({
   { import = "plugins.git" },
   { import = "plugins.code" },
   { import = "plugins.telescope.telescope" },
+}, {
   install = {
     colorscheme = colorscheme(),
   },
@@ -39,8 +40,9 @@ require("lazy").setup({
     version = "*",
   },
   checker = {
+    frequency = 3600,
     enabled = true,
-    notify = true,
+    notify = false,
   },
   ui = {
     border = "rounded",
