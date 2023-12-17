@@ -3,6 +3,7 @@ return {
   cond = _G.Settings.plugins_enabled.toggleterm,
   version = "*",
   command = "ToggleTerm",
+  event = "VeryLazy",
   config = function()
     local toggleterm = require("toggleterm")
 
