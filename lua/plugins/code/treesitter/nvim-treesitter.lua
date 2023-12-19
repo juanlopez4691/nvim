@@ -61,15 +61,6 @@ return {
       },
       incremental_selection = {
         enable = true,
-      },
-      autotag = {
-        enabled = true,
-        enable_rename = true,
-        enable_close = true,
-        enable_close_on_slash = true,
-        filetypes = {
-          "php",
-          "twig",
         },
       },
       sync_install = true,
