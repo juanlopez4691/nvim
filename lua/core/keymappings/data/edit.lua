@@ -1,11 +1,3 @@
-local autoIndentEmptyLine = function()
-  if #vim.fn.getline(".") == 0 then
-    return [["_cc]]
-  else
-    return "i"
-  end
-end
-
 return {
   groups = {
     {
@@ -45,15 +37,6 @@ return {
           cmd = "<gv",
           opt = {
             desc = "Indent out",
-          },
-        },
-        {
-          enabled = true,
-          modes = { "v" },
-          key = ">",
-          cmd = "<cmd>lua autoIndentEmptyLine()<CR>",
-          opt = {
-            desc = "Auto indent current empty line",
           },
         },
         -- Move line(s) up/down.
