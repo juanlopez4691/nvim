@@ -9,6 +9,15 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.nvim_tree,
           modes = { "n" },
+          key = "<leader>fc",
+          cmd = "<cmd>NvimTreeFocus<CR>",
+          opt = {
+            desc = "Focus on file explorer",
+          },
+        },
+        {
+          enabled = _G.Settings.plugins_enabled.nvim_tree,
+          modes = { "n" },
           key = "<leader>ft",
           cmd = "<cmd>NvimTreeToggle<CR>",
           opt = {
