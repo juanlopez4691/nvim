@@ -5,11 +5,11 @@ local g = vim.g
 g.loaded_perl_provider = 0
 
 -- Python provider
-g.python_host_prog = '/opt/homebrew/bin/python3'
-g.python3_host_prog = '/opt/homebrew/bin/python3'
+g.python_host_prog = "/opt/homebrew/bin/python3"
+g.python3_host_prog = "/opt/homebrew/bin/python3"
 
 -- Set leader key.
-g.mapleader = ' '
+g.mapleader = " "
 
 -- Disable netrw.
 g.loaded_netrw = 1
@@ -19,30 +19,30 @@ g.loaded_netrwPlugin = 1
 g.editorconfig = true
 
 -- Ensure undo dir exists.
-local undodir = fn.stdpath('data') .. '/undodir'
+local undodir = fn.stdpath("data") .. "/undodir"
 if fn.isdirectory(undodir) ~= 0 then
-  fn.mkdir(undodir, 'p')
+  fn.mkdir(undodir, "p")
 end
 
 local options = {
   -- Enable mouse support.
-  mouse = 'a',
+  mouse = "a",
   -- Copy/paste to system clipboard.
   -- clipboard = 'unnamedplus',
   -- Enable 24-bit RGB colors.
   termguicolors = true,
   -- Make backspace behave in a sane manner.
-  backspace = { 'indent', 'eol,start' },
+  backspace = { "indent", "eol,start" },
   -- Line lenght marker at 80 columns.
-  colorcolumn = '80',
+  colorcolumn = "80",
   -- A comma separated list of options for Insert mode completion.
-  completeopt = { 'menu', 'menuone', 'noinsert' },
+  completeopt = { "menu", "menuone", "noinsert" },
   -- Enable folding.
-  foldmethod = 'syntax',
+  foldmethod = "syntax",
   foldenable = true,
   foldlevel = 99,
   foldlevelstart = 99,
-  foldcolumn = '1',
+  foldcolumn = "1",
   foldnestmax = 4,
   fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
   statuscolumn = '%=%l%s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " }',
@@ -53,7 +53,7 @@ local options = {
   -- Relative line numbers.
   relativenumber = true,
   -- Set space for signs in status column.
-  signcolumn = 'yes:1',
+  signcolumn = "yes:1",
   -- Highlight matching parenthesis.
   showmatch = true,
   -- Ignore lowercase for the whole pattern.
@@ -95,9 +95,9 @@ local options = {
   synmaxcol = 250,
   -- When set case is ignored when completing file names and directories.
   wildignorecase = true,
-  wildmode = 'full',
+  wildmode = "full",
   -- Set char to start wildcard expansion in command line for macros and mappings.
-  wildcharm=('\t'):byte(),
+  wildcharm = ("\t"):byte(),
   -- No line wrapping.
   wrap = false,
   -- Wrap on word boundary.
@@ -112,4 +112,4 @@ for k, v in pairs(options) do
 end
 
 -- Line wrap cursor movement.
-vim.cmd "set whichwrap+=<,>,[,],h,l"
+vim.cmd("set whichwrap+=<,>,[,],h,l")
