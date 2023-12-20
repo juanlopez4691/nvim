@@ -7,6 +7,15 @@ return {
       name = "+Files",
       mappings = {
         {
+          enabled = true,
+          modes = { "n" },
+          key = "<leader>fd",
+          cmd = "<cmd>lcd %:h<CR>",
+          opt = {
+            desc = "Change to dir of current file",
+          },
+        },
+        {
           enabled = _G.Settings.plugins_enabled.nvim_tree,
           modes = { "n" },
           key = "<leader>fc",
