@@ -91,6 +91,8 @@ local options = {
   regexpengine = 0,
   -- ms to wait for trigger an event.
   updatetime = 250,
+  -- Faster keymappings completion.
+  timeoutlen = 300,
   -- Max column for syntax highlight.
   synmaxcol = 250,
   -- When set case is ignored when completing file names and directories.
