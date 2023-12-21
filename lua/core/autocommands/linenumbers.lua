@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd({ "BufNew", "BufEnter", "FocusGained", "InsertLeave"
     if vim.o.nu and vim.api.nvim_get_mode().mode ~= "i" then
       opt.relativenumber = true
       opt.statuscolumn =
-        '%=%{v:relnum ? v:relnum : v:lnum }%s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " }'
+        '%=%{v:relnum ? v:relnum : v:lnum } %s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : " ") : "  " }'
     end
   end,
 })
@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEn
     if vim.o.nu then
       opt.relativenumber = false
       opt.statuscolumn =
-        '%=%l%s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " }'
+        '%=%l %s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : " ") : "  " }'
       vim.cmd("redraw")
     end
   end,

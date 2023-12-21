@@ -45,7 +45,7 @@ local options = {
   foldcolumn = "1",
   foldnestmax = 4,
   fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]],
-  statuscolumn = '%=%l%s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? "" : "") : " " }',
+  statuscolumn = '%=%l %s%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : " ") : "  " }',
   -- Highlight cursor line.
   cursorline = true,
   -- Show line number.
