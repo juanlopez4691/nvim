@@ -1,15 +1,3 @@
-local openAllFolds = function()
-  require("ufo").openAllFolds()
-end
-
-local closeAllFolds = function()
-  require("ufo").closeAllFolds()
-end
-
-local peekFoldedLinesUnderCursor = function()
-  require("ufo").peekFoldedLinesUnderCursor()
-end
-
 return {
   groups = {
     {
@@ -21,8 +9,8 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.nvim_ufo,
           modes = { "n" },
-          key = "zR",
-          cmd = openAllFolds,
+          key = "<leader>zR",
+          cmd = "<cmd>lua require('ufo').openAllFolds()<CR>",
           opt = {
             desc = "Open all folds",
           },
@@ -30,8 +18,8 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.nvim_ufo,
           modes = { "n" },
-          key = "zM",
-          cmd = closeAllFolds,
+          key = "<leader>zM",
+          cmd = "<cmd>lua require('ufo').closeAllFolds()<CR>",
           opt = {
             desc = "Close all folds",
           },
@@ -39,8 +27,8 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.nvim_ufo,
           modes = { "n" },
-          key = "zK",
-          cmd = peekFoldedLinesUnderCursor,
+          key = "<leader>zK",
+          cmd = "<cmd>lua PeekFoldedLinesUnderCursor()<CR>",
           opt = {
             desc = "Peek folded lines under cursor",
           },

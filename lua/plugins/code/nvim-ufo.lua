@@ -4,6 +4,7 @@ local virtual_text_handler = function(virtText, lnum, endLnum, width, truncate)
   local sufWidth = vim.fn.strdisplaywidth(suffix)
   local targetWidth = width - sufWidth
   local curWidth = 0
+
   for _, chunk in ipairs(virtText) do
     local chunkText = chunk[1]
     local chunkWidth = vim.fn.strdisplaywidth(chunkText)
@@ -33,24 +34,35 @@ return {
     "kevinhwang91/promise-async",
   },
   event = "BufRead",
-  opts = {
-    open_fold_hl_timeout = 0,
-    fold_virt_text_handler = virtual_text_handler,
-    preview = {
-      win_config = {
-        border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
-        winblend = 0,
-        winhighlight = "Normal:LazyNormal",
+  config = function()
+    require("ufo").setup({
+      open_fold_hl_timeout = 0,
+      fold_virt_text_handler = virtual_text_handler,
+      preview = {
+        win_config = {
+          border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+          winblend = 0,
+          winhighlight = "Normal:LazyNormal",
+        },
+        mappings = {
+          scrollU = "<C-u>",
+          scrollD = "<C-d>",
+          jumpTop = "[",
+          jumpBot = "]",
+        },
       },
-      mappings = {
-        scrollU = "<C-u>",
-        scrollD = "<C-d>",
-        jumpTop = "[",
-        jumpBot = "]",
-      },
-    },
-    provider_selector = function()
-      return { "treesitter", "indent" }
-    end,
-  },
+      provider_selector = function()
+        return { "treesitter", "indent" }
+      end,
+    })
+
+    -- Global functions used in keymappings
+    _G.PeekFoldedLinesUnderCursor = function()
+      local winid = require("ufo").peekFoldedLinesUnderCursor()
+
+      if not winid then
+        vim.lsp.buf.hover()
+      end
+    end
+  end,
 }
