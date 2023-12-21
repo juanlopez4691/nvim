@@ -3,16 +3,15 @@ return {
   branch = "0.1.x",
   cond = _G.Settings.plugins_enabled.telescope,
   dependencies = require("plugins.telescope.dependencies"),
-  -- cmd = 'Telescope',
-  -- event = { 'BufReadPre', 'BufNewFile' },
+  cmd = "Telescope",
   event = "VeryLazy",
   config = function()
     local telescope = require("telescope")
     local telescope_builtin = require("telescope.builtin")
     local actions = require("telescope.actions")
-    local extensions = require("plugins.telescope.extensions")
-    local pickers = require("plugins.telescope.pickers")
-    local pretty_pickers = require("plugins.telescope.pretty_pickers")
+    local extensions = require("plugins.telescope.inc.extensions")
+    local pickers = require("plugins.telescope.inc.pickers")
+    local pretty_pickers = require("plugins.telescope.inc.pretty_pickers")
 
     telescope.setup({
       file_ignore_patterns = {},

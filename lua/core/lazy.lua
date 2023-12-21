@@ -29,7 +29,7 @@ require("lazy").setup({
   { import = "plugins.ui" },
   { import = "plugins.git" },
   { import = "plugins.code" },
-  { import = "plugins.telescope.telescope" },
+  { import = "plugins.telescope" },
 }, {
   install = {
     colorscheme = colorscheme(),
