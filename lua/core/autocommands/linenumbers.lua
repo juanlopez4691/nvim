@@ -3,11 +3,14 @@ local opt = vim.opt
 -- Automatically toggle between relative and absolute line numbers.
 local augroup = vim.api.nvim_create_augroup("line_number_toggle", {})
 
-vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "CmdlineLeave", "WinEnter" }, {
+vim.api.nvim_create_autocmd({ "BufNew", "BufEnter", "FocusGained", "InsertLeave", "CmdlineLeave", "WinEnter" }, {
   pattern = "*",
   group = augroup,
   callback = function()
-    if vim.o.filetype == "NvimTree" then
+    local filetype = vim.o.filetype
+
+    if filetype == "NvimTree" or filetype == "NvimSeparator" then
+      opt.statuscolumn = ""
       return
     end
 
@@ -23,7 +26,10 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEn
   pattern = "*",
   group = augroup,
   callback = function()
-    if vim.o.filetype == "NvimTree" then
+    local filetype = vim.o.filetype
+
+    if filetype == "NvimTree" or filetype == "NvimSeparator" then
+      opt.statuscolumn = ""
       return
     end
 
