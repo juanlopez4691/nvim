@@ -3,13 +3,13 @@ return {
     {
       enabled = true,
       whichkey = true,
-      prefix = "<leader>d",
+      prefix = "<leader>cd",
       name = "+Diagnostics",
       mappings = {
         {
           enabled = _G.Settings.plugins_enabled.touble,
           modes = { "n" },
-          key = "<leader>dt",
+          key = "<leader>cdt",
           cmd = "<cmd>TroubleToggle<CR>",
           opt = {
             desc = "Trouble toggle",
@@ -18,7 +18,7 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.touble,
           modes = { "n" },
-          key = "<leader>dd",
+          key = "<leader>cdd",
           cmd = "<cmd>Trouble document_diagnostics<CR>",
           opt = {
             desc = "Document diagnostics",
@@ -27,7 +27,7 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.touble,
           modes = { "n" },
-          key = "<leader>dw",
+          key = "<leader>cdw",
           cmd = "<cmd>Trouble workspace_diagnostics<CR>",
           opt = {
             desc = "Workspace diagnostics",
@@ -36,7 +36,7 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.touble,
           modes = { "n" },
-          key = "<leader>dr",
+          key = "<leader>cdr",
           cmd = "<cmd>Trouble lsp_references<CR>",
           opt = {
             desc = "Symbol references",
