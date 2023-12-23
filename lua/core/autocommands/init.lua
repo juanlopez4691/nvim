@@ -1,8 +1,9 @@
 local autocommands = {
+  "debug",
   "linenumbers",
-  "toggleterm",
-  "telescope",
   "none-ls",
+  "telescope",
+  "toggleterm",
 }
 
 for _, file in pairs(autocommands) do
