@@ -113,5 +113,8 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+-- Fix handling of $ symbol for PHP.
+vim.opt.iskeyword:append({ "$" })
+
 -- Line wrap cursor movement.
 vim.cmd("set whichwrap+=<,>,[,],h,l")
