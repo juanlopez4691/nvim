@@ -1,4 +1,12 @@
 return {
+  ["ui-select"] = {
+    require("telescope.themes").get_dropdown({
+      width = 0.5,
+      prompt = " ",
+      results_height = 15,
+      previewer = false,
+    }),
+  },
   fzf = {
     fuzzy = true, -- false will only do exact matching
     override_generic_sorter = true, -- override the generic sorter

@@ -1,4 +1,5 @@
 return {
+  { "nvim-telescope/telescope-ui-select.nvim" },
   {
     "nvim-lua/plenary.nvim",
     config = function()
