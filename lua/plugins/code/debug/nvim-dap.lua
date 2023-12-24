@@ -12,6 +12,12 @@ return {
 
     vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
 
+    vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0, fg = "#e31010", bg = "#31353f" })
+    vim.api.nvim_set_hl(0, "DapBreakpointCondition", { ctermbg = 0, fg = "#78bffd", bg = "#31353f" })
+    vim.api.nvim_set_hl(0, "DapBreakpointStopped", { ctermbg = 0, fg = "#ffc72b", bg = "#31353f" })
+    vim.api.nvim_set_hl(0, "DapBreakpointRejected", { ctermbg = 0, fg = "#f88080", bg = "#31353f" })
+    vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0, fg = "#d6a4fc", bg = "#31353f" })
+
     for name, sign in pairs(icons.dap) do
       sign = type(sign) == "table" and sign or { sign }
       vim.fn.sign_define(
