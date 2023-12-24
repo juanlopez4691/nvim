@@ -9,6 +9,15 @@ return {
         {
           enabled = true,
           modes = { "n" },
+          key = "<leader>ca",
+          cmd = "<cmd>lua vim.lsp.buf.code_action()<cr>",
+          opt = {
+            desc = "Code actions",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
           key = "<leader>cf",
           cmd = "<cmd>lua vim.lsp.buf.format({ async = false })<cr>",
           opt = {
