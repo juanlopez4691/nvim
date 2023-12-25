@@ -54,10 +54,19 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
-          key = "<leader>fr",
+          key = "<leader>fo",
           cmd = "<cmd>lua TelescopeOldFiles()<CR>",
           opt = {
             desc = "Recent files",
+          },
+        },
+        {
+          enabled = _G.Settings.plugins_enabled.telescope,
+          modes = { "n" },
+          key = "<leader>fr",
+          cmd = "<cmd>Telescope resume<CR>",
+          opt = {
+            desc = "Resume picker",
           },
         },
         {
