@@ -87,6 +87,15 @@ return {
           },
         },
         {
+          enabled = true,
+          modes = { "n" },
+          key = "<leader>gdb",
+          cmd = "<cmd>DiffOrig<CR>",
+          opt = {
+            desc = "Diff buffer to original",
+          },
+        },
+        {
           enabled = _G.Settings.plugins_enabled.diffview,
           modes = { "n" },
           key = "<leader>gdc",
