@@ -71,7 +71,7 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.diffview,
           modes = { "n" },
-          key = "<leader>gdl",
+          key = "<leader>gdd",
           cmd = "<cmd>DiffviewOpen<CR>",
           opt = {
             desc = "Open diff view",
