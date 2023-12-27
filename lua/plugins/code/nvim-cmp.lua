@@ -66,7 +66,11 @@ return {
         ["<Esc>"] = cmp.mapping.abort(),
       },
       window = {
-        completion = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+          border = "rounded",
+          side_padding = 0,
+          col_offset = -4,
+        }),
         documentation = cmp.config.window.bordered(),
       },
       snippet = {
