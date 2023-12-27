@@ -61,8 +61,8 @@ return {
         end,
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         -- Navigate completion docs.
-        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<Esc>"] = cmp.mapping.abort(),
       },
       window = {
