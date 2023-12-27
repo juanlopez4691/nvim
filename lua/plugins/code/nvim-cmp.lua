@@ -89,16 +89,16 @@ return {
       sorting = {
         priority_weight = 2,
         comparators = {
-          compare.kind,
-          compare.recently_used,
-          compare.offset,
           compare.exact,
-          -- compare.scopes,
+          compare.offset,
           compare.score,
+          compare.recently_used,
           compare.locality,
-          -- compare.sort_text,
+          compare.kind,
           compare.length,
           compare.order,
+          -- compare.scopes,
+          -- compare.sort_text,
         },
       },
       formatting = {
