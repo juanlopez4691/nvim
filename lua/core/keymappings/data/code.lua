@@ -63,7 +63,7 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
-          key = "<leader>cw",
+          key = "<leader>cS",
           cmd = "<cmd>Telescope lsp_workspace_symbols query=main<CR>",
           opt = {
             desc = "Workspace symbols",
