@@ -31,9 +31,9 @@ return {
       completion = {
         completeopt = "menu,menuone,noinsert",
       },
-      mapping = {
+      mapping = cmp.mapping.preset.insert({
         -- Navigate completion menu.
-        ["<Tab>"] = function(fallback)
+        ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             if #cmp.get_entries() == 1 then
               cmp.confirm({ select = true })
@@ -45,8 +45,8 @@ return {
           else
             fallback()
           end
-        end,
-        ["<S-Tab>"] = function(fallback)
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             if #cmp.get_entries() == 1 then
               cmp.confirm({ select = true })
@@ -58,13 +58,15 @@ return {
           else
             fallback()
           end
-        end,
+        end, { "i", "s" }),
+        -- Accept completion entry.
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         -- Navigate completion docs.
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        -- Close completion menu.
         ["<Esc>"] = cmp.mapping.abort(),
-      },
+      }),
       window = {
         completion = cmp.config.window.bordered({
           border = "rounded",
@@ -89,12 +91,12 @@ return {
       sorting = {
         priority_weight = 2,
         comparators = {
+          compare.kind,
           compare.exact,
           compare.offset,
           compare.score,
           compare.recently_used,
           compare.locality,
-          compare.kind,
           compare.length,
           compare.order,
           -- compare.scopes,
