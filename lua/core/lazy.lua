@@ -40,6 +40,20 @@ require("lazy").setup({
     lazy = true,
     version = "*",
   },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
   checker = {
     frequency = 3600,
     enabled = true,
