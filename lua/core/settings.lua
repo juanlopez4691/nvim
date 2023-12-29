@@ -47,7 +47,7 @@ _G.Settings.plugins_enabled.catppuccin = _G.Settings.colorscheme == "catppuccin"
 -- Set global limits for large files.
 _G.Settings.max_file = {
   size = 1024 * 100,
-  lines = 10000.,
+  lines = 10000,
 }
 
 _G.Settings.cmp_max_length = 50
