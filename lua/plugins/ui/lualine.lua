@@ -9,13 +9,13 @@ return {
     local lazy_status = require("lazy.status")
 
     lualine.setup({
-      theme = {
-        colorscheme = _G.Settings.colorscheme,
-      },
+      theme = _G.Settings.colorscheme,
       options = {
         icons_enabled = true,
         component_separators = "|",
-        -- section_separators = '',
+        draw_empty = false,
+        section_separators = { left = "", right = "" },
+        globalstatus = true,
       },
       extensions = {
         "nvim-tree",
@@ -29,14 +29,20 @@ return {
           {
             "diagnostics",
             symbols = {
-              error = icons.diagnostics.Error,
-              warn = icons.diagnostics.Warn,
-              info = icons.diagnostics.Info,
-              hint = icons.diagnostics.Hint,
+              error = icons.diagnostics.Error .. " ",
+              warn = icons.diagnostics.Warn .. " ",
+              info = icons.diagnostics.Info .. " ",
+              hint = icons.diagnostics.Hint .. " ",
             },
           },
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+          {
+            "filename",
+            file_status = true,
+            newfile_status = true,
+            path = 1,
+            shorting_target = 40,
+            symbols = { modified = "󰲶", readonly = "", unnamed = "", newfile = "" },
+          },
           -- stylua: ignore
           {
             function() return require("nvim-navic").get_location() end,
@@ -51,7 +57,12 @@ return {
           },
           { "encoding" },
           { "fileformat" },
-          { "filetype" },
+          {
+            "filetype",
+            colored = true,
+            icon_only = false,
+            padding = 1,
+          },
         },
       },
     })
