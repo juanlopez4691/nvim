@@ -39,7 +39,7 @@ return {
           key = "<leader>sw",
           cmd = "<cmd>lua TelescopeGrepString()<CR>",
           opt = {
-            desc = "Find word under cursor",
+            desc = "Grep word under cursor",
           },
         },
         -- Clear search
