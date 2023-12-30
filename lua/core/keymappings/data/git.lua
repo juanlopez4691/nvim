@@ -52,6 +52,15 @@ return {
           },
         },
         {
+          enabled = _G.Settings.plugins_enabled.telescope,
+          modes = { "n" },
+          key = "<leader>gt",
+          cmd = "<cmd>Telescope git_stash prompt_prefix=🧺›<CR>",
+          opt = {
+            desc = "Stash",
+          },
+        },
+        {
           enabled = _G.Settings.plugins_enabled.gitsigns,
           modes = { "n" },
           key = "<leader>gk",
