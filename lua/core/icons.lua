@@ -118,6 +118,7 @@ return {
     LineMiddle = "│",
     List = "",
     Lock = "",
+    Magic = "",
     NewFile = "",
     Note = "",
     Package = "",
