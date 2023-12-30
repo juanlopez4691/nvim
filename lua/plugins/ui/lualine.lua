@@ -8,6 +8,12 @@ return {
     local lualine = require("lualine")
     local lazy_status = require("lazy.status")
 
+    -- Gets Codeium icon and status info.
+    local function codeium_status()
+      local status = vim.fn["codeium#GetStatusString"]():gsub("%s+", "")
+      return icons.ui.Magic .. " " .. status
+    end
+
     lualine.setup({
       theme = _G.Settings.colorscheme,
       options = {
@@ -54,6 +60,10 @@ return {
             lazy_status.updates,
             cond = lazy_status.has_updates,
             color = { fg = "#ff9e64" },
+          },
+          {
+            codeium_status,
+            color = { fg = "#58f5ab" },
           },
           { "encoding" },
           { "fileformat" },
