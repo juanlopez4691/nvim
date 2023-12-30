@@ -19,7 +19,7 @@ return {
           enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>gl",
-          cmd = "<cmd>Telescope git_commits prompt_prefix=💡›<CR>",
+          cmd = "<cmd>Telescope git_commits prompt_prefix=📖›<CR>",
           opt = {
             desc = "Commits log",
           },
@@ -28,7 +28,7 @@ return {
           enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>gc",
-          cmd = "<cmd>Telescope git_bcommits prompt_prefix=📝›<CR>",
+          cmd = "<cmd>Telescope git_bcommits prompt_prefix=👓›<CR>",
           opt = {
             desc = "Buffer commits",
           },
