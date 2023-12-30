@@ -2,7 +2,7 @@ return {
   "akinsho/toggleterm.nvim",
   cond = _G.Settings.plugins_enabled.toggleterm,
   version = "*",
-  command = "ToggleTerm",
+  cmd = "ToggleTerm",
   event = "VeryLazy",
   config = function()
     local toggleterm = require("toggleterm")
