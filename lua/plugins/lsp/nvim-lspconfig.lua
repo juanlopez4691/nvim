@@ -74,11 +74,13 @@ return {
       lsp.default_keymaps({ buffer = bufnr })
     end)
 
+    local icons = require("core.icons").diagnostics
+
     lsp.set_sign_icons({
-      error = "✘",
-      warn = "▲",
-      hint = "⚑",
-      info = "»",
+      error = icons.Error,
+      warn = icons.Warn,
+      hint = icons.Hint,
+      info = icons.Info,
     })
 
     -- Avoid errors in css files using tailwind directives.
