@@ -10,18 +10,31 @@ return {
     { "hrsh7th/cmp-nvim-lua" },
     { "hrsh7th/cmp-nvim-lsp-signature-help" },
     -- Snippets.
-    { "L3MON4D3/LuaSnip" },
+    { "saadparwaiz1/cmp_luasnip" },
+    {
+      "L3MON4D3/LuaSnip",
+      config = function()
+        -- Disable <Tab> and <S-Tab> for LuaSnip.
+        -- This is required to allow super-tab in nvim_cmp.
+        return {}
+      end,
+    },
+    { "rafamadriz/friendly-snippets" },
   },
   event = { "CmdLineEnter", "InsertEnter" },
   config = function()
     local cmp = require("cmp")
     local neogen = require("neogen")
     local compare = require("cmp.config.compare")
+    local luasnip = require("luasnip")
 
     -- Colorize the autocompletion menu icons.
     local cmp_menu_colors = require("core.cmp_menu_colors")
 
     cmp_menu_colors.colorize_cmp_menu()
+
+    -- Load snippets from vscode
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
       preselect = "item",
@@ -40,6 +53,8 @@ return {
             else
               cmp.select_next_item()
             end
+          elseif luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
           elseif neogen.jumpable() then
             neogen.jump_next()
           else
@@ -53,6 +68,8 @@ return {
             else
               cmp.select_prev_item()
             end
+          elseif luasnip.jumpable(-1) then
+            luasnip.jump(-1)
           elseif neogen.jumpable() then
             neogen.jump_prev()
           else
@@ -82,11 +99,11 @@ return {
       },
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
+        { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
         { name = "nvim_lsp_signature_help" },
         { name = "nvim-lua" },
-        { name = "luasnip" },
       }),
       sorting = {
         priority_weight = 2,
@@ -142,6 +159,7 @@ return {
         end,
       },
     })
+
     -- Use buffer source for `/` and `?`.
     cmp.setup.cmdline({ "/", "?" }, {
       mapping = cmp.mapping.preset.cmdline(),
@@ -149,6 +167,7 @@ return {
         { name = "buffer" },
       },
     })
+
     -- Use cmdline & path source for ':'.
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
