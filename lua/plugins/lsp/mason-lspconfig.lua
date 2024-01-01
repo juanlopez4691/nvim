@@ -12,26 +12,8 @@ return {
           require("lspconfig").lua_ls.setup(lua_opts)
         end,
       },
-      ensure_installed = {
-        "bashls",
-        "cssls",
-        "dockerls",
-        "docker_compose_language_service",
-        "efm",
-        "emmet_ls",
-        "eslint",
-        "html",
-        "intelephense",
-        "jsonls",
-        "lemminx",
-        "lua_ls",
-        "sqlls",
-        "tailwindcss",
-        "taplo",
-        "tsserver",
-        "vimls",
-        "yamlls",
-      },
+      ensure_installed = require("plugins.lsp.inc.servers"),
+      automatic_installation = true,
     })
   end,
 }
