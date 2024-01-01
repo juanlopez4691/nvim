@@ -35,46 +35,13 @@ return {
   },
   config = function()
     local lspconfig = require("lspconfig")
-
+    local icons = require("core.icons").diagnostics
     local lsp = require("lsp-zero").preset({
       call_servers = "local",
       float_border = "rounded",
       configure_diagnostics = true,
       setup_servers_on_start = true,
     })
-
-    local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
-    local ok, cmp_capabilities = pcall(require, "cmp_nvim_lsp")
-    if ok then
-      vim.tbl_deep_extend("force", lsp_capabilities, cmp_capabilities)
-    end
-
-    lsp_capabilities.textDocument.foldingRange = {
-      dynamicRegistration = false,
-      lineFoldingOnly = true,
-    }
-    lsp_capabilities.textDocument.completion.completionItem.snippetSupport = true
-    lsp_capabilities.textDocument.completion.completionItem.resolveSupport = {
-      properties = {
-        "documentation",
-        "detail",
-        "additionalTextEdits",
-      },
-    }
-
-    require("mason").setup({
-      ui = {
-        border = "rounded",
-      },
-    })
-
-    lsp.on_attach(function(_, bufnr)
-      -- see :help lsp-zero-keybindings
-      -- to learn the available actions
-      lsp.default_keymaps({ buffer = bufnr })
-    end)
-
-    local icons = require("core.icons").diagnostics
 
     lsp.set_sign_icons({
       error = icons.Error,
@@ -119,10 +86,9 @@ return {
           enabled = false,
         },
       },
-      capabilities = lsp_capabilities,
     })
 
-    -- (Optional) Configure lua language server for neovim
+    -- Configure lua language server for neovim
     lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
     lsp.setup()
