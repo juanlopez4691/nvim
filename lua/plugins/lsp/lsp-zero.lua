@@ -6,9 +6,12 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local lsp_zero = require("lsp-zero")
+    local lsp_keymappings = require("plugins.lsp.inc.lsp_keys")
 
     lsp_zero.on_attach(function(_, bufnr)
-      lsp_zero.default_keymaps({ buffer = bufnr })
+      for _, m in ipairs(lsp_keymappings) do
+        vim.keymap.set("n", m.key, m.cmd, { buffer = bufnr, remap = false, desc = m.desc })
+      end
     end)
   end,
   dependencies = {
