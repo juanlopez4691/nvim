@@ -37,6 +37,7 @@ return {
           },
           ["n"] = {
             ["q"] = actions.close,
+            ["<Esc>"] = actions.close,
             ["<C-[>"] = actions.cycle_previewers_prev,
             ["<C-]>"] = actions.cycle_previewers_next,
           },
