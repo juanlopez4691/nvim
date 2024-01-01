@@ -18,6 +18,15 @@ return {
         {
           enabled = true,
           modes = { "n" },
+          key = "<leader>cn",
+          cmd = "<cmd>lua vim.lsp.buf.rename()<cr>",
+          opt = {
+            desc = "Code actions",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
           key = "<leader>cf",
           cmd = "<cmd>lua vim.lsp.buf.format({ async = false })<cr>",
           opt = {
