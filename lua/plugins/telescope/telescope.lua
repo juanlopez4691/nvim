@@ -2,7 +2,7 @@ return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
   cond = _G.Settings.plugins_enabled.telescope,
-  dependencies = require("plugins.telescope.dependencies"),
+  dependencies = require("plugins.telescope.inc.dependencies"),
   cmd = "Telescope",
   event = "VeryLazy",
   config = function()
