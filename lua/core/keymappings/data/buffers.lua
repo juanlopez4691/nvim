@@ -36,6 +36,24 @@ return {
         {
           enabled = true,
           modes = { "n" },
+          key = "]b",
+          cmd = "<cmd>bnext<CR>",
+          opt = {
+            desc = "Next buffer",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "[b",
+          cmd = "<cmd>bprev<CR>",
+          opt = {
+            desc = "Previous buffer",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
           key = "<leader>bu",
           cmd = "<cmd>bunload<CR>",
           opt = {
