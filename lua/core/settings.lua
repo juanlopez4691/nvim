@@ -16,6 +16,7 @@ _G.Settings.plugins_enabled = {
   mini_surround = true,
   neogen = true,
   none_ls = true,
+  notify = true,
   nvim_autopairs = true,
   nvim_bqf = true,
   nvim_cmp = true,
