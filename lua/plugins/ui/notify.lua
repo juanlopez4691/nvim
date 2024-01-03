@@ -7,13 +7,23 @@ return {
   },
   config = function()
     local notify = require("notify")
+    local banned_messages = { "No information available" }
 
     notify.setup({
       timeout = 3000,
       stages = "slide",
     })
 
-    vim.notify = notify
+    ---@diagnostic disable-next-line: duplicate-set-field
+    vim.notify = function(msg, ...)
+      for _, banned in ipairs(banned_messages) do
+        if msg == banned then
+          return
+        end
+      end
+      return notify(msg, ...)
+    end
+
     vim.ui.input = function(opts, on_confirm)
       require("floating-input").input(opts, on_confirm, {
         relative = "win",
