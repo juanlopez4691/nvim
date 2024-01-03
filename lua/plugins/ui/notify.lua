@@ -25,10 +25,16 @@ return {
     end
 
     vim.ui.input = function(opts, on_confirm)
-      require("floating-input").input(opts, on_confirm, {
+      local input_config = {
         relative = "win",
         title_pos = "center",
-      })
+      }
+
+      if opts.prompt == "Input session name: " then
+        input_config.width = 60
+      end
+
+      require("floating-input").input(opts, on_confirm, input_config)
     end
 
     require("telescope").load_extension("notify")
