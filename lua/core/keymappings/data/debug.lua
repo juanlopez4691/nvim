@@ -48,16 +48,16 @@ return {
           key = "<leader>xc",
           cmd = "<cmd>lua require('dap').continue()<CR>",
           opt = {
-            desc = "Continue",
+            desc = "Start/Continue [F5]",
           },
         },
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>xa",
-          cmd = "<cmd>lua require('dap').continue({ before = get_args })<CR>",
+          key = "<F5>",
+          cmd = "<cmd>lua require('dap').continue()<CR>",
           opt = {
-            desc = "Run with args",
+            desc = "Start/Continue [F5]",
           },
         },
         {
@@ -66,16 +66,16 @@ return {
           key = "<leader>xC",
           cmd = "<cmd>lua require('dap').run_to_cursor()<CR>",
           opt = {
-            desc = "Run to cursor",
+            desc = "Run to cursor [F4]",
           },
         },
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>xg",
-          cmd = "<cmd>lua require('dap').goto_()<CR>",
+          key = "<F4>",
+          cmd = "<cmd>lua require('dap').run_to_cursor()<CR>",
           opt = {
-            desc = "Go to line (no execute)",
+            desc = "Run to cursor [F4]",
           },
         },
         {
@@ -84,34 +84,16 @@ return {
           key = "<leader>xi",
           cmd = "<cmd>lua require('dap').step_into()<CR>",
           opt = {
-            desc = "Step Into",
+            desc = "Step Into [F11]",
           },
         },
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>xj",
-          cmd = "<cmd>lua require('dap').down()<CR>",
+          key = "<F11>",
+          cmd = "<cmd>lua require('dap').step_into()<CR>",
           opt = {
-            desc = "Down in callstack",
-          },
-        },
-        {
-          enabled = true,
-          modes = { "n" },
-          key = "<leader>xk",
-          cmd = "<cmd>lua require('dap').up()<CR>",
-          opt = {
-            desc = "Up in callstack",
-          },
-        },
-        {
-          enabled = true,
-          modes = { "n" },
-          key = "<leader>xl",
-          cmd = "<cmd>lua require('dap').run_last()<CR>",
-          opt = {
-            desc = "Run Last",
+            desc = "Step Into [F11]",
           },
         },
         {
@@ -120,7 +102,16 @@ return {
           key = "<leader>xo",
           cmd = "<cmd>lua require('dap').step_out()<CR>",
           opt = {
-            desc = "Step Out",
+            desc = "Step Out [F12]",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "<F12>",
+          cmd = "<cmd>lua require('dap').step_out()<CR>",
+          opt = {
+            desc = "Step Out [F12]",
           },
         },
         {
@@ -129,7 +120,16 @@ return {
           key = "<leader>xO",
           cmd = "<cmd>lua require('dap').step_over()<CR>",
           opt = {
-            desc = "Step Over",
+            desc = "Step Over [F10]",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "<F10>",
+          cmd = "<cmd>lua require('dap').step_over()<CR>",
+          opt = {
+            desc = "Step Over [F10]",
           },
         },
         {
@@ -138,25 +138,34 @@ return {
           key = "<leader>xp",
           cmd = "<cmd>lua require('dap').pause()<CR>",
           opt = {
-            desc = "Pause",
+            desc = "Pause [F6]",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "<F6>",
+          cmd = "<cmd>lua require('dap').pause()<CR>",
+          opt = {
+            desc = "Pause [F6]",
           },
         },
         {
           enabled = true,
           modes = { "n" },
           key = "<leader>xr",
-          cmd = "<cmd>lua require('dap').repl.toggle()<CR>",
+          cmd = "<cmd>lua require('dap').restart()<CR>",
           opt = {
-            desc = "Toggle REPL",
+            desc = "Restart [F8]",
           },
         },
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>xs",
-          cmd = "<cmd>lua require('dap').session()<CR>",
+          key = "<F8>",
+          cmd = "<cmd>lua require('dap').restart()<CR>",
           opt = {
-            desc = "Session",
+            desc = "Restart [F8]",
           },
         },
         {
@@ -165,7 +174,16 @@ return {
           key = "<leader>xt",
           cmd = "<cmd>lua require('dap').terminate()<CR>",
           opt = {
-            desc = "Terminate",
+            desc = "Terminate [F9]",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "<F9>",
+          cmd = "<cmd>lua require('dap').terminate()<CR>",
+          opt = {
+            desc = "Terminate [F9]",
           },
         },
         {
