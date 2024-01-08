@@ -10,7 +10,6 @@ _G.Settings.plugins_enabled = {
   flatten = true,
   gitsigns = true,
   indent_blankline = true,
-  lsp_zero = true,
   lualine = true,
   mini_indentscope = true,
   mini_surround = true,

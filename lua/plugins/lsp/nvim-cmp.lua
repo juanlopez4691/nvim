@@ -13,13 +13,31 @@ return {
     { "saadparwaiz1/cmp_luasnip" },
     {
       "L3MON4D3/LuaSnip",
-      config = function()
+      version = "v2.*",
+      build = "make install_jsregexp",
+      dependencies = { "rafamadriz/friendly-snippets" },
+      config = function(_, opts)
+        local luasnip = require("luasnip")
+        if opts then
+          luasnip.config.setup(opts)
+        end
+
+        vim.tbl_map(function(type)
+          require("luasnip.loaders.from_" .. type).lazy_load()
+        end, { "vscode", "snipmate", "lua" })
+
+        -- friendly-snippets - enable standardized comments snippets
+        luasnip.filetype_extend("typescript", { "tsdoc" })
+        luasnip.filetype_extend("javascript", { "jsdoc" })
+        luasnip.filetype_extend("lua", { "luadoc" })
+        luasnip.filetype_extend("php", { "phpdoc" })
+        luasnip.filetype_extend("sh", { "shelldoc" })
+
         -- Disable <Tab> and <S-Tab> for LuaSnip.
         -- This is required to allow super-tab in nvim_cmp.
         return {}
       end,
     },
-    { "rafamadriz/friendly-snippets" },
   },
   event = { "CmdLineEnter", "InsertEnter" },
   config = function()
@@ -32,9 +50,6 @@ return {
     local cmp_menu_colors = require("core.cmp_menu_colors")
 
     cmp_menu_colors.colorize_cmp_menu()
-
-    -- Load snippets from vscode
-    require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
       preselect = "item",
