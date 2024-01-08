@@ -65,41 +65,41 @@ return {
           lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
           keymaps = {
             -- You can use the capture groups defined in textobjects.scm
-            ["aa"] = "@parameter.outer",
-            ["ia"] = "@parameter.inner",
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",
-            ["ic"] = "@class.inner",
+            ["aa"] = { query = "@parameter.outer", desc = "Select around parameter" },
+            ["ia"] = { query = "@parameter.inner", desc = "Select inside parameter" },
+            ["af"] = { query = "@function.outer", desc = "Select around function" },
+            ["if"] = { query = "@function.inner", desc = "Select inside function" },
+            ["ac"] = { query = "@class.outer", desc = "Select around class or interface" },
+            ["ic"] = { query = "@class.inner", desc = "Select inside class or interface" },
           },
         },
         move = {
           enable = true,
           set_jumps = true, -- Whether to set jumps in the jumplist
           goto_next_start = {
-            ["]m"] = "@function.outer",
-            ["]]"] = "@class.outer",
+            ["]m"] = { query = "@function.outer", desc = "Next function start" },
+            ["]]"] = { query = "@class.outer", desc = "Next class start" },
           },
           goto_next_end = {
-            ["]M"] = "@function.outer",
-            ["]["] = "@class.outer",
+            ["]M"] = { query = "@function.outer", desc = "Next function end" },
+            ["]["] = { query = "@class.outer", desc = "Next class end" },
           },
           goto_previous_start = {
-            ["[m"] = "@function.outer",
-            ["[["] = "@class.outer",
+            ["[m"] = { query = "@function.outer", desc = "Previous function start" },
+            ["[["] = { query = "@class.outer", desc = "Previous class start" },
           },
           goto_previous_end = {
-            ["[M"] = "@function.outer",
-            ["[]"] = "@class.outer",
+            ["[M"] = { query = "@function.outer", desc = "Previous function end" },
+            ["[]"] = { query = "@class.outer", desc = "Previous class end" },
           },
         },
         swap = {
           enable = true,
           swap_next = {
-            ["<leader>ea"] = "@parameter.inner",
+            ["<leader>ea"] = { query = "@parameter.inner", desc = "Swap next parameter" },
           },
           swap_previous = {
-            ["<leader>eA"] = "@parameter.inner",
+            ["<leader>eA"] = { query = "@parameter.inner", desc = "Swap previous parameter" },
           },
         },
       },
