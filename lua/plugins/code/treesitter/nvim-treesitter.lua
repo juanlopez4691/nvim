@@ -55,9 +55,9 @@ return {
         additional_vim_regex_highlighting = {
           "php",
         },
-        indent = {
-          enabled = true,
-        },
+      },
+      indent = {
+        enabled = true,
       },
       textobjects = {
         select = {
