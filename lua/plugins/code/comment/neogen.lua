@@ -4,10 +4,12 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   cond = _G.Settings.plugins_enabled.neogen,
   config = function()
-    require("neogen").setup()
+    local neogen = require("neogen")
+
+    neogen.setup()
 
     _G.AddCommentBlock = function(comment_type)
-      require("neogen").generate({ type = comment_type })
+      neogen.generate({ type = comment_type })
     end
   end,
 }
