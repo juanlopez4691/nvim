@@ -8,3 +8,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
   desc = "Highlight yanked text",
 })
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+  pattern = "*",
+  group = augroup,
+  callback = function()
+    vim.cmd([[highlight RedundantSpaces ctermbg=red guibg=red]])
+    vim.cmd([[match RedundantSpaces /\s\+$/]])
+  end,
+  desc = "Higlight extra spaces",
+})
