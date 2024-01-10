@@ -1,3 +1,18 @@
+local function try_jump_window(direction, count)
+  local prev_win_nr = vim.fn.winnr()
+
+  vim.cmd(count .. "wincmd " .. direction)
+  return vim.fn.winnr() ~= prev_win_nr
+end
+
+local function jump_window_with_wrap(direction, opposite)
+  return function()
+    if not try_jump_window(direction, vim.v.count1) then
+      try_jump_window(opposite, 999)
+    end
+  end
+end
+
 return {
   groups = {
     {
@@ -9,7 +24,7 @@ return {
           enabled = true,
           modes = { "n" },
           key = "<C-h>",
-          cmd = "<C-w>h",
+          cmd = jump_window_with_wrap("h", "l"),
           opt = {
             desc = "Jump to split left",
           },
@@ -18,7 +33,7 @@ return {
           enabled = true,
           modes = { "n" },
           key = "<C-j>",
-          cmd = "<C-w>j",
+          cmd = jump_window_with_wrap("j", "k"),
           opt = {
             desc = "Jump to split down",
           },
@@ -27,7 +42,7 @@ return {
           enabled = true,
           modes = { "n" },
           key = "<C-k>",
-          cmd = "<C-w>k",
+          cmd = jump_window_with_wrap("k", "j"),
           opt = {
             desc = "Jump to split up",
           },
@@ -36,7 +51,7 @@ return {
           enabled = true,
           modes = { "n" },
           key = "<C-l>",
-          cmd = "<C-w>l",
+          cmd = jump_window_with_wrap("l", "h"),
           opt = {
             desc = "Jump to split right",
           },
