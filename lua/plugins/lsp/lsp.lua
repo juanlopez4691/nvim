@@ -16,6 +16,9 @@ return {
       local icons = require("core.icons").diagnostics
       local lsp_keymappings = require("plugins.lsp.inc.lsp_keys")
 
+      -- Set border style for floating windows.
+      require("lspconfig.ui.windows").default_options.border = "rounded"
+
       -- Set up handler for lsp clients on_attach event.
       local on_attach = function(_, bufnr)
         for _, m in ipairs(lsp_keymappings) do
