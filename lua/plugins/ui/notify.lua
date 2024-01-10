@@ -9,6 +9,7 @@ return {
     local notify = require("notify")
     local banned_messages = { "No information available" }
 
+    ---@diagnostic disable-next-line: undefined-field
     notify.setup({
       timeout = 3000,
       stages = "slide",
@@ -24,6 +25,7 @@ return {
       return notify(msg, ...)
     end
 
+    ---@diagnostic disable-next-line: duplicate-set-field
     vim.ui.input = function(opts, on_confirm)
       local input_config = {
         relative = "win",
