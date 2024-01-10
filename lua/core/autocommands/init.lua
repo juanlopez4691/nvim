@@ -1,5 +1,6 @@
 local autocommands = {
   "debug",
+  "general",
   "linenumbers",
   "none-ls",
   "telescope",
