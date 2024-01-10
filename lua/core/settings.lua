@@ -28,6 +28,7 @@ _G.Settings.plugins_enabled = {
   telescope = true,
   toggleterm = true,
   trouble = true,
+  which_key = true,
 }
 
 _G.Settings.colorscheme_default = "habamax"
