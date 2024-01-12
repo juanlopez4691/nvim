@@ -3,13 +3,13 @@ return {
     {
       enabled = true,
       whichkey = true,
-      prefix = "<leader>p",
-      name = "+Packages",
+      prefix = "<leader>L",
+      name = "+Lazy",
       mappings = {
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>pl",
+          key = "<leader>Ll",
           cmd = "<cmd>Lazy<cr>",
           opt = {
             desc = "Open Lazy",
@@ -18,7 +18,7 @@ return {
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>pc",
+          key = "<leader>Lc",
           cmd = "<cmd>Lazy check<cr>",
           opt = {
             desc = "Check packages",
@@ -27,7 +27,7 @@ return {
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>ps",
+          key = "<leader>Ls",
           cmd = "<cmd>Lazy sync<cr>",
           opt = {
             desc = "Sync packages",
@@ -36,16 +36,24 @@ return {
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>pp",
+          key = "<leader>Lp",
           cmd = "<cmd>Lazy profile<cr>",
           opt = {
             desc = "Profile",
           },
         },
+      },
+    },
+    {
+      enabled = true,
+      whichkey = true,
+      prefix = "<leader>M",
+      name = "Mason",
+      mappings = {
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>cM",
+          key = "<leader>M",
           cmd = "<cmd>Mason<cr>",
           opt = {
             desc = "Open Mason",
