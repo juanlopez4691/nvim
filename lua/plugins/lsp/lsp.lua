@@ -7,6 +7,7 @@ return {
       "williamboman/mason.nvim",
       "neovim/nvim-lspconfig",
       "j-hui/fidget.nvim",
+      "folke/neodev.nvim",
     },
     config = function()
       local lsp = vim.lsp
@@ -25,6 +26,9 @@ return {
           vim.keymap.set("n", m.key, m.cmd, { buffer = bufnr, remap = false, desc = m.desc })
         end
       end
+
+      -- Set up neodev.
+      require("neodev").setup({})
 
       -- Set up fidget notifications.
       require("fidget").setup({})
