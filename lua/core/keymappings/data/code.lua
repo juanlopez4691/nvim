@@ -34,6 +34,15 @@ return {
           },
         },
         {
+          enabled = true,
+          modes = { "n" },
+          key = "<leader>cF",
+          cmd = "<cmd>lua _G.Settings.format_on_save = ToggleSetting(_G.Settings.format_on_save)<cr>",
+          opt = {
+            desc = "Toggle format on save",
+          },
+        },
+        {
           enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>cd",
