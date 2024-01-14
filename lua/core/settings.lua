@@ -80,7 +80,13 @@ _G.ToggleSetting = function(setting)
   if setting then
     status = "on"
   end
-  print("Formatting on save is " .. status)
+  local has_notify, notify = pcall(require, "notify")
+
+  if has_notify then
+    notify("Formatting on save is " .. status)
+  else
+    print("Formatting on save is " .. status)
+  end
 
   return setting
 end
