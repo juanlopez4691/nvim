@@ -20,7 +20,7 @@ return {
 
     local sources = {
       nls.builtins.formatting.stylua,
-      nls.builtins.formatting.prettierd,
+      nls.builtins.formatting.prettier,
       nls.builtins.diagnostics.eslint_d,
       nls.builtins.diagnostics.stylelint,
       nls.builtins.formatting.rustywind,
