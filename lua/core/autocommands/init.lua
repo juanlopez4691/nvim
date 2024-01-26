@@ -3,7 +3,7 @@ local autocommands = {
   "edit",
   "general",
   "linenumbers",
-  "none-ls",
+  "format",
   "telescope",
   "toggleterm",
 }

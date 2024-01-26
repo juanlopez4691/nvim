@@ -3,6 +3,7 @@ _G.Settings = {}
 -- Plugins to enable.
 _G.Settings.plugins_enabled = {
   aerial = true,
+  code_format = true,
   codeium = true,
   colorful_winsep = true,
   comments = true,
@@ -14,7 +15,6 @@ _G.Settings.plugins_enabled = {
   mini_indentscope = true,
   mini_surround = true,
   neogen = true,
-  none_ls = true,
   notify = true,
   nvim_autopairs = true,
   nvim_bqf = true,

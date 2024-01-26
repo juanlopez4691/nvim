@@ -26,9 +26,9 @@ return {
         },
         {
           enabled = true,
-          modes = { "n" },
+          modes = { "n", "v" },
           key = "<leader>cf",
-          cmd = "<cmd>lua vim.lsp.buf.format({ async = false })<cr>",
+          cmd = "<cmd>CodeFormat<cr>",
           opt = {
             desc = "Format code",
           },
