@@ -21,7 +21,7 @@ return {
           key = "<leader>cn",
           cmd = "<cmd>lua vim.lsp.buf.rename()<cr>",
           opt = {
-            desc = "Code actions",
+            desc = "Rename symbol",
           },
         },
         {
