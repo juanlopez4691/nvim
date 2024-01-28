@@ -1,5 +1,9 @@
 return {
   {
+    "nvim-lua/plenary.nvim",
+    lazy = true,
+  },
+  {
     "nvim-telescope/telescope-live-grep-args.nvim",
     version = "^1.0.0",
     lazy = true,
