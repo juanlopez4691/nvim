@@ -52,5 +52,21 @@ return {
         "--standard=phpcs.xml",
       }
     end
+
+    -- Create autocommand to run linters on save.
+    local augroup = vim.api.nvim_create_augroup("CodeLinting", {})
+
+    vim.api.nvim_create_autocmd({
+      "BufReadPost",
+      "InsertLeave",
+      "TextChanged",
+      "FocusGained",
+    }, {
+      pattern = "*",
+      group = augroup,
+      callback = function()
+        lint.try_lint()
+      end,
+    })
   end,
 }
