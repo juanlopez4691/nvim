@@ -27,6 +27,17 @@ return {
         {
           enabled = true,
           modes = { "n", "v" },
+          key = "<leader>cl",
+          cmd = function()
+            require("lint").try_lint()
+          end,
+          opt = {
+            desc = "Lint code",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n", "v" },
           key = "<leader>cf",
           cmd = "<cmd>CodeFormat<cr>",
           opt = {
