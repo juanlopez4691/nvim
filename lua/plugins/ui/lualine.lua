@@ -20,7 +20,7 @@ return {
         icons_enabled = true,
         component_separators = "|",
         draw_empty = false,
-        section_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
         globalstatus = true,
       },
       extensions = {
