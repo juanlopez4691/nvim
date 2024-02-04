@@ -115,6 +115,7 @@ return {
             prompt_prefix = "💾›",
             layout_strategy = "flex",
             layout_config = layout_vertical_config,
+            cwd_only = true,
           },
         })
       end
