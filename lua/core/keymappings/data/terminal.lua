@@ -10,7 +10,7 @@ return {
           enabled = _G.Settings.plugins_enabled.toggleterm,
           modes = { "n" },
           key = "<leader>tt",
-          cmd = "<cmd>100ToggleTerm direction=float<CR>",
+          cmd = "<cmd>ToggleTerm direction=float<CR>",
           opt = {
             desc = "Terminal float",
           },
