@@ -76,7 +76,16 @@ return {
         },
       },
       tabline = {
-        lualine_a = {},
+        lualine_a = {
+          {
+            "buffers",
+            mode = 0,
+            show_modified_status = true,
+            symbols = {
+              modified = " 󰲶",
+            },
+          },
+        },
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
