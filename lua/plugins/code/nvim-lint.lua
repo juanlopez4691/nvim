@@ -25,31 +25,35 @@ return {
     local vendor_path = "./vendor/bin/"
     local phpcs = require("lint").linters.phpcs
 
+    -- Use local version of phpcs if available.
     if vim.fn.executable(vendor_path .. phpcs_exec) == 1 then
       phpcs_exec = vendor_path .. phpcs_exec
     else
-      phpcs_exec = ""
+      phpcs_exec = os.getenv("HOME") .. "/.composer/vendor/bin/phpcs"
     end
 
-    if phpcs_exec == "" then
-      lint.linters_by_ft.php = { "phpstan", "php" }
+    lint.linters_by_ft.php = { "phpcs", "phpstan", "php" }
+    phpcs.cmd = phpcs_exec
 
+    -- Use local configuration of phpcs linter if available.
+    if vim.fn.filereadable("phpcs.xml") == 1 then
       phpcs.args = {
         "-q",
-        -- <- Add a new parameter here
-        "--standard=PSR12",
+        "--standard=phpcs.xml",
         "--report=json",
         "-",
       }
+    elseif vim.fn.isdirectory("./wp-content") == 1 then
+      -- Disable linting if its a WordPress project and no phpcs.xml exists.
+      lint.linters_by_ft.php = {}
+      phpcs.cmd = ""
     else
-      lint.linters_by_ft.php = { "phpcs", "phpstan", "php" }
-
-      phpcs.cmd = phpcs_exec
+      -- Apply PSR12 rules by default.
       phpcs.args = {
         "-q",
+        "--standard=PSR12",
         "--report=json",
         "-",
-        "--standard=phpcs.xml",
       }
     end
 
