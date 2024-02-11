@@ -6,16 +6,17 @@ return {
 
     lint.linters_by_ft = {
       css = { "stylelint" },
-      javascript = { "eslint_d", "eslint" },
-      javascriptreact = { "eslint_d", "eslint" },
+      javascript = { "eslint_d" },
+      javascriptreact = { "eslint_d" },
       lua = { "luacheck" },
       scss = { "stylelint" },
-      typescript = { "eslint_d", "eslint" },
-      typescriptreact = { "eslint_d", "eslint" },
+      svelte = { "eslint_d" },
+      typescript = { "eslint_d" },
+      typescriptreact = { "eslint_d" },
     }
 
     -- Avoid errors thrown by global vim variables.
-    require("lint").linters.luacheck.args = {
+    lint.linters.luacheck.args = {
       globals = {
         "vim",
       },
