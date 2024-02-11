@@ -100,7 +100,7 @@ return {
             lspconfig[server].setup(default_lsp_config)
           end,
           ["cssls"] = function()
-            server_setup("cssls")
+            return require("plugins.lsp.inc.cssls").setup()
           end,
           ["intelephense"] = function()
             server_setup("intelephense")
@@ -109,7 +109,7 @@ return {
             server_setup("lua_ls")
           end,
           ["tailwindcss"] = function()
-            return lspconfig.tailwindcss.setup(require("plugins.lsp.inc.tailwindcss"))
+            return require("plugins.lsp.inc.tailwindcss").setup()
           end,
         },
       })
