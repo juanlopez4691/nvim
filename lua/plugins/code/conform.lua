@@ -8,15 +8,20 @@ return {
 
     conform.setup({
       formatters_by_ft = {
-        css = { { "stylelint", "prettierd", "prettier" } },
-        html = { { "prettierd", "prettier", "htmlbeautifier" } },
-        javascript = { { "eslintd", "prettierd", "prettier" } },
-        json = { { "prettierd", "prettier" } },
-        typescript = { { "eslintd", "prettierd", "prettier" } },
-        scss = { { "stylelint", "prettierd", "prettier" } },
+        css = { "prettier" },
+        graphql = { "prettier" },
+        html = { "prettier" },
+        javascript = { { "prettier", "eslint_d" } },
+        javascriptreact = { { "prettier", "eslint_d" } },
+        json = { "prettier" },
         lua = { "stylua" },
+        markdown = { "prettier" },
         php = { { "phpcbf", "pretty-php" } },
-        yaml = { { "yamlfix", "prettierd", "prettier" } },
+        scss = { { "prettier", "stylelint" } },
+        svelte = { "prettier" },
+        typescript = { { "prettier", "eslint_d" } },
+        typescriptreact = { { "prettier", "eslint_d" } },
+        yaml = { "prettier" },
       },
     })
   end,
