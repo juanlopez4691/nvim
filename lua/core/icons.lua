@@ -80,6 +80,7 @@ return {
     BoldLineLeft = "▎",
     BookMark = "",
     BoxChecked = "",
+    Brush = "",
     Bug = "",
     Calendar = "",
     Check = "",
