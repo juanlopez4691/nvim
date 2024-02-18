@@ -42,9 +42,13 @@ _G.Settings.colorscheme_variant = "tokyonight-night"
 -- _G.Settings.colorscheme = "kanagawa"
 -- _G.Settings.colorscheme_variant = "kanagawa-wave"
 
+-- _G.Settings.colorscheme = "nightfly"
+-- _G.Settings.colorscheme_variant = "nightfly"
+
 _G.Settings.plugins_enabled.tokyonight = _G.Settings.colorscheme == "tokyonight"
 _G.Settings.plugins_enabled.kanagawa = _G.Settings.colorscheme == "kanagawa"
 _G.Settings.plugins_enabled.catppuccin = _G.Settings.colorscheme == "catppuccin"
+_G.Settings.plugins_enabled.catppuccin = _G.Settings.colorscheme == "nightfly"
 
 -- Set global limits for large files.
 _G.Settings.max_file = {
