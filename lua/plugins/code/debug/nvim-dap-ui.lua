@@ -69,6 +69,12 @@ return {
     local dap = require("dap")
     local dapui = require("dapui")
 
+    -- Set up neodev to ensure nvim-dap-ui gets type checking,
+    -- documentation and autocompletion for all API functions.
+    require("neodev").setup({
+      library = { plugins = { "nvim-dap-ui" }, types = true },
+    })
+
     -- Setup dap config by VsCode launch.json file
     require("dap.ext.vscode").load_launchjs()
 
