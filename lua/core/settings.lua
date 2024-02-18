@@ -39,8 +39,8 @@ _G.Settings.colorscheme_default = "habamax"
 _G.Settings.colorscheme = "tokyonight"
 _G.Settings.colorscheme_variant = "tokyonight-night"
 
--- _G.Settings.colorscheme = 'kanagawa'
--- _G.Settings.colorscheme_variant = 'kanagawa-wave'
+-- _G.Settings.colorscheme = "kanagawa"
+-- _G.Settings.colorscheme_variant = "kanagawa-wave"
 
 _G.Settings.plugins_enabled.tokyonight = _G.Settings.colorscheme == "tokyonight"
 _G.Settings.plugins_enabled.kanagawa = _G.Settings.colorscheme == "kanagawa"
