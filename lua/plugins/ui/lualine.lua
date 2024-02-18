@@ -15,6 +15,17 @@ return {
       return icons.ui.Magic .. " " .. status
     end
 
+    -- Gets format-on-save setting status.
+    local function auto_format()
+      local status
+      if _G.Settings.format_on_save then
+        status = " ON"
+      else
+        status = " OFF"
+      end
+      return icons.ui.Brush .. " " .. status
+    end
+
     lualine.setup({
       theme = _G.Settings.colorscheme,
       options = {
@@ -60,6 +71,10 @@ return {
           {
             codeium_status,
             color = { fg = "#58f5ab" },
+          },
+          {
+            auto_format,
+            color = { fg = "#096ae8" },
           },
           { "encoding" },
           { "fileformat" },
