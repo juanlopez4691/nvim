@@ -28,10 +28,12 @@ return {
       nls.builtins.diagnostics.php,
       nls.builtins.diagnostics.phpcs.with({
         command = phpcs_exec,
+        prefer_local = true,
       }),
       nls.builtins.diagnostics.phpstan,
       nls.builtins.formatting.phpcbf.with({
         command = phpcbf_exec,
+        prefer_local = true,
       }),
       nls.builtins.code_actions.gitsigns,
     }
