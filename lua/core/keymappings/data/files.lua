@@ -82,7 +82,13 @@ return {
           enabled = true,
           modes = { "n" },
           key = "<leader>fW",
-          cmd = "",
+          cmd = function()
+            local auto_format = _G.Settings.format_on_save
+
+            _G.Settings.format_on_save = false
+            vim.cmd("write")
+            _G.Settings.format_on_save = auto_format
+          end,
           opt = {
             desc = "Save without formatting",
           },
