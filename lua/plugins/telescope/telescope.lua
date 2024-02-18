@@ -29,7 +29,9 @@ return {
       local pretty_pickers = require("plugins.telescope.inc.pretty_pickers")
 
       telescope.setup({
-        file_ignore_patterns = {},
+        file_ignore_patterns = {
+          ".git/",
+        },
         color_devicons = true,
         defaults = {
           path_display = { "smart" },
