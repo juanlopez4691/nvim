@@ -62,6 +62,7 @@ return {
         special_files = {
           ".env",
           "Cargo.toml",
+          ".gitignore",
           "Makefile",
           "README.md",
           "readme.md",
