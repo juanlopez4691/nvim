@@ -39,6 +39,43 @@ return {
             desc = "Indent out",
           },
         },
+        -- Duplicate lines(s) up/down.
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "<S-A-j>",
+          cmd = "yypgv=",
+          opt = {
+            desc = "Duplicate current line down",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "<S-A-k>",
+          cmd = "yyPgv=",
+          opt = {
+            desc = "Duplicate current line up",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "v" },
+          key = "<S-A-j>",
+          cmd = "ypgv=",
+          opt = {
+            desc = "Duplicate current line down",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "v" },
+          key = "<S-A-k>",
+          cmd = "yPgv=",
+          opt = {
+            desc = "Duplicate current line up",
+          },
+        },
         -- Move line(s) up/down.
         {
           enabled = true,
