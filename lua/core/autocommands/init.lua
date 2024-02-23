@@ -4,6 +4,7 @@ local autocommands = {
   "general",
   "linenumbers",
   "format",
+  "nvim-tree",
   "telescope",
   "toggleterm",
 }
