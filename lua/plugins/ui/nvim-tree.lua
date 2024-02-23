@@ -40,6 +40,8 @@ return {
   -- tag = 'nightly',
   cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
   config = function()
+    local git_icons = require("core.icons").git
+
     require("nvim-tree").setup({
       on_attach = do_on_attach,
       disable_netrw = true,
@@ -77,6 +79,17 @@ return {
             folder = true,
             folder_arrow = false,
             git = true,
+          },
+          glyphs = {
+            git = {
+              unstaged = git_icons.FileUnstaged,
+              staged = git_icons.FileStaged,
+              unmerged = git_icons.FileUnmerged,
+              renamed = git_icons.FileRenamed,
+              untracked = git_icons.FileUntracked,
+              deleted = git_icons.FileDeleted,
+              ignored = git_icons.FileIgnored,
+            },
           },
         },
       },
