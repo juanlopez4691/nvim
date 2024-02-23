@@ -9,7 +9,6 @@ return {
 
     toggleterm.setup({
       size = function(term)
-        print(term.direction)
         if term.direction == "horizontal" then
           return _G.Settings.terminal.size.horizontal.height
         elseif term.direction == "vertical" then
