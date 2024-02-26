@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd({ "BufNew", "BufEnter", "FocusGained", "InsertLeave"
   callback = function()
     local filetype = vim.o.filetype
 
-    if filetype == "NvimTree" or filetype == "NvimSeparator" then
+    if filetype == "NvimTree" or filetype == "NvimSeparator" or filetype == "aerial" then
       opt.statuscolumn = ""
       return
     end
@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEn
   callback = function()
     local filetype = vim.o.filetype
 
-    if filetype == "NvimTree" or filetype == "NvimSeparator" then
+    if filetype == "NvimTree" or filetype == "NvimSeparator" or filetype == "aerial" then
       opt.statuscolumn = ""
       return
     end
