@@ -60,6 +60,15 @@ return {
             desc = "Unload buffer",
           },
         },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "<leader>bc",
+          cmd = "<cmd>%bd|e#|bd#<CR>",
+          opt = {
+            desc = "Close all buffers except current",
+          },
+        },
       },
     },
   },
