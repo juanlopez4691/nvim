@@ -42,6 +42,67 @@ return {
             desc = "Grep word under cursor",
           },
         },
+      },
+    },
+    {
+      enabled = true,
+      whichkey = false,
+      mappings = {
+        -- Center search results.
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "n",
+          cmd = "nzz",
+          opt = {
+            desc = "Next search occurrence",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "N",
+          cmd = "Nzz",
+          opt = {
+            desc = "Previous search occurrence",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "*",
+          cmd = "*zz",
+          opt = {
+            desc = "Search current word",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "#",
+          cmd = "#zz",
+          opt = {
+            desc = "Search current word backwards",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "g*",
+          cmd = "g*zz",
+          opt = {
+            desc = "Search current word (partial)",
+          },
+        },
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "g#",
+          cmd = "g#zz",
+          opt = {
+            desc = "Search current word (partial) backwards",
+          },
+        },
         -- Clear search
         {
           enabled = true,
