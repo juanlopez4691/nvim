@@ -84,6 +84,15 @@ return {
             desc = "Terminal: window command prefix",
           },
         },
+        {
+          enabled = true,
+          modes = { "t" },
+          key = "<C-n>",
+          cmd = "<C-\\><C-n>",
+          opt = {
+            desc = "Terminal: escape to normal mode",
+          },
+        },
         -- Terminal: resize window splits.
         {
           enabled = true,
