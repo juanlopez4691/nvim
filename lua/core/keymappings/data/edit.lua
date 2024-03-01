@@ -20,6 +20,16 @@ return {
       enabled = true,
       whichkey = false,
       mappings = {
+        -- Paste and keep the yanked text.
+        {
+          enabled = true,
+          modes = { "x" },
+          key = "p",
+          cmd = [["_dP]],
+          opt = {
+            desc = "Paste and keep the yanked text",
+          },
+        },
         -- Indent/Reindent in visual modes.
         {
           enabled = true,
