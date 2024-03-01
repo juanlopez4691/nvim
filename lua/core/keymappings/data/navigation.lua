@@ -44,7 +44,7 @@ return {
         -- Improved cursor movement.
         {
           enabled = true,
-          modes = { "n" },
+          modes = { "n", "x" },
           key = "j",
           cmd = "gj",
           opt = {
@@ -53,7 +53,7 @@ return {
         },
         {
           enabled = true,
-          modes = { "n" },
+          modes = { "n", "x" },
           key = "k",
           cmd = "gk",
           opt = {
