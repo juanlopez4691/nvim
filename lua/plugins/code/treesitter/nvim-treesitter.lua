@@ -21,7 +21,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     { "JoosepAlviste/nvim-ts-context-commentstring" },
-    { "nvim-treesitter/nvim-treesitter-textobjects" },
+    -- { "nvim-treesitter/nvim-treesitter-textobjects" },
   },
   config = function()
     ---@diagnostic disable-next-line: missing-fields
