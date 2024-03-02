@@ -1,13 +1,23 @@
 return {
   {
-    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     cmd = "Mason",
     dependencies = {
-      "williamboman/mason.nvim",
-      "neovim/nvim-lspconfig",
-      "j-hui/fidget.nvim",
-      "folke/neodev.nvim",
+      {
+        "williamboman/mason-lspconfig.nvim",
+        opts = {
+          auto_install = true,
+        },
+      },
+      {
+        "williamboman/mason.nvim",
+        config = function()
+          require("mason").setup()
+        end,
+      },
+      { "j-hui/fidget.nvim" },
+      { "folke/neodev.nvim" },
     },
     config = function()
       local lsp = vim.lsp
@@ -116,6 +126,9 @@ return {
 
       -- Set up hover and signature help.
       lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, {
+        border = "rounded",
+      })
+      lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, {
         border = "rounded",
       })
     end,
