@@ -7,7 +7,6 @@ return {
     local icons = require("core.icons")
     local lualine = require("lualine")
     local lazy_status = require("lazy.status")
-    local navic = require("nvim-navic")
 
     -- Gets Codeium icon and status info.
     local function codeium_status()
@@ -61,6 +60,11 @@ return {
             shorting_target = 40,
             symbols = { modified = "󰲶", readonly = "", unnamed = "", newfile = "" },
           },
+          -- stylua: ignore
+          {
+            function() return require("nvim-navic").get_location() end,
+            cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+          },
         },
         lualine_x = {
           {
@@ -97,17 +101,7 @@ return {
             },
           },
         },
-        lualine_b = {
-          {
-            function()
-              return require("nvim-navic").get_location()
-            end,
-            cond = function()
-              return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
-            end,
-            section_separators = {},
-          },
-        },
+        lualine_b = {},
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
