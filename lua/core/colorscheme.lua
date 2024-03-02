@@ -5,4 +5,4 @@ if ok then
   colorscheme = _G.Settings.colorscheme_variant
 end
 
-vim.cmd('colorscheme ' .. colorscheme)
+vim.cmd("colorscheme " .. colorscheme)

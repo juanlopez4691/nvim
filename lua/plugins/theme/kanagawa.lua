@@ -1,12 +1,8 @@
 return {
   "rebelot/kanagawa.nvim",
-  cond = _G.Settings.plugins_enabled.kanagawa,
+  lazy = false,
   priority = 10000, -- make sure to load this before all the other start plugins
   config = function()
-    if not _G.Settings.plugins_enabled.kanagawa then
-      return
-    end
-
     require("kanagawa").setup({
       compile = false, -- enable compiling the colorscheme
       undercurl = true, -- enable undercurls

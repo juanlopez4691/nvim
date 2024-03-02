@@ -1,7 +1,7 @@
 return {
   "bluz71/vim-nightfly-colors",
   name = "nightfly",
-  cond = _G.Settings.plugins_enabled.nightfly,
+  lazy = false,
   priority = 1000,
   config = function()
     if not _G.Settings.plugins_enabled.nightfly then
