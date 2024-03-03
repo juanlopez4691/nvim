@@ -5,6 +5,7 @@ return {
   "json",
   "lua",
   "luadoc",
+  "markdown_inline",
   "php",
   "phpdoc",
   "query",
