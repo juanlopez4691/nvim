@@ -8,12 +8,11 @@ return {
   },
   config = function()
     local aerial = require("aerial")
+    print(vim.o.filetype)
 
     aerial.setup({
       attach_mode = "global",
       backends = { "lsp", "treesitter", "markdown", "man" },
-      disable_max_lines = _G.Settings.max_file.lines,
-      disable_max_size = _G.Settings.max_file.size,
       layout = {
         min_width = { 30, 0.2 },
         resize_to_content = true,
