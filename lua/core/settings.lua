@@ -15,6 +15,7 @@ _G.Settings.plugins_enabled = {
   mini_indentscope = true,
   mini_surround = true,
   neogen = true,
+  neoscroll = true,
   notify = true,
   nvim_autopairs = true,
   nvim_bqf = true,
