@@ -71,6 +71,9 @@ return {
         },
         indent_markers = {
           enable = true,
+          icons = {
+            corner = "╰╴",
+          },
         },
         icons = {
           git_placement = "signcolumn",
