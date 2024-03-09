@@ -33,6 +33,7 @@ return {
     show_untracked = true,
   },
   colorscheme = {
+    layout_strategy = "vertical",
     enable_preview = true,
   },
 }
