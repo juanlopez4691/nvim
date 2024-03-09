@@ -77,7 +77,7 @@ local options = {
   -- Enable/disable undo file creation.
   undofile = true,
   -- Enable background buffers.
-  hidden = true,
+  hidden = false,
   -- Remember N lines in history.
   history = 1000,
   -- Set global statusline.
