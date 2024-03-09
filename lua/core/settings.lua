@@ -13,7 +13,6 @@ _G.Settings.plugins_enabled = {
   indent_blankline = true,
   lualine = true,
   mini_indentscope = true,
-  mini_surround = true,
   neogen = true,
   neoscroll = true,
   notify = true,
