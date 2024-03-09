@@ -9,6 +9,7 @@ _G.Settings.plugins_enabled = {
   comments = true,
   diffview = true,
   flatten = true,
+  gen = true,
   gitsigns = true,
   indent_blankline = true,
   lualine = true,
