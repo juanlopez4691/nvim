@@ -38,15 +38,6 @@ _G.Settings.colorscheme_default = "habamax"
 _G.Settings.colorscheme = "catppuccin"
 _G.Settings.colorscheme_variant = "catppuccin-mocha"
 
--- _G.Settings.colorscheme = "tokyonight"
--- _G.Settings.colorscheme_variant = "tokyonight-night"
-
--- _G.Settings.colorscheme = "kanagawa"
--- _G.Settings.colorscheme_variant = "kanagawa-wave"
-
--- _G.Settings.colorscheme = "nightfly"
--- _G.Settings.colorscheme_variant = "nightfly"
-
 -- Set global limits for large files.
 _G.Settings.max_file = {
   size = 1024 * 100,
