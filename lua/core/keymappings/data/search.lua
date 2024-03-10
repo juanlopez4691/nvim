@@ -42,6 +42,15 @@ return {
             desc = "Grep word under cursor",
           },
         },
+        {
+          enabled = _G.Settings.plugins_enabled.telescope,
+          modes = { "n" },
+          key = "<leader>sr",
+          cmd = "<cmd>Telescope resume<CR>",
+          opt = {
+            desc = "Resume Telescope picker",
+          },
+        },
       },
     },
     {
