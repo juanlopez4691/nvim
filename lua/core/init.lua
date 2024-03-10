@@ -1,5 +1,6 @@
 require("core.settings")
 require("core.config")
+require("custom")
 require("core.lazy")
 require("core.colorscheme")
 require("core.commands")
