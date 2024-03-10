@@ -107,6 +107,8 @@ local options = {
   -- Autoindent new lines.
   smartindent = true,
   autoindent = true,
+  -- Background color mode.
+  background = "dark",
 }
 
 for k, v in pairs(options) do
