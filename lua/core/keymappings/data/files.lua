@@ -66,7 +66,7 @@ return {
           key = "<leader>fr",
           cmd = "<cmd>Telescope resume<CR>",
           opt = {
-            desc = "Resume picker",
+            desc = "Resume Telescope picker",
           },
         },
         {
