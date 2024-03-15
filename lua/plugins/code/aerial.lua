@@ -12,7 +12,7 @@ return {
 
     aerial.setup({
       attach_mode = "global",
-      backends = { "lsp", "treesitter", "markdown", "man" },
+      backends = { "lsp", "markdown", "man" },
       layout = {
         min_width = { 30, 0.2 },
         resize_to_content = true,
