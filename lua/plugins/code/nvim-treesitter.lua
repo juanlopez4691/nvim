@@ -34,8 +34,11 @@ return {
     }
   },
   config = function()
+    local treesitter = require("nvim-treesitter")
+    local treesitter_configs = require("nvim-treesitter.configs")
+
     ---@diagnostic disable-next-line: missing-fields
-    require("nvim-treesitter.configs").setup({
+    treesitter_configs.setup({
       ensure_installed = require("plugins.code.treesitter.inc.ensure_installed"),
       ignore_install = {
         "html",
@@ -65,5 +68,21 @@ return {
       sync_install = true,
       auto_install = true,
     })
+
+    local buf = vim.api.nvim_get_current_buf()
+    local highlighter = require "vim.treesitter.highlighter"
+
+    -- Add treesitter as a backend for nvim-aerial.
+    if highlighter.active[buf] then
+      local aerial_ok, aerial = pcall(require, "aerial")
+      if aerial_ok then
+        aerial.setup({
+          backends = { "treesitter", "lsp", "markdown", "man" },
+        })
+      end
+    end
+
   end,
+
+
 }
