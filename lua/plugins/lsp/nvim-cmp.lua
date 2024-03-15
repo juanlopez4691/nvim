@@ -38,6 +38,7 @@ return {
         return {}
       end,
     },
+    { "roobert/tailwindcss-colorizer-cmp.nvim", lazy = true },
   },
   event = { "CmdLineEnter", "InsertEnter" },
   config = function()
@@ -139,6 +140,8 @@ return {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
           local icons = require("core.icons")
+          local kind = icons.kind[vim_item.kind]
+          local menu = vim_item.menu
 
           -- Limit lenght of completion entry
           if #vim_item.abbr > _G.Settings.cmp_max_length then
@@ -146,9 +149,7 @@ return {
               string.format("%s %s", string.sub(vim_item.abbr, 1, _G.Settings.cmp_max_length - 1), icons.ui.Ellipsis)
           end
 
-          vim_item.kind = icons.kind[vim_item.kind]
-
-          local strings = vim.split(vim_item.kind, "%s", { trimempty = true })
+          local strings = vim.split(kind, "%s", { trimempty = true })
           local source_name = ({
             buffer = "[Buffer]",
             cmdline = "[Cmd]",
@@ -159,18 +160,24 @@ return {
           })[entry.source.name]
 
           if entry.source.name == "cmdline" then
-            vim_item.kind = "  "
+            kind = "  "
           else
-            vim_item.kind = string.format(" %s ", (strings[1] or ""))
+            kind = string.format(" %s ", (strings[1] or ""))
           end
 
           if source_name ~= nil then
-            vim_item.menu = source_name
+            menu = source_name
           else
-            vim_item.menu = ""
+            menu = ""
           end
 
-          return vim_item
+          -- Apply tailwindcss colorization.
+          local formatted_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+
+          formatted_item.kind = kind
+          formatted_item.menu = menu
+
+          return formatted_item
         end,
       },
     })
@@ -184,12 +191,12 @@ return {
     })
 
     -- Use cmdline & path source for ':'.
-    cmp.setup.cmdline(":", {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = {
-        { name = "path" },
-        { name = "cmdline" },
-      },
-    })
+    -- cmp.setup.cmdline(":", {
+    --   mapping = cmp.mapping.preset.cmdline(),
+    --   sources = {
+    --     { name = "path" },
+    --     { name = "cmdline" },
+    --   },
+    -- })
   end,
 }
