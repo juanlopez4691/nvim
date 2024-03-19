@@ -10,7 +10,5 @@ return {
 
     vim.g.nightflyNormalFloat = true
     vim.g.nightflyCursorColor = true
-
-    vim.cmd("colorscheme nightfly")
   end,
 }
