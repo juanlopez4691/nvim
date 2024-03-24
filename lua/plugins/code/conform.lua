@@ -7,6 +7,17 @@ return {
     local conform = require("conform")
 
     conform.setup({
+      formatters = {
+        injected = {
+          options = { ignore_errors = true },
+        },
+      },
+      format = {
+        timeout_ms = 3000,
+        async = false,
+        quiet = false,
+        lsp_fallback = true,
+      },
       formatters_by_ft = {
         css = { "prettier" },
         graphql = { "prettier" },
