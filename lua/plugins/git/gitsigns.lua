@@ -16,10 +16,5 @@ return {
       },
       current_line_blame = true,
     })
-
-    -- Global functions used in keymappings
-    GitSignsFullBlameLine = function()
-      gs.blame_line({ full = true })
-    end
   end,
 }

@@ -64,7 +64,16 @@ return {
           enabled = _G.Settings.plugins_enabled.gitsigns,
           modes = { "n" },
           key = "<leader>gk",
-          cmd = "<cmd>lua GitSignsFullBlameLine()<CR>",
+          cmd = "<cmd>lua require('gitsigns').blame_line()<CR>",
+          opt = {
+            desc = "Line blame",
+          },
+        },
+        {
+          enabled = _G.Settings.plugins_enabled.gitsigns,
+          modes = { "n" },
+          key = "<leader>gK",
+          cmd = "<cmd>lua require('gitsigns').blame_line({ full = true })<CR>",
           opt = {
             desc = "Full line blame",
           },
