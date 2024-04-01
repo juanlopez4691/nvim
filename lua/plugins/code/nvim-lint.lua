@@ -22,19 +22,10 @@ return {
       },
     }
 
-    local phpcs_exec = "phpcs"
-    local vendor_path = "./vendor/bin/"
     local phpcs = require("lint").linters.phpcs
 
-    -- Use local version of phpcs if available.
-    if vim.fn.executable(vendor_path .. phpcs_exec) == 1 then
-      phpcs_exec = vendor_path .. phpcs_exec
-    else
-      phpcs_exec = os.getenv("HOME") .. "/.composer/vendor/bin/phpcs"
-    end
-
     lint.linters_by_ft.php = { "phpcs", "phpstan", "php" }
-    phpcs.cmd = phpcs_exec
+    -- phpcs.cmd = phpcs_exec
 
     -- Use local configuration of phpcs linter if available.
     if vim.fn.filereadable("phpcs.xml") == 1 then
