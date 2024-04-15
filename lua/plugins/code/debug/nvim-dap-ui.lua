@@ -3,6 +3,7 @@ return {
   lazy = true,
   cond = _G.Settings.plugins_enabled.nvim_dap_ui,
   dependencies = { "nvim-neotest/nvim-nio" },
+  branch = "master",
   opts = {
     icons = { expanded = "", collapsed = "", circular = "" },
     mappings = {
