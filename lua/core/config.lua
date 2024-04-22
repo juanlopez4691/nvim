@@ -72,6 +72,8 @@ local options = {
   shiftwidth = 2,
   -- 1 tab == 2 spaces.
   tabstop = 2,
+  -- Use value of shiftwidth instead of tabstop for indentation.
+  softtabstop = -1,
   -- Set undo directory.
   undodir = undodir,
   -- Enable/disable undo file creation.
