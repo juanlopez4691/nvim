@@ -46,7 +46,9 @@ return {
       -- Set up diagnostics.
       vim.diagnostic.config({
         enable = true,
-        underline = false,
+        signs = true,
+        virtual_text = true,
+        underline = true,
         update_in_insert = false,
         severity_sort = true,
         float = {
