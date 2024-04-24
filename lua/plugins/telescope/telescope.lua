@@ -33,7 +33,12 @@ return {
         },
         color_devicons = true,
         defaults = {
-          path_display = { "smart" },
+          -- path_display = { "filename_first" },
+          path_display = {
+            filename_first = {
+              reverse_directories = false,
+            },
+          },
           initial_mode = "insert",
           selection_caret = "❯ ",
           layout_config = {
