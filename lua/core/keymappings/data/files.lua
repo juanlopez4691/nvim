@@ -46,7 +46,7 @@ return {
           enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>ff",
-          cmd = "<cmd>lua FindFiles()<CR>",
+          cmd = "<cmd>Telescope find_files prompt_prefix=🔭› layout_strategy=flex cwd_only=true<CR>",
           opt = {
             desc = "Find files",
           },
@@ -55,7 +55,7 @@ return {
           enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>fo",
-          cmd = "<cmd>lua TelescopeOldFiles()<CR>",
+          cmd = "<cmd>Telescope oldfiles prompt_prefix=💾› layout_strategy=flex cwd_only=true<CR>",
           opt = {
             desc = "Recent files",
           },

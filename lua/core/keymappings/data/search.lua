@@ -19,7 +19,7 @@ return {
           enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>sg",
-          cmd = "<cmd>lua TelescopeLiveGrep()<CR>",
+          cmd = "<cmd>Telescope live_grep prompt_prefix=🔍> layout_strategy=flex<CR>",
           opt = {
             desc = "Live Grep (root dir)",
           },
@@ -28,7 +28,7 @@ return {
           enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>sG",
-          cmd = "<cmd>lua TelescopeLiveGrepArgs()<CR>",
+          cmd = "<cmd>Telescope live_grep_args prompt_prefix=🔍> layout_strategy=flex<CR>",
           opt = {
             desc = "Live Grep with arguments (root dir)",
           },
@@ -37,7 +37,7 @@ return {
           enabled = _G.Settings.plugins_enabled.telescope,
           modes = { "n" },
           key = "<leader>sw",
-          cmd = "<cmd>lua TelescopeGrepString()<CR>",
+          cmd = "<cmd>Telescope live_grep_args prompt_prefix=🔍> layout_strategy=flex<CR>",
           opt = {
             desc = "Grep word under cursor",
           },
