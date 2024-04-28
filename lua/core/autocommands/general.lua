@@ -27,3 +27,10 @@ vim.api.nvim_create_autocmd("WinEnter", {
   pattern = "*",
   command = "setlocal cursorline cursorlineopt=both",
 })
+
+-- Resizes panes when window is resized.
+vim.api.nvim_create_autocmd("VimResized", {
+  group = augroup,
+  pattern = "*",
+  command = "wincmd =",
+})
