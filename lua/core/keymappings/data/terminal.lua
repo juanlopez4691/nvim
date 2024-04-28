@@ -9,10 +9,10 @@ return {
         {
           enabled = _G.Settings.plugins_enabled.toggleterm,
           modes = { "n" },
-          key = "<leader>tt",
+          key = "<leader>tf",
           cmd = "<cmd>ToggleTerm direction=float<CR>",
           opt = {
-            desc = "Terminal float",
+            desc = "Terminal: open float",
           },
         },
         {
@@ -21,7 +21,7 @@ return {
           key = "<leader>th",
           cmd = '<cmd>lua ToggleSomeTerminal(20, "horizontal")<cr>',
           opt = {
-            desc = "Terminal horizontal",
+            desc = "Terminal: open horizontal split",
           },
         },
         {
@@ -30,7 +30,16 @@ return {
           key = "<leader>tv",
           cmd = '<cmd>lua ToggleSomeTerminal(0, "vertical")<cr>',
           opt = {
-            desc = "Terminal vertical",
+            desc = "Terminal: open vertical split",
+          },
+        },
+        {
+          enabled = term,
+          modes = { "n" },
+          key = "<leader>tt",
+          cmd = "<cmd>term<cr>",
+          opt = {
+            desc = "Terminal: open terminal",
           },
         },
       },
