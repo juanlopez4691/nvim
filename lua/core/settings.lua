@@ -28,6 +28,7 @@ _G.Settings.plugins_enabled = {
   nvim_treesitter = true,
   nvim_ufo = true,
   telescope = true,
+  tmux_navigator = true,
   toggleterm = true,
   trouble = true,
   which_key = true,
