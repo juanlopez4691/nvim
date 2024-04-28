@@ -5,6 +5,19 @@ return {
   config = function()
     require("catppuccin").setup({
       flavour = "mocha",
+      color_overrides = {
+        mocha = {
+          base = "#101219",
+        },
+      },
+      highlight_overrides = {
+        mocha = function()
+          return {
+            ColorColumn = { bg = "#14161f" },
+            CursorLine = { bg = "#14161f" },
+          }
+        end,
+      },
       integrations = {
         cmp = true,
         gitsigns = true,
