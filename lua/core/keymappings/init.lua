@@ -1,4 +1,8 @@
-local wk = require("which-key")
+local ok, wk = pcall(require, "which-key")
+if not ok then
+  return
+end
+
 local utils = require("core.utils")
 
 local files = vim.fn.readdir(vim.fn.stdpath("config") .. "/lua/core/keymappings/data", [[v:val =~ '\.lua$']])
