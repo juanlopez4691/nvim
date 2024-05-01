@@ -26,6 +26,7 @@ return {
       local lspconfig = require("lspconfig")
       local icons = require("core.icons").diagnostics
       local lsp_keymappings = require("plugins.lsp.inc.lsp_keys")
+      local utils = require("core.utils")
 
       -- Set border style for floating windows.
       require("lspconfig.ui.windows").default_options.border = "rounded"
@@ -94,6 +95,9 @@ return {
           debounce_text_changes = 200,
           allow_incremental_sync = true,
         },
+        root_dir = function()
+          return utils.get_project_root()
+        end,
       }
 
       -- Sets up a given LSP server.

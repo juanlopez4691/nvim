@@ -46,16 +46,19 @@ function M.get_project_root(root_markers)
     root_markers = { ".git", "Makefile" }
   end
 
-  local root_marker = vim.fs.find(root_markers, {
-    path = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
+  local current_dir = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
+
+  local project_root = vim.fs.find(root_markers, {
+    path = current_dir,
     upward = true,
   })[1]
 
-  if not root_marker then
-    return
+  -- Could not find project root dir, return current dir
+  if not project_root then
+    return current_dir
   end
 
-  return vim.fs.dirname(root_marker)
+  return vim.fs.dirname(project_root)
 end
 
 -----------------------------------------------------------
