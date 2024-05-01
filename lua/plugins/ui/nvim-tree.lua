@@ -27,6 +27,20 @@ local function do_on_attach(bufnr)
   }
   for key, value in pairs(mappings) do
     vim.keymap.set("n", key, value[1], value[2])
+
+    -- Only preview files, expand/collapse directories.
+    local preview = require("nvim-tree-preview")
+
+    vim.keymap.set("n", "<Tab>", function()
+      local ok, node = pcall(api.tree.get_node_under_cursor)
+      if ok and node then
+        if node.type == "directory" then
+          api.node.open.edit()
+        else
+          preview.node(node, { toggle_focus = true })
+        end
+      end
+    end, opts("Preview"))
   end
 end
 
@@ -35,7 +49,9 @@ return {
   "nvim-tree/nvim-tree.lua",
   cond = _G.Settings.plugins_enabled.nvim_tree,
   dependencies = {
-    "nvim-tree/nvim-web-devicons",
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-tree/nvim-web-devicons" },
+    { "b0o/nvim-tree-preview.lua" },
   },
   -- tag = 'nightly',
   cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
