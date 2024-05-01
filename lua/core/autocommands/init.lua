@@ -1,4 +1,5 @@
 local autocommands = {
+  "rooter",
   "debug",
   "edit",
   "general",
