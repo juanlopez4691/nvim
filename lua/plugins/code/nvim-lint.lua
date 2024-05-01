@@ -3,6 +3,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local lint = require("lint")
+    local utils = require("core.utils")
 
     lint.linters_by_ft = {
       css = { "stylelint" },
@@ -25,13 +26,15 @@ return {
     local phpcs = require("lint").linters.phpcs
 
     lint.linters_by_ft.php = { "phpcs", "phpstan", "php" }
-    -- phpcs.cmd = phpcs_exec
+
+    -- Find closest phpcs.xml file.
+    local phpcs_xml_path = utils.find_closest_file("phpcs.xml")
 
     -- Use local configuration of phpcs linter if available.
-    if vim.fn.filereadable("phpcs.xml") == 1 then
+    if phpcs_xml_path then
       phpcs.args = {
         "-q",
-        "--standard=phpcs.xml",
+        "--standard=" .. phpcs_xml_path,
         "--report=json",
         "-",
       }
