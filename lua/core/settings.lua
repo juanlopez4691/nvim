@@ -7,6 +7,7 @@ _G.Settings.plugins_enabled = {
   codeium = true,
   colorful_winsep = true,
   comments = true,
+  cursorword = true,
   diffview = true,
   flatten = true,
   gen = true,
