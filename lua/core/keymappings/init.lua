@@ -5,10 +5,10 @@ end
 
 local utils = require("core.utils")
 
-local files = vim.fn.readdir(vim.fn.stdpath("config") .. "/lua/core/keymappings/data", [[v:val =~ '\.lua$']])
+local files = vim.fn.readdir(vim.fn.stdpath("config") .. "/lua/core/keymappings/keys", [[v:val =~ '\.lua$']])
 
 for _, file in ipairs(files) do
-  local keymappings = require("core.keymappings.data." .. file:gsub("%.lua$", ""))
+  local keymappings = require("core.keymappings.keys." .. file:gsub("%.lua$", ""))
 
   for _, group in ipairs(keymappings.groups) do
     if group.enabled == false then
