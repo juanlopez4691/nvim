@@ -32,7 +32,9 @@ return {
       require("lspconfig.ui.windows").default_options.border = "rounded"
 
       -- Set up handler for lsp clients on_attach event.
-      local on_attach = function(_, bufnr)
+      local on_attach = function(client, bufnr)
+        client.server_capabilities.semanticTokensProvider = nil
+
         for _, m in ipairs(lsp_keymappings) do
           vim.keymap.set("n", m.key, m.cmd, { buffer = bufnr, remap = false, desc = m.desc })
         end
