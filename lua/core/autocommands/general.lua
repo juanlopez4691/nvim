@@ -43,3 +43,10 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.cmd("startinsert")
   end,
 })
+
+-- Reloads buffer if changed externally
+vim.api.nvim_create_autocmd("FocusGained", {
+  group = augroup,
+  pattern = "*",
+  command = "checktime",
+})
