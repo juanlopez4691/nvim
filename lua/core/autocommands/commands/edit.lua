@@ -13,6 +13,12 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   pattern = "*",
   group = augroup,
   callback = function()
+    local filetype = vim.o.filetype
+
+    if filetype == "terminal" then
+      return
+    end
+
     vim.cmd([[highlight RedundantSpaces ctermbg=red guibg=red]])
     vim.cmd([[match RedundantSpaces /\s\+$/]])
   end,
