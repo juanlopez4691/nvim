@@ -14,7 +14,8 @@ return {
         mocha = function()
           return {
             ColorColumn = { bg = "#14161f" },
-            CursorLine = { bg = "#14161f" },
+            CursorLine = { bg = "#24262f" },
+            WinSeparator = { fg = "#44464f" },
           }
         end,
       },
