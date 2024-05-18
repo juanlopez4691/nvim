@@ -31,6 +31,8 @@ local options = {
   -- clipboard = 'unnamedplus',
   -- Enable 24-bit RGB colors.
   termguicolors = true,
+  -- Show effects of command incrementally on buffer.
+  inccommand = "split",
   -- Make backspace behave in a sane manner.
   backspace = { "indent", "eol,start" },
   -- Line lenght marker at 80 columns.
