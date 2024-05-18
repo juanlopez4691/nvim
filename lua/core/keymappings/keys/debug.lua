@@ -19,7 +19,7 @@ return {
           enabled = true,
           modes = { "n" },
           key = "<leader>xe",
-          cmd = "<cmd>lua require('dapui').eval()<CR>",
+          cmd = "<cmd>lua require('dapui').eval(nil, { enter = true })<CR>",
           opt = {
             desc = "Evaluate",
           },
