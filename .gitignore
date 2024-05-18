@@ -1,3 +1,4 @@
 lazy-lock.json
 sessions/
+lua/custom/plugins/
 lua/custom/settings.lua

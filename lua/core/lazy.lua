@@ -31,6 +31,7 @@ require("lazy").setup({
   { import = "plugins.code" },
   { import = "plugins.code.debug" },
   { import = "plugins.telescope" },
+  { import = "custom.plugins" },
 }, {
   install = {
     colorscheme = colorscheme(),
