@@ -103,10 +103,30 @@ return {
             desc = "Grow vertical split",
           },
         },
+        -- Fix for iterm2
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "<M-b>",
+          cmd = "<cmd>vertical resize +2<CR>",
+          opt = {
+            desc = "Grow vertical split",
+          },
+        },
         {
           enabled = true,
           modes = { "n" },
           key = "<A-Right>",
+          cmd = "<cmd>vertical resize -2<CR>",
+          opt = {
+            desc = "Reduce vertical split",
+          },
+        },
+        -- Fix for iterm2
+        {
+          enabled = true,
+          modes = { "n" },
+          key = "<M-f>",
           cmd = "<cmd>vertical resize -2<CR>",
           opt = {
             desc = "Reduce vertical split",
