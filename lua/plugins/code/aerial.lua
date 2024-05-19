@@ -43,8 +43,6 @@ return {
     -- Global methods to be used in keymaps.
     ToggleAerial = function()
       vim.cmd("AerialToggle")
-      vim.opt.statuscolumn = ""
-    end
     end
   end,
 }
