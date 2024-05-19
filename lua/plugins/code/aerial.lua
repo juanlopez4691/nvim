@@ -45,13 +45,6 @@ return {
       vim.cmd("AerialToggle")
       vim.opt.statuscolumn = ""
     end
-
-    AerialNavIsOpen = function()
-      return aerial.nav_is_open()
-    end
-
-    AerialNavClose = function()
-      aerial.nav_close()
     end
   end,
 }
