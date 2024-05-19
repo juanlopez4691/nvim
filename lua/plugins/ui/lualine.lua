@@ -2,7 +2,7 @@ return {
   "nvim-lualine/lualine.nvim",
   cond = _G.Settings.plugins_enabled.lualine,
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  event = "VeryLazy",
+  event = "UIEnter",
   config = function()
     local icons = require("core.icons")
     local lualine = require("lualine")

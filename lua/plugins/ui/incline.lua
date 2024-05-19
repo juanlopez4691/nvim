@@ -1,7 +1,7 @@
 return {
   cond = _G.Settings.plugins_enabled.incline,
   "b0o/incline.nvim",
-  event = "VeryLazy",
+  event = "UIEnter",
   config = function()
     require("incline").setup({
       window = {

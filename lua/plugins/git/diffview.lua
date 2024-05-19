@@ -1,5 +1,5 @@
 return {
   "sindrets/diffview.nvim",
-  event = "VeryLazy",
+  event = { "BufReadPre", "BufNewFile" },
   cond = _G.Settings.plugins_enabled.diffview,
 }

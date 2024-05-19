@@ -1,7 +1,8 @@
 return {
   "kevinhwang91/nvim-bqf",
   cond = _G.Settings.plugins_enabled.nvim_bfq,
-  event = { "BufReadPre", "BufNewFile" },
+  cmd = "BqfAutoToggle",
+  event = "QuickFixCmdPost",
   ft = "qf",
   opts = {
     filter = {
