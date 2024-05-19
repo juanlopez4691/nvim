@@ -2,6 +2,11 @@ local augroup = vim.api.nvim_create_augroup("tabs", {})
 
 local onTabEnter = function(path)
   local dirname = path:match("(.*[/\\])")
+
+  if dirname == nil then
+    return
+  end
+
   vim.cmd("tcd " .. dirname)
 end
 
