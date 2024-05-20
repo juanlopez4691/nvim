@@ -35,6 +35,7 @@ return {
         buftypes = { "terminal", "nofile", "telescope" },
       },
       scope = {
+        enabled = false,
         show_start = false,
         show_end = false,
       },
