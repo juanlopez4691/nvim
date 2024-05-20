@@ -32,6 +32,7 @@ return {
           "toggleterm",
           "Trouble",
         },
+        buftypes = { "terminal", "nofile", "telescope" },
       },
       scope = {
         show_start = false,
