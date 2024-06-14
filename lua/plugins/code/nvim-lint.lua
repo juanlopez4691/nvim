@@ -11,7 +11,6 @@ return {
       javascriptreact = { "eslint" },
       lua = { "luacheck" },
       scss = { "stylelint" },
-      svelte = { "eslint" },
       typescript = { "eslint" },
       typescriptreact = { "eslint" },
     }
