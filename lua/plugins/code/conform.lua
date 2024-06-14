@@ -28,7 +28,7 @@ return {
         lua = { "stylua" },
         markdown = { "prettier" },
         php = { { "phpcbf", "pretty-php" } },
-        scss = { { "prettier", "stylelint" } },
+        scss = { "stylelint" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
         yaml = { "prettier" },
