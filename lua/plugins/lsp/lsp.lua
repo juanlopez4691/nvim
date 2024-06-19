@@ -129,6 +129,9 @@ return {
           ["tailwindcss"] = function()
             return require("plugins.lsp.inc.tailwindcss").setup()
           end,
+          ["tsserver"] = function()
+            return require("plugins.lsp.inc.tsserver").setup()
+          end,
         },
       })
 
