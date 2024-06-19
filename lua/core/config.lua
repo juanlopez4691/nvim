@@ -102,6 +102,8 @@ local options = {
   -- When set case is ignored when completing file names and directories.
   wildignorecase = true,
   wildmode = "full",
+  -- Ignore node_modules.
+  wildignore = { "*/node_modules/*" },
   -- Set char to start wildcard expansion in command line for macros and mappings.
   wildcharm = ("\t"):byte(),
   -- No line wrapping.
