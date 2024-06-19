@@ -57,7 +57,7 @@ return {
         float = {
           focusable = false,
           border = "rounded",
-          source = "always",
+          source = true,
         },
       })
       -- Add custom icons to diagnostics.
