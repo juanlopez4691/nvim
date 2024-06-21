@@ -36,7 +36,7 @@ return {
         {
           enabled = true,
           modes = { "n" },
-          key = "]b",
+          key = "<Tab>",
           cmd = "<cmd>bnext<CR>",
           opt = {
             desc = "Next buffer",
@@ -45,7 +45,7 @@ return {
         {
           enabled = true,
           modes = { "n" },
-          key = "[b",
+          key = "<S-Tab>",
           cmd = "<cmd>bprev<CR>",
           opt = {
             desc = "Previous buffer",
