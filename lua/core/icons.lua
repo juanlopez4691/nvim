@@ -7,10 +7,10 @@ return {
     Stopped = { "🔶", "DapBreakpointStopped", "DapBreakpointStopped", "DapBreakpointStopped" },
   },
   diagnostics = {
-    Error = "",
-    Hint = "",
-    Info = "",
-    Warn = "",
+    Error = "🔥",
+    Warn = "💀",
+    Info = "🤓",
+    Hint = "💡",
   },
   git = {
     Branch = "",
