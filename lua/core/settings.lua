@@ -16,7 +16,6 @@ _G.Settings.plugins_enabled = {
   lualine = true,
   mini_indentscope = true,
   surround = true,
-  neogen = true,
   neoscroll = true,
   notify = true,
   nvim_autopairs = true,

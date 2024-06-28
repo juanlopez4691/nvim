@@ -43,7 +43,6 @@ return {
   event = { "CmdLineEnter", "InsertEnter" },
   config = function()
     local cmp = require("cmp")
-    local neogen = require("neogen")
     local compare = require("cmp.config.compare")
     local luasnip = require("luasnip")
 
@@ -71,8 +70,6 @@ return {
             end
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
-          elseif neogen.jumpable() then
-            neogen.jump_next()
           else
             fallback()
           end
@@ -86,8 +83,6 @@ return {
             end
           elseif luasnip.jumpable(-1) then
             luasnip.jump(-1)
-          elseif neogen.jumpable() then
-            neogen.jump_prev()
           else
             fallback()
           end
