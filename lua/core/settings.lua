@@ -2,7 +2,6 @@ _G.Settings = {}
 
 -- Plugins to enable.
 _G.Settings.plugins_enabled = {
-  aerial = true,
   code_format = true,
   codeium = true,
   colorful_winsep = true,

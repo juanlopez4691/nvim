@@ -99,10 +99,10 @@ return {
           },
         },
         {
-          enabled = _G.Settings.plugins_enabled.aerial,
+          enabled = _G.Settings.plugins_enabled.trouble,
           modes = { "n" },
           key = "<leader>co",
-          cmd = "<cmd>lua ToggleAerial()<CR>",
+          cmd = "<cmd>Trouble lsp_document_symbols focus=true follow=true win.position=right win.size=0.25<CR>",
           opt = {
             desc = "Code outline",
           },
