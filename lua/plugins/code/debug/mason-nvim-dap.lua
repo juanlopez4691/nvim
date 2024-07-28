@@ -20,8 +20,12 @@ return {
           config.adapters = {
             type = "executable",
             command = "node",
-            args = { os.getenv("HOME") .. "/vscode-php-debug/out/phpDebug.js" },
+            args = { vim.fn.stdpath("data") .. "/mason/packages/php-debug-adapter/extension/out/phpDebug.js" },
           }
+
+          -- Setup debug configuration using vscode launch.json file.
+          config.configurations = {}
+          require("dap.ext.vscode").load_launchjs()
 
           require("mason-nvim-dap").default_setup(config)
         end,

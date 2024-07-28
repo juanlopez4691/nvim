@@ -77,9 +77,6 @@ return {
       library = { plugins = { "nvim-dap-ui" }, types = true },
     })
 
-    -- Setup dap config by VsCode launch.json file
-    require("dap.ext.vscode").load_launchjs()
-
     dapui.setup(opts)
 
     -- Open dap-ui when dap session is started.
