@@ -7,11 +7,13 @@ return {
     vim.o.timeout = true
     vim.o.timeoutlen = 300
 
-    require("which-key").setup({
-      sort_by_description = true,
-      window = {
-        border = "single",
-        margin = { 1, 1, 1, 1 },
+    local wk = require("which-key")
+
+    wk.setup({
+      preset = "classic",
+      notify = false,
+      win = {
+        title = false,
       },
     })
   end,
