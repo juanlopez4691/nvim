@@ -5,6 +5,7 @@ return {
       whichkey = true,
       prefix = "<leader>h",
       name = "+Help",
+      icon = { icon = "", color = "cyan" },
       mappings = {
         {
           enabled = true,

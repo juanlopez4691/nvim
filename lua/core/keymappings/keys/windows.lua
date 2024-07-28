@@ -78,7 +78,7 @@ return {
         -- Resize window splits.
         {
           enabled = true,
-          modes = { "n" },
+          modes = { "n", "t" },
           key = "<A-Up>",
           cmd = "<cmd>resize +2<CR>",
           opt = {
@@ -87,7 +87,7 @@ return {
         },
         {
           enabled = true,
-          modes = { "n" },
+          modes = { "n", "t" },
           key = "<A-Down>",
           cmd = "<cmd>resize -2<CR>",
           opt = {
@@ -96,7 +96,7 @@ return {
         },
         {
           enabled = true,
-          modes = { "n" },
+          modes = { "n", "t" },
           key = "<A-Left>",
           cmd = "<cmd>vertical resize +2<CR>",
           opt = {
@@ -106,7 +106,7 @@ return {
         -- Fix for iterm2
         {
           enabled = true,
-          modes = { "n" },
+          modes = { "n", "t" },
           key = "<M-b>",
           cmd = "<cmd>vertical resize +2<CR>",
           opt = {
@@ -115,7 +115,7 @@ return {
         },
         {
           enabled = true,
-          modes = { "n" },
+          modes = { "n", "t" },
           key = "<A-Right>",
           cmd = "<cmd>vertical resize -2<CR>",
           opt = {
@@ -125,7 +125,7 @@ return {
         -- Fix for iterm2
         {
           enabled = true,
-          modes = { "n" },
+          modes = { "n", "t" },
           key = "<M-f>",
           cmd = "<cmd>vertical resize -2<CR>",
           opt = {

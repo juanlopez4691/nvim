@@ -3,60 +3,28 @@ return {
     {
       enabled = true,
       whichkey = true,
-      prefix = "<leader>L",
-      name = "+Lazy",
+      prefix = "<leader>P",
+      name = "+Packages",
+      icon = { icon = "", color = "purple" },
       mappings = {
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>Ll",
+          key = "<leader>Pl",
           cmd = "<cmd>Lazy<cr>",
+          icon = { icon = "󰒲", color = "purple" },
           opt = {
-            desc = "Open Lazy",
+            desc = "Lazy",
           },
         },
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>Lc",
-          cmd = "<cmd>Lazy check<cr>",
-          opt = {
-            desc = "Check packages",
-          },
-        },
-        {
-          enabled = true,
-          modes = { "n" },
-          key = "<leader>Ls",
-          cmd = "<cmd>Lazy sync<cr>",
-          opt = {
-            desc = "Sync packages",
-          },
-        },
-        {
-          enabled = true,
-          modes = { "n" },
-          key = "<leader>Lp",
-          cmd = "<cmd>Lazy profile<cr>",
-          opt = {
-            desc = "Profile",
-          },
-        },
-      },
-    },
-    {
-      enabled = true,
-      whichkey = true,
-      prefix = "<leader>M",
-      name = "Mason",
-      mappings = {
-        {
-          enabled = true,
-          modes = { "n" },
-          key = "<leader>M",
+          key = "<leader>Pm",
           cmd = "<cmd>Mason<cr>",
+          icon = { icon = "󱊍", color = "purple" },
           opt = {
-            desc = "Open Mason",
+            desc = "Mason",
           },
         },
       },

@@ -3,7 +3,7 @@ return {
     {
       enabled = true,
       whichkey = true,
-      prefix = "<leader>t",
+      prefix = "<leader>T",
       name = "+Terminal",
       mappings = {
         {
@@ -12,7 +12,7 @@ return {
           key = "<leader>tf",
           cmd = "<cmd>ToggleTerm direction=float<CR>",
           opt = {
-            desc = "Terminal: open float",
+            desc = "Open float",
           },
         },
         {
@@ -21,7 +21,7 @@ return {
           key = "<leader>th",
           cmd = '<cmd>lua ToggleSomeTerminal(20, "horizontal")<cr>',
           opt = {
-            desc = "Terminal: open horizontal split",
+            desc = "Horizontal split",
           },
         },
         {
@@ -30,16 +30,16 @@ return {
           key = "<leader>tv",
           cmd = '<cmd>lua ToggleSomeTerminal(0, "vertical")<cr>',
           opt = {
-            desc = "Terminal: open vertical split",
+            desc = "Vertical split",
           },
         },
         {
-          enabled = term,
+          enabled = _G.Settings.plugins_enabled.toggleterm,
           modes = { "n" },
           key = "<leader>tt",
           cmd = "<cmd>term<cr>",
           opt = {
-            desc = "Terminal: open terminal",
+            desc = "Open full",
           },
         },
       },
@@ -100,43 +100,6 @@ return {
           cmd = "<C-\\><C-n>",
           opt = {
             desc = "Terminal: escape to normal mode",
-          },
-        },
-        -- Terminal: resize window splits.
-        {
-          enabled = true,
-          modes = { "t" },
-          key = "<A-Up>",
-          cmd = "<cmd>resize +2<CR>",
-          opt = {
-            desc = "Grow horizontal split",
-          },
-        },
-        {
-          enabled = true,
-          modes = { "t" },
-          key = "<A-Down>",
-          cmd = "<cmd>resize -2<CR>",
-          opt = {
-            desc = "Reduce horizontal split",
-          },
-        },
-        {
-          enabled = true,
-          modes = { "t" },
-          key = "<A-Left>",
-          cmd = "<cmd>vertical resize +2<CR>",
-          opt = {
-            desc = "Grow vertical split",
-          },
-        },
-        {
-          enabled = true,
-          modes = { "t" },
-          key = "<A-Right>",
-          cmd = "<cmd>vertical resize -2<CR>",
-          opt = {
-            desc = "Reduce vertical split",
           },
         },
       },

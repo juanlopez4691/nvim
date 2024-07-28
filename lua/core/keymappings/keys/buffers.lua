@@ -5,12 +5,14 @@ return {
       whichkey = true,
       prefix = "<leader>b",
       name = "+Buffers",
+      icon = { icon = "﬘", color = "blue" },
       mappings = {
         {
           enabled = true,
           modes = { "n" },
           key = "<leader>bl",
           cmd = "<cmd>Telescope buffers prompt_prefix=👓›<CR>",
+          icon = { icon = "", color = "blue" },
           opt = {
             desc = "Buffers list",
           },
@@ -20,6 +22,7 @@ return {
           modes = { "n" },
           key = "<leader>bn",
           cmd = "<cmd>bnext<CR>",
+          icon = { icon = "󰒭", color = "blue" },
           opt = {
             desc = "Next buffer",
           },
@@ -29,6 +32,7 @@ return {
           modes = { "n" },
           key = "<leader>bp",
           cmd = "<cmd>bprev<CR>",
+          icon = { icon = "󰒮", color = "blue" },
           opt = {
             desc = "Previous buffer",
           },
@@ -54,19 +58,21 @@ return {
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>bu",
+          key = "<leader>bc",
+          icon = { icon = "󰅘", color = "blue" },
           cmd = "<cmd>bunload<CR>",
           opt = {
-            desc = "Unload buffer",
+            desc = "Close buffer",
           },
         },
         {
           enabled = true,
           modes = { "n" },
-          key = "<leader>bc",
+          key = "<leader>bo",
           cmd = "<cmd>%bd|e#|bd#<CR>",
+          icon = { icon = "󰱞", color = "blue" },
           opt = {
-            desc = "Close all buffers except current",
+            desc = "Close other buffers",
           },
         },
       },

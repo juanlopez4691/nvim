@@ -5,6 +5,7 @@ return {
       whichkey = true,
       prefix = "<leader>f",
       name = "+Files",
+      icon = { icon = "󰙅", color = "yellow" },
       mappings = {
         {
           enabled = true,
@@ -21,8 +22,9 @@ return {
           key = "<leader>fc",
           cmd = "<cmd>NvimTreeFocus<CR>",
           opt = {
-            desc = "Focus on file explorer",
+            desc = "Focus on File Tree",
           },
+          icon = { icon = "󰙅", color = "yellow" },
         },
         {
           enabled = _G.Settings.plugins_enabled.nvim_tree,
@@ -30,8 +32,9 @@ return {
           key = "<leader>ft",
           cmd = "<cmd>NvimTreeToggle<CR>",
           opt = {
-            desc = "Toggle file explorer",
+            desc = "File Tree",
           },
+          icon = { icon = "󰙅", color = "yellow" },
         },
         {
           enabled = _G.Settings.plugins_enabled.nvim_tree,
@@ -39,8 +42,9 @@ return {
           key = "<leader>fT",
           cmd = "<cmd>NvimTreeFindFileToggle<CR>",
           opt = {
-            desc = "Toggle file explorer on current file",
+            desc = "File Tree (current file)",
           },
+          icon = { icon = "󰙅", color = "yellow" },
         },
         {
           enabled = _G.Settings.plugins_enabled.telescope,

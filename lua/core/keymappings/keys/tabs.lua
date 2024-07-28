@@ -3,7 +3,7 @@ return {
     {
       enabled = true,
       whichkey = true,
-      prefix = "<leader>T",
+      prefix = "<leader>t",
       name = "+Tabs",
       mappings = {
         {
@@ -11,6 +11,7 @@ return {
           modes = { "n" },
           key = "<leader>Ta",
           cmd = "<cmd>tabnew<CR>",
+          icon = { icon = "", color = "orange" },
           opt = {
             desc = "Add new tab",
           },
@@ -20,6 +21,7 @@ return {
           modes = { "n" },
           key = "<leader>Th",
           cmd = "<cmd>tabfirst<CR>",
+          icon = { icon = "󰒫", color = "orange" },
           opt = {
             desc = "First tab",
           },
@@ -29,6 +31,7 @@ return {
           modes = { "n" },
           key = "<leader>Tp",
           cmd = "<cmd>tabprevious<CR>",
+          icon = { icon = "󰒮", color = "orange" },
           opt = {
             desc = "Previous tab",
           },
@@ -38,6 +41,7 @@ return {
           modes = { "n" },
           key = "<leader>Tn",
           cmd = "<cmd>tabnext<CR>",
+          icon = { icon = "󰒭", color = "orange" },
           opt = {
             desc = "Next tab",
           },
@@ -47,6 +51,7 @@ return {
           modes = { "n" },
           key = "<leader>Tl",
           cmd = "<cmd>tablast<CR>",
+          icon = { icon = "󰒬", color = "orange" },
           opt = {
             desc = "Last tab",
           },
@@ -56,6 +61,7 @@ return {
           modes = { "n" },
           key = "<leader>Tx",
           cmd = "<cmd>tabclose<CR>",
+          icon = { icon = "󱎘", color = "orange" },
           opt = {
             desc = "Close tab",
           },

@@ -5,11 +5,13 @@ return {
       whichkey = true,
       prefix = "<leader>e",
       name = "+Edit",
+      icon = { icon = "󰙏", color = "yellow" },
       mappings = {
         {
           modes = { "n" },
           key = "<leader>eu",
           cmd = "<cmd>Telescope undo<CR>",
+          icon = { icon = "󰕍", color = "yellow" },
           opt = {
             desc = "Undo tree",
           },
