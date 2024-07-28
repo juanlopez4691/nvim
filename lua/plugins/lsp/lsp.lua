@@ -12,6 +12,19 @@ return {
       },
       {
         "williamboman/mason.nvim",
+        dependencies = {
+          "WhoIsSethDaniel/mason-tool-installer.nvim",
+          config = function()
+            require("mason-tool-installer").setup({
+              ensure_installed = {
+                "prettier",
+                "stylua",
+                "eslint_d",
+              },
+              auto_update = true,
+            })
+          end,
+        },
         config = function()
           local mason = require("mason")
 

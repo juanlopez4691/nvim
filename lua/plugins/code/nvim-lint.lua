@@ -7,12 +7,12 @@ return {
 
     lint.linters_by_ft = {
       css = { "stylelint" },
-      javascript = { "eslint" },
-      javascriptreact = { "eslint" },
+      javascript = { "eslint_d" },
+      javascriptreact = { "eslint_d" },
       lua = { "luacheck" },
       scss = { "stylelint" },
-      typescript = { "eslint" },
-      typescriptreact = { "eslint" },
+      typescript = { "eslint_d" },
+      typescriptreact = { "eslint_d" },
     }
 
     -- Avoid errors thrown by global vim variables.
