@@ -2,8 +2,7 @@ return {
   "folke/trouble.nvim",
   cond = _G.Settings.plugins_enabled.trouble,
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  cmd = "Trouble",
-  config = function(_, opts)
+  cmd = { "Trouble" },
     require("trouble").setup({
       use_diagnostic_signs = true,
       mode = "workspace_diagnostics", -- start in workspace diagnostics mode
