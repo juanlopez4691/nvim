@@ -11,6 +11,11 @@ return {
         toggle_mode = "m", -- toggle between "workspace" and "document" diagnostics mode
         -- other action keys
       },
+      modes = {
+        lsp_document_symbols = {
+          format = "{kind_icon} {symbol.name} {pos}",
+        },
+      },
     })
   end,
 }
