@@ -18,6 +18,9 @@ return {
         quiet = false,
         lsp_fallback = true,
       },
+      default_format_opts = {
+        stop_after_first = true,
+      },
       formatters_by_ft = {
         css = { "prettier" },
         graphql = { "prettier" },
@@ -27,7 +30,7 @@ return {
         json = { "prettier" },
         lua = { "stylua" },
         markdown = { "prettier" },
-        php = { { "phpcbf", "pretty-php" } },
+        php = { "phpcbf", "pretty-php" },
         scss = { "stylelint" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
