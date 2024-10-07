@@ -14,7 +14,7 @@ return {
   "sqlls",
   "tailwindcss",
   "taplo",
-  "tsserver",
+  "ts_ls",
   "vimls",
   "yamlls",
 }

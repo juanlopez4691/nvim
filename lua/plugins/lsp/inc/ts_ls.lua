@@ -3,7 +3,7 @@ local lspconfig = require("lspconfig")
 local M = {}
 
 M.setup = function()
-  lspconfig.tsserver.setup({
+  lspconfig.ts_ls.setup({
     root_dir = function(...)
       return require("lspconfig.util").root_pattern(".git")(...)
     end,

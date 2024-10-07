@@ -153,8 +153,8 @@ return {
           ["tailwindcss"] = function()
             return require("plugins.lsp.inc.tailwindcss").setup()
           end,
-          ["tsserver"] = function()
-            return require("plugins.lsp.inc.tsserver").setup()
+          ["ts_ls"] = function()
+            return require("plugins.lsp.inc.ts_ls").setup()
           end,
         },
       })
